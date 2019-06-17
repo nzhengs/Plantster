@@ -12,6 +12,7 @@ const AsyncTypeahead = asyncContainer(Typeahead);
 
 class Books extends Component {
   state = {
+    plant: null,
     plants: [],
     Type: "",
     Name: "",
@@ -64,8 +65,21 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              {this.state.plant && (
+                <div>
+                  <h2>{this.state.plant.Name}</h2>
+                  <p>Type:{this.state.plant.Type}</p>
+                  <p>Spacing:{this.state.plant.Spacing}</p>
+                  <p>PS:{this.state.plant.PS}</p>
+                  <p>RS:{this.state.plant.RS}</p>
+                  <p>Depth:{this.state.plant.Depth}</p>
+                  <p>Spread:{this.state.plant.Spread}</p>
+                  <p>Light:{this.state.plant.Light}</p>
+                  <p>Maturity:{this.state.plant.Maturity}</p>
+                </div>
+              )}
             </Jumbotron>
+
             <form>
               <Input
                 value={this.state.title}
@@ -99,7 +113,8 @@ class Books extends Component {
               <AsyncTypeahead
                 isLoading={this.state.isLoading}
                 labelKey="Name"
-                onChange={selectedPlant => {
+                onChange={([selectedPlant]) => {
+                  this.setState({ plant: selectedPlant });
                   console.log(selectedPlant);
                 }}
                 onSearch={query => {
