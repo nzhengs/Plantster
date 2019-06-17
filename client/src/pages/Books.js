@@ -6,13 +6,19 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
+
+const AsyncTypeahead = asyncContainer(Typeahead);
 
 class Books extends Component {
   state = {
+    plant: null,
     plants: [],
     Type: "",
     Name: "",
-    Comments: ""
+    Comments: "",
+    isLoading: false,
+    options: []
   };
 
   componentDidMount() {
@@ -59,8 +65,21 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              {this.state.plant && (
+                <div>
+                  <h2>{this.state.plant.Name}</h2>
+                  <p>Type:{this.state.plant.Type}</p>
+                  <p>Spacing:{this.state.plant.Spacing}</p>
+                  <p>PS:{this.state.plant.PS}</p>
+                  <p>RS:{this.state.plant.RS}</p>
+                  <p>Depth:{this.state.plant.Depth}</p>
+                  <p>Spread:{this.state.plant.Spread}</p>
+                  <p>Light:{this.state.plant.Light}</p>
+                  <p>Maturity:{this.state.plant.Maturity}</p>
+                </div>
+              )}
             </Jumbotron>
+
             <form>
               <Input
                 value={this.state.title}
@@ -90,18 +109,35 @@ class Books extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Plants List</h1>
+              <h1>Search Plants</h1>
+              <AsyncTypeahead
+                isLoading={this.state.isLoading}
+                labelKey="Name"
+                onChange={([selectedPlant]) => {
+                  this.setState({ plant: selectedPlant });
+                  console.log(selectedPlant);
+                }}
+                onSearch={query => {
+                  this.setState({ isLoading: true });
+                  fetch(`api/plants?name=${query}`)
+                    .then(resp => resp.json())
+                    .then(plants => {
+                      this.setState({
+                        isLoading: false,
+                        options: plants
+                      });
+                    });
+                }}
+                options={this.state.options}
+              />
             </Jumbotron>
             {this.state.plants.length ? (
               <List>
                 {this.state.plants.map(plant => (
                   <ListItem key={plant._id}>
                     <Link to={"/books/" + plant._id}>
-                      <strong>
-                        {plant.Name}
-                      </strong>
+                      <strong>{plant.Name}</strong>
                     </Link>
-                    
                   </ListItem>
                 ))}
               </List>
