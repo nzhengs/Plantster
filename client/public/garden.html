@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Garden</title>
+
+
+    <link rel="stylesheet" href="../Project3/assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Roboto|Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Josefin+Slab|Major+Mono+Display|Merriweather|Nova+Mono|PT+Mono|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+       
+    <!-- FontAwesome File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    
+<section>
+<!-- Navigation -->
+                
+     <nav class="navbar navbar-expand-lg navbar-light static-top">
+
+        <a class="navbar-brand" href="#">
+            <img src="../Project3/assets/images/Plantster/plantster logo-02.png" width="300" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a href="#projects" class="nav-link">Sign up</a>
+            </li>
+            <li class="nav-item">
+            <a href="#connect" class="nav-link">Sign in</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+<!-- Search -->
+    <div id="container">
+            <div id="plant-detail" class="row">
+                    <div class="col-sm-4">
+                            <form>
+                                    <div class="form-group">
+                                      <label for="exampleFormControlInput1">Search for your plant</label>
+                                      <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="search for your plant">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleFormControlSelect1">Select the variety</label>
+                                      <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Kentucky beans</option>
+                                        <option>Midwest beans</option>
+                                        <option>Mama's beans</option>
+                                        <option>Papa's beans</option>
+                                      </select>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary">Place it in the garden</button>
+                             </form>
+                    </div>
+<!-- Plant details -->
+                <div id="details" class="card mb-3" style="max-width: 900px;">
+                        <div class="row no-gutters">
+                                <div class="col-md-4">
+                                <img src="../Project3/assets/images/beans.jpg" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <table id="product_detail" class="table table-sm">
+                                                <tbody>
+                                                    <tr>
+                                                    <td width="30%" scope="row">Height</td>
+                                                    <td>5-7 feet</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td scope="row">Spacing</td>
+                                                    <td>Plant 1 inch deep and 4 inches apart in rows 30 inches apart.</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td scope="row">Depth</td>
+                                                    <td>1 - 1.5 inches.</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td scope="row">Light</td>
+                                                    <td>Full sun.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">Zone</td>
+                                                    <td>3-9 annual</td>
+                                                </tr>      
+                                                <tr>
+                                                    <td scope="row">Days to maturity</td>
+                                                    <td>67 days.</td>
+                                                </tr>                                                                                                        
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+                </div>       
+            </div>
+<!-- Chosen plants list-->
+        <div id="garden-detail" class="row">
+                <div class="col-sm-4">
+                <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Heirloom Tomato
+                            <button type="button" class="btn btn-secondary">
+                                    <span class="badge badge-light">X</span>
+                                </button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Kentucky beans
+                            <button type="button" class="btn btn-secondary">
+                                    <span class="badge badge-light">X</span>
+                                </button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          Watermelon
+                          <button type="button" class="btn btn-secondary">
+                                <span class="badge badge-light">X</span>
+                            </button>
+                        </li>
+                      </ul>
+
+        </div>
+
+<!-- Placeholder for the interactive garden grid-->
+        <div class="col-sm-8">
+
+        </div>
+
+     </div>
+
+</section>
+
+
+</body>
+
+
+
+</html>
