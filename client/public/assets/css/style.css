@@ -1,0 +1,240 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  line-height: 34px;
+  color: #777777;
+  /* background: url('../images/chu-tai-121706-unsplash.jpg') no-repeat center center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; 
+}
+
+/*
+    NAVIGATION
+*/
+
+.nav-link{
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+}
+/* 
+/*
+    HOMEPAGE
+*/
+
+#about-us {
+  color: black;
+  text-align: center;
+  background: white;
+  margin-bottom: 150px;
+  margin-top: 100px;
+  padding: 1em;
+}
+
+#meet-team {
+  color: black;
+  text-align: center;
+  background: white;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  padding: 1em;
+
+}
+
+#projects {
+  background-color: white;
+}
+
+#projects2 {
+  background-color: white;
+}
+
+#projects3 {
+  background-color: white;
+}
+
+/*
+    HOMEPAGE ONLY 
+*/
+
+h1 {
+  padding: 1em;
+}
+
+h5 {
+  color: #042138;
+  font-family: 'Major Mono Display', monospace;
+}
+
+p {
+  color:white;
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.text-center p {
+  color: #343a40;
+}
+
+
+#team{
+  margin-left: 150px;
+}
+
+.irina-image {
+  width: 100px;
+}
+
+
+#product_detail{
+  text-align: left;
+  margin-top: 30px;
+} */
+
+
+/*
+    HOMEPAGE & GARDEN PAGE
+*/
+
+.card {
+  margin-top: 1em;
+  text-align: center;
+  border: none !important;
+  size: 10%;
+}
+
+.card .card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
+.card-text {
+  width: 70%;
+  text-align: center;
+  margin-left: 100px;
+  font-size: 25px !important;
+}
+
+.card-title {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 25px;
+}
+
+
+.card p {
+  color: #343a40;
+  margin-bottom: 2rem !important;
+  font-size: 15px;
+  padding: 1em;
+}
+
+
+.card-img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+  padding-left: 30px;
+  margin-top: 45px;
+}
+
+.form-group{
+  margin-left: 35px;
+  margin-top: 30px;
+}
+
+.list-group{
+  margin-left: 35px;
+  margin-top: 30px;
+}
+
+button{
+  margin-left: 25px;
+  float: right;
+}
+
+/*
+    DYNAMIC BUTTON ON HOMEPAGE
+*/
+
+
+.button.inset {
+  text-decoration: none;
+  color: #fff;
+  background-color: #A0D413;
+  letter-spacing: 2px;
+  padding: 10px 25px 10px 25px;
+  border: 5px solid rgb(179, 190, 192);
+  border: 5px solid #A0D413;
+  transition: 0.2s;
+}
+
+.button.wrap {
+  text-decoration: none;
+  color: #A0D413;
+  background-color: #fff;
+  letter-spacing: 2px;
+  padding: 10px 25px 10px 25px;
+  border: 5px solid #fff;
+  border: 5px solid #fff;
+  transition: 0.2s;
+}
+
+
+.button.inset:hover {
+  box-shadow: inset 0px 0px 0px 2px #fff;
+}
+
+.button.wrap:hover {
+  box-shadow: inset 0px 0px 0px 2px #2496B0
+}
+
+/*
+    SOCIAL ICONS
+*/
+
+#lab_social_icon_footer {
+  padding: 40px 0;
+  background-color: white;
+  margin-top: 50px;
+}
+
+#lab_social_icon_footer a {
+  color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+/*
+    SOCIAL ICONS - Multicolored Button Hover Variations
+*/
+
+#lab_social_icon_footer #social-gh:hover {
+  color:#A0D413;
+}
+
+#lab_social_icon_footer #social-tw:hover {
+  color: #A0D413;
+}
+
+#lab_social_icon_footer #social-li:hover {
+  color: #A0D413;
+}
+
+
