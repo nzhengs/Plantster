@@ -78,6 +78,11 @@ class Books extends Component {
                   <p>Maturity:{this.state.plant.Maturity}</p>
                 </div>
               )}
+              {this.state.plant && (
+                <div>
+                  Image: <img src={this.state.plant.Image} />
+                </div>
+              )}
             </Jumbotron>
 
             <form>
