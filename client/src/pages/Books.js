@@ -7,6 +7,9 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
+import SearchWrap from "../components/SearchWrap";
+import SearchBar from "../components/SearchBar";
+import PlantDetail from "../components/PlantDetail";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -62,7 +65,7 @@ class Books extends Component {
   render() {
     return (
       <Container fluid>
-        <Row>
+        {/* <Row>
           <Col size="md-6">
             <Jumbotron>
               {this.state.plant && (
@@ -150,6 +153,34 @@ class Books extends Component {
               <h3>No Results to Display</h3>
             )}
           </Col>
+        </Row>
+       */}
+        <Row>
+          <Col size="sm-4">
+            <SearchBar>
+              <AsyncTypeahead
+                isLoading={this.state.isLoading}
+                labelKey="Name"
+                onChange={([selectedPlant]) => {
+                  this.setState({ plant: selectedPlant });
+                  console.log(selectedPlant);
+                }}
+                onSearch={query => {
+                  this.setState({ isLoading: true });
+                  fetch(`api/plants?name=${query}`)
+                    .then(resp => resp.json())
+                    .then(plants => {
+                      this.setState({
+                        isLoading: false,
+                        options: plants
+                      });
+                    });
+                }}
+                options={this.state.options}
+              />
+            </SearchBar>
+          </Col>
+          <Col size="sm-8" />
         </Row>
       </Container>
     );
