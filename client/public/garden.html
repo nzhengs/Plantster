@@ -48,26 +48,46 @@
 <!-- Search -->
     <div id="container">
             <div id="plant-detail" class="row">
-                    <div class="col-sm-4">
-                            <form>
+                    <div class="plant-detail col-sm-4 col-md-4 col-lg-4">
+
+                        <form>
+
+                            <div class="form-group">
+                                <label for="garden-name">Name your garden</label>
+                                <input type="text" class="form-control" placeholder="Name">
+                            
+                              </div>
+
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="dimension-1 col">
+                                  <input type="text" class="form-control" placeholder="width"> 
+                                </div>
+
+                                <div class="dimension-2 col">
+                                  <h4"> by </h4>
+                                </div>
+                              
+                                <div class="dimension-3 col">
+                                  <input type="text" class="form-control w-200" placeholder="length">
+                                </div>
+                                </div>
+
+                              </div>
                                     <div class="form-group">
-                                      <label for="exampleFormControlInput1">Search for your plant</label>
-                                      <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="search for your plant">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="exampleFormControlSelect1">Select the variety</label>
-                                      <select class="form-control" id="exampleFormControlSelect1">
+                                      <label for="vegetable-select">Select your vegetable</label>
+                                      <select class="form-control" id="vegetable-options">
                                         <option>Kentucky beans</option>
                                         <option>Midwest beans</option>
                                         <option>Mama's beans</option>
                                         <option>Papa's beans</option>
                                       </select>
                                     </div>
-                                    <button type="button" class="btn btn-secondary">Place it in the garden</button>
+                                    <button type="button" class="btn btn-secondary">Start your garden</button>
                              </form>
                     </div>
 <!-- Plant details -->
-                <div id="details" class="card border-0 mb-3" style="max-width: 900px;">
+                <div id="details" class="card border-0 col-sm-8 col-md-8 col-lg-8 mb-3" style="max-width: 900px;">
                         <div class="row no-gutters">
                                 <div class="col-md-4">
                                 <img src="../public/assets/images/beans.jpg" class="card-img" alt="...">
@@ -113,21 +133,33 @@
                 <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           Heirloom Tomato
-                            <button type="button" class="btn btn-secondary">
-                                    <span class="badge badge-light">X</span>
-                                </button>
+                           
+                                <span class="badge badge-success">#</span>
+
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                     
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           Kentucky beans
-                            <button type="button" class="btn btn-secondary">
-                                    <span class="badge badge-light">X</span>
-                                </button>
+                     
+                                <span class="badge badge-success">#</span>
+
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                         
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           Watermelon
-                          <button type="button" class="btn btn-secondary">
-                                <span class="badge badge-light">X</span>
-                            </button>
+                           
+                                <span class="badge badge-success">#</span>
+
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                        
                         </li>
                       </ul>
 
