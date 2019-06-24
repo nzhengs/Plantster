@@ -154,6 +154,10 @@ p {
 
 .dimension-2 {
   text-align: center;
+  
+}
+.dimension-1{
+  margin-left: 35px;
 }
 
 button{
