@@ -180,7 +180,10 @@ class Books extends Component {
               />
             </SearchBar>
           </Col>
-          <Col size="sm-8" />
+          <Col size="sm-8">
+          
+          <PlantDetail plant={this.state.plant}/>
+        </Col>
         </Row>
       </Container>
     );
