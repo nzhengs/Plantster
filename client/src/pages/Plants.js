@@ -13,7 +13,7 @@ import PlantDetail from "../components/PlantDetail";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
-class Books extends Component {
+class Plants extends Component {
   state = {
     plant: null,
     plants: [],
@@ -190,4 +190,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Plants;
