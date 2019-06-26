@@ -182,7 +182,7 @@ class Plants extends Component {
           </Col>
           <Col size="sm-8">
           
-          <PlantDetail plant={this.state.plant}/>
+          <PlantDetail plant={this.state.plant} style={{ marginTop: 0, marginBottom: 0 }}/>
         </Col>
         </Row>
       </Container>
