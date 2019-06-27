@@ -21,7 +21,9 @@ class Plants extends Component {
     Name: "",
     Comments: "",
     isLoading: false,
-    options: []
+    options: [],
+    finalPlant: {},
+    finalPlants:[]
   };
 
   componentDidMount() {
@@ -49,18 +51,48 @@ class Plants extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-    }
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   console.log(this.state.name)
+  //   if (this.state.name) {
+  //     API.getBook({
+  //       finalPlant: this.state.plant,
+  //     })
+  //       .then(res => this.loadBooks())
+  //       .catch(err => console.log(err));
+  //   }
+  // };
+
+// onClick would add the plant object to an array
+
+handleFormSubmit = event => {
+  event.preventDefault();
+      let finalPlants = [];
+      let finalPlant = this.state.plant.Name;
+      finalPlants.push({
+        name:finalPlant,
+        id:this.state.plant._id,
+        key: 1
+      });
+      this.setState({finalPlants:finalPlants});
+      console.log(finalPlants);
+  }
+  
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   if (this.state.plant.Name) {
+  //     API.getBook({
+  //       name: this.state.plant.Name,
+  //       id: this.state.plant._id,
+  //       number: 1
+  //     })
+  //       .then(res => this.loadBooks())
+  //       .catch(err => console.log(err));
+  //   }
+  //   console.log(this.state.plant.Name)
+  // };
+
+ 
 
   render() {
     return (
@@ -179,12 +211,39 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
+            <FormBtn
+                onClick={this.handleFormSubmit}
+              >
+                Start your garden
+              </FormBtn>
           </Col>
           <Col size="sm-8">
           
           <PlantDetail plant={this.state.plant} style={{ marginTop: 0, marginBottom: 0 }}/>
         </Col>
         </Row>
+
+<Row>
+<Col size="col-sm-4">
+    {this.state.plant ? (
+          <List>
+          {this.state.plants.map(plant => (
+            <ListItem 
+            key={plant._id}>
+            {/* {this.state.plant.Name} */}
+            {plant.Name}
+               
+              <DeleteBtn onClick={() => this.deleteBook(plant._id)} />
+            </ListItem>
+          ))}
+        </List>
+            ) : (
+              <h6>Search your plant to get started</h6>
+            )}
+</Col>
+
+</Row>
+
       </Container>
     );
   }

@@ -142,9 +142,9 @@ p {
   margin-top: 15px;
 } 
 
-.form-group{
+.form-group {
   margin-left: 35px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .list-group{
@@ -163,6 +163,17 @@ p {
 button{
   margin-left: 25px;
   float: right;
+}
+
+.btn-success:disabled {
+  color: #fff;
+  background-color: #A0D413;
+  border-color: #A0D413;
+}
+
+h6{
+  margin-left: 50px;
+  margin-top: 10px;
 }
 
 /* .indicators{
@@ -185,7 +196,7 @@ span{
   color: #fff;
   background-color: #A0D413;
   letter-spacing: 2px;
-  padding: 10px 25px 10px 25px;
+  padding: 0px 10px 0px 10px;
   border: 5px solid rgb(179, 190, 192);
   border: 5px solid #A0D413;
   transition: 0.2s;
