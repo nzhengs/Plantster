@@ -8,7 +8,7 @@ export default PlantDetail;
 
 function displayPlant(props) {
   return (
-    <div id="details" className="card border-0 mb-3">
+    <div id="details" className="card border-0 m-0">
       <div className="row no-gutters">
         <div className="col-md-4">
           <img alt={props.plant.Name} src={props.plant.Image} className="card-img" />
