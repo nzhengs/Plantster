@@ -134,7 +134,7 @@ p {
   height: 15vw;
   object-fit: cover;
   padding-left: 30px;
-  margin-top: 35px;
+  margin-top: 0px;
 }
 
 #product_detail{
@@ -143,12 +143,12 @@ p {
 } 
 
 .form-group{
-  margin-left: 35px;
-  margin-top: 30px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 .list-group{
-  margin-left: 35px;
+  margin-left: 0px;
   margin-top: 30px;
 }
 
@@ -157,11 +157,11 @@ p {
   
 }
 .dimension-1{
-  margin-left: 35px;
+  margin-left: 0px;
 }
 
 button{
-  margin-left: 25px;
+  margin-left: 0px;
   float: right;
 }
 

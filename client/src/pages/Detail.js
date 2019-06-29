@@ -107,29 +107,3 @@ class Detail extends Component {
 
 export default Detail;
 
-/*
-Type: String,
-Name: String,
-Image: String,
-BotanicalName: String,
-Height: String,
-Spacing: String,
-PS: Number,
-RS: Number,
-Depth: String,
-Spread: String,
-Light: String,
-Yield: String,
-Foliage: String,
-Fruit: String,
-Maturity: String,
-Zone: String,
-Germination: String,
-Form: String,
-Flowers: String,
-Soil: String,
-Growth: String,
-Seeds: String,
-Pruning: String,
-Comments: String,
-*/
