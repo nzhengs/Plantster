@@ -51,19 +51,7 @@ class Plants extends Component {
     });
   };
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   console.log(this.state.name)
-  //   if (this.state.name) {
-  //     API.getBook({
-  //       finalPlant: this.state.plant,
-  //     })
-  //       .then(res => this.loadBooks())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
 
-// onClick would add the plant object to an array
 
 handleFormSubmit = event => {
   event.preventDefault();
@@ -78,115 +66,13 @@ handleFormSubmit = event => {
       console.log(finalPlants);
   }
   
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.plant.Name) {
-  //     API.getBook({
-  //       name: this.state.plant.Name,
-  //       id: this.state.plant._id,
-  //       number: 1
-  //     })
-  //       .then(res => this.loadBooks())
-  //       .catch(err => console.log(err));
-  //   }
-  //   console.log(this.state.plant.Name)
-  // };
 
  
 
   render() {
     return (
       <Container fluid>
-        {/* <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              {this.state.plant && (
-                <div>
-                  <h2>{this.state.plant.Name}</h2>
-                  <p>Type:{this.state.plant.Type}</p>
-                  <p>Spacing:{this.state.plant.Spacing}</p>
-                  <p>PS:{this.state.plant.PS}</p>
-                  <p>RS:{this.state.plant.RS}</p>
-                  <p>Depth:{this.state.plant.Depth}</p>
-                  <p>Spread:{this.state.plant.Spread}</p>
-                  <p>Light:{this.state.plant.Light}</p>
-                  <p>Maturity:{this.state.plant.Maturity}</p>
-                </div>
-              )}
-              {this.state.plant && (
-                <div>
-                  Image: <img src={this.state.plant.Image} />
-                </div>
-              )}
-            </Jumbotron>
-
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Search Plants</h1>
-              <AsyncTypeahead
-                isLoading={this.state.isLoading}
-                labelKey="Name"
-                onChange={([selectedPlant]) => {
-                  this.setState({ plant: selectedPlant });
-                  console.log(selectedPlant);
-                }}
-                onSearch={query => {
-                  this.setState({ isLoading: true });
-                  fetch(`api/plants?name=${query}`)
-                    .then(resp => resp.json())
-                    .then(plants => {
-                      this.setState({
-                        isLoading: false,
-                        options: plants
-                      });
-                    });
-                }}
-                options={this.state.options}
-              />
-            </Jumbotron>
-            {this.state.plants.length ? (
-              <List>
-                {this.state.plants.map(plant => (
-                  <ListItem key={plant._id}>
-                    <Link to={"/books/" + plant._id}>
-                      <strong>{plant.Name}</strong>
-                    </Link>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-       */}
+   
         <Row>
           <Col size="sm-4">
             <SearchBar>

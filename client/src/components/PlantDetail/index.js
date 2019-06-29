@@ -16,8 +16,14 @@ function displayPlant(props) {
         <div className="col-md-8">
           <div className="card-body">
             <table id="product_detail" className="table table-sm">
+              <thead>
+                <tr>
+                  <th colSpan="2">
+                    <h4>{props.plant.Name}</h4>
+                  </th>
+                </tr>
+              </thead>
               <tbody>
-                <tr>{props.plant.Name}</tr>
                 <tr>
                   <td width="30%" scope="row">
                     Height
@@ -25,15 +31,15 @@ function displayPlant(props) {
                   <td>{props.plant.Height}</td>
                 </tr>
                 <tr>
-                  <td scope="row">Spacing</td>
+                  {/* <td scope="row">Spacing</td>
                   <td>
                     {props.plant.Spacing}
-                  </td>
+                  </td> */}
                 </tr>
-                <tr>
+                {/* <tr>
                   <td scope="row">Depth</td>
                   <td>{props.plant.Depth}</td>
-                </tr>
+                </tr> */}
                 <tr>
                   <td scope="row">Light</td>
                   <td>{props.plant.Light}</td>
