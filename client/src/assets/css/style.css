@@ -137,7 +137,7 @@ p {
   height: 12vw;
   object-fit: cover;
   padding-left: 30px;
-  margin-top: 0px;
+  margin-top: 35px;
 }
 
 #product_detail{
@@ -161,7 +161,7 @@ p {
 }
 
 .list-group{
-  margin-left: 0px;
+  margin-left: 35px;
   margin-top: 30px;
 }
 
@@ -170,11 +170,11 @@ p {
   
 }
 .dimension-1{
-  margin-left: 0px;
+  margin-left: 35px;
 }
 
 button{
-  margin-left: 0px;
+  margin-left: 35px;
   float: right;
 }
 
