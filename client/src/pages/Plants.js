@@ -10,6 +10,7 @@ import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
 import SearchWrap from "../components/SearchWrap";
 import SearchBar from "../components/SearchBar";
 import PlantDetail from "../components/PlantDetail";
+import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -110,7 +111,7 @@ handleFormSubmit = event => {
         </Row>
 
 <Row>
-<Col size="col-sm-4">
+<Col size="sm-4">
     {this.state.plant ? (
           <List>
           {this.state.plants.map(plant => (
@@ -126,6 +127,9 @@ handleFormSubmit = event => {
             ) : (
               <h6>Search your plant to get started</h6>
             )}
+</Col>
+<Col size="sm-8">
+<LocalStorageOriginal />
 </Col>
 
 </Row>
