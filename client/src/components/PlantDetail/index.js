@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../../assets/css/style.css";
 import Modal from "react-modal";
 import { Col, Row, Container } from "../Grid";
-import Jumbotron from "../Jumbotron";
 
 class PlantDetail extends Component {
   state = {
@@ -85,7 +84,7 @@ class PlantDetail extends Component {
               <Col size="md-6">
                 <ul>
                   <li>
-                    Image Link: <img src={this.props.plant.Image} />
+                    <img src={this.props.plant.Image} />
                   </li>
 
                   <li>Type: {this.props.plant.Type}</li>

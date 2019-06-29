@@ -4,7 +4,6 @@ import Plants from "./pages/Plants";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import MoreDetail from "./pages/Moredetails"
 
 function App() {
   return (

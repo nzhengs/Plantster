@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { FormBtn } from "../components/Form";
 import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
-import SearchWrap from "../components/SearchWrap";
 import SearchBar from "../components/SearchBar";
 import PlantDetail from "../components/PlantDetail";
 import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
