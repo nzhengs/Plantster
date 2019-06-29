@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/images/Plantster/plantster logo-02.png"
+import logo from "../../assets/images/Plantster_color/Plantster_green_B.png"
 
 function Nav() {
   return (
@@ -7,7 +7,7 @@ function Nav() {
       <a className="navbar-brand">
         <img
           src={logo}
-          width="300"
+          height="75"
           alt=""
         />
       </a>

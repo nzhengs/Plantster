@@ -5,7 +5,6 @@ function SearchBar({ children }) {
   return (
     
     <form>
-       <div className="row"></div>
       <div className="form-group">
         <label for="garden-name">Name your garden and specify dimensions</label>
         <input type="text" className="form-control" placeholder="Name" />
@@ -16,7 +15,7 @@ function SearchBar({ children }) {
         </div>
 
         <div className="dimension-2 col">
-          <h4> by </h4>
+          <h6> by </h6>
         </div>
 
         <div className="dimension-3 col">
@@ -36,6 +35,7 @@ function SearchBar({ children }) {
         Start your garden
       </button> */}
     </form>
+    
   );
 }
 
