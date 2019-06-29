@@ -240,11 +240,11 @@ class LocalStorageOriginal extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
-        <div>
+        <div id="headerTestForce">
           <button onClick={this.onAddItem}>Add Item</button>
           <h1>Title</h1>
         </div>
-        <div onMouseDown={this.handleMouseDown}>
+        <div id="mainTestForce" onMouseDown={this.handleMouseDown}>
           {/* <button onClick={this.resetLayout}>Reset Layout</button> */}
           {/* <button onClick={this.setHeight}>Set Height</button> */}
 

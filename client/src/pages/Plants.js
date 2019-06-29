@@ -111,7 +111,7 @@ handleFormSubmit = event => {
         </Row>
 
 <Row>
-<Col size="col-sm-4">
+<Col size="sm-4">
     {this.state.plant ? (
           <List>
           {this.state.plants.map(plant => (
