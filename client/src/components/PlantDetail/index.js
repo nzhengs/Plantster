@@ -23,7 +23,6 @@ class PlantDetail extends Component {
       <div id="details" className="card border-0 mb-3">
         <div className="row no-gutters">
           <div className="col-md-4">
-            <h3 onClick={this.onClick.bind(this)}>{props.plant.Name}</h3>
             <img
               alt={props.plant.Name}
               src={props.plant.Image}
@@ -34,6 +33,15 @@ class PlantDetail extends Component {
           <div className="col-md-8">
             <div className="card-body">
               <table id="product_detail" className="table table-sm">
+                <thead>
+                  <tr>
+                    <th colSpan="2">
+                      <h4 onClick={this.onClick.bind(this)}>
+                        {props.plant.Name}
+                      </h4>
+                    </th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
                     <td width="30%" scope="row">
@@ -41,14 +49,7 @@ class PlantDetail extends Component {
                     </td>
                     <td>{props.plant.Height}</td>
                   </tr>
-                  <tr>
-                    <td scope="row">Spacing</td>
-                    <td>{props.plant.Spacing}</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">Depth</td>
-                    <td>{props.plant.Depth}</td>
-                  </tr>
+
                   <tr>
                     <td scope="row">Light</td>
                     <td>{props.plant.Light}</td>
@@ -66,6 +67,7 @@ class PlantDetail extends Component {
             </div>
           </div>
         </div>
+
         <Modal
           isOpen={this.state.isOpen}
           aria={{

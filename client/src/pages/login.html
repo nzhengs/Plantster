@@ -7,7 +7,7 @@
     <title>Plantster</title>
 
 
-    <link rel="stylesheet" href="../public/assets/css/style.css">
+    <link rel="stylesheet" href="../../public/assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Roboto|Source+Serif+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Josefin+Slab|Major+Mono+Display|Merriweather|Nova+Mono|PT+Mono|Roboto+Slab&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light static-top">
 
                             <a class="navbar-brand" href="#">
-                              <img src="../../public/assets/images/Plantster/plantster logo-02.png" width="300" alt="">
+                              <img src="../public/assets/images/Plantster/plantster logo-02.png" width="300" alt="">
                             </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -111,19 +111,6 @@
                       />
                     </div>
       
-                    <div class="input-group">
-                      <div class="checkbox">
-                        <label>
-                          <input
-                            id="login-remember"
-                            type="checkbox"
-                            name="remember"
-                            value="1"
-                          />
-                          Remember me
-                        </label>
-                      </div>
-                    </div>
       
                     <div style="margin-top:10px" class="form-group">
                       <!-- Button -->
@@ -229,18 +216,12 @@
                         <input
                           type="password"
                           class="form-control"
-                          name="passwd"
+                          name="password1"
                           placeholder="Password"
                         />
                       </div>
                     </div>
-                    <label for="password" class="col-md-3 control-label"
-                    >Profile Picture</label
-                  >
-                  <div class="col-md-9">
-                    <form action="myform.cgi"> <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label>
-      
-                    </div>
+            
       
                   
                     </div>
@@ -273,7 +254,48 @@
               </div>
           </div>
 </section>
+<script>
+//signup 
+$("#btn-signup ").on("click", function() {
+console.log("signup clicked");
+var firstName = $("input[name='firstname']").val();
+var lastName = $("input[name='lastname']").val();
+var email = $("input[name='email']").val();
+var password = $("input[name='password1']").val();
+var user = {
+  firstName,lastName,email,password
+}
+console.log(user)
+$.post("/api/user/signup", user, function(data) {
+console.log(data)
+if (data.firstName) {
+  window.location = "/html/profile"
+}else {
+  alert ("Please enter a new email")
+}
+})
+})
 
+$("#btn-login ").on("click", function() {
+  var email = $("input[name='username']").val();
+var password = $("input[name='password']").val();
+var user = {
+  email,password
+}
+console.log(user)
+$.post("/api/user/login", user, function(data) {
+console.log(data)
+if (data.firstName) {
+  window.location = "/html/profile"
+}else {
+  alert ("Please enter a valid email and password")
+}
+});
+});
+
+
+
+</script>
 
 </body>
 </html>

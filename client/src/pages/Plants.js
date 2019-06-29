@@ -10,7 +10,7 @@ import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
 import SearchWrap from "../components/SearchWrap";
 import SearchBar from "../components/SearchBar";
 import PlantDetail from "../components/PlantDetail";
-import ReactModal from "react-modal";
+import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -22,7 +22,9 @@ class Plants extends Component {
     Name: "",
     Comments: "",
     isLoading: false,
-    options: []
+    options: [],
+    finalPlant: {},
+    finalPlants: []
   };
 
   componentDidMount() {
@@ -52,15 +54,15 @@ class Plants extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-    }
+    let finalPlants = [];
+    let finalPlant = this.state.plant.Name;
+    finalPlants.push({
+      name: finalPlant,
+      id: this.state.plant._id,
+      key: 1
+    });
+    this.setState({ finalPlants: finalPlants });
+    console.log(finalPlants);
   };
 
   render() {
@@ -90,9 +92,35 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
+            <FormBtn onClick={this.handleFormSubmit}>Start your garden</FormBtn>
           </Col>
           <Col size="sm-8">
-            <PlantDetail plant={this.state.plant} />
+            <PlantDetail
+              plant={this.state.plant}
+              style={{ marginTop: 0, marginBottom: 0 }}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col size="sm-4">
+            {this.state.plant ? (
+              <List>
+                {this.state.plants.map(plant => (
+                  <ListItem key={plant._id}>
+                    {/* {this.state.plant.Name} */}
+                    {plant.Name}
+
+                    <DeleteBtn onClick={() => this.deleteBook(plant._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h6>Search your plant to get started</h6>
+            )}
+          </Col>
+          <Col size="sm-8">
+            <LocalStorageOriginal />
           </Col>
         </Row>
       </Container>
