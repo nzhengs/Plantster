@@ -1,15 +1,11 @@
 import React from "react";
-import logo from "../../assets/images/Plantster_color/Plantster_green_B.png"
+import logo from "../../assets/images/Plantster_color/Plantster_green_B.png";
 
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light static-top">
       <a className="navbar-brand">
-        <img
-          src={logo}
-          height="75"
-          alt=""
-        />
+        <img src={logo} height="75" alt="" />
       </a>
       <button
         className="navbar-toggler"

@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { FormBtn } from "../components/Form";
 import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
-import SearchWrap from "../components/SearchWrap";
 import SearchBar from "../components/SearchBar";
 import PlantDetail from "../components/PlantDetail";
 import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
@@ -24,7 +21,7 @@ class Plants extends Component {
     isLoading: false,
     options: [],
     finalPlant: {},
-    finalPlants:[]
+    finalPlants: []
   };
 
   componentDidMount() {
@@ -52,28 +49,22 @@ class Plants extends Component {
     });
   };
 
-
-
-handleFormSubmit = event => {
-  event.preventDefault();
-      let finalPlants = [];
-      let finalPlant = this.state.plant.Name;
-      finalPlants.push({
-        name:finalPlant,
-        id:this.state.plant._id,
-        key: 1
-      });
-      this.setState({finalPlants:finalPlants});
-      console.log(finalPlants);
-  }
-  
-
- 
+  handleFormSubmit = event => {
+    event.preventDefault();
+    let finalPlants = [];
+    let finalPlant = this.state.plant.Name;
+    finalPlants.push({
+      name: finalPlant,
+      id: this.state.plant._id,
+      key: 1
+    });
+    this.setState({ finalPlants: finalPlants });
+    console.log(finalPlants);
+  };
 
   render() {
     return (
       <Container fluid>
-   
         <Row>
           <Col size="sm-4">
             <SearchBar>
@@ -98,42 +89,37 @@ handleFormSubmit = event => {
                 options={this.state.options}
               />
             </SearchBar>
-            <FormBtn
-                onClick={this.handleFormSubmit}
-              >
-                Start your garden
-              </FormBtn>
+            <FormBtn onClick={this.handleFormSubmit}>Start your garden</FormBtn>
           </Col>
           <Col size="sm-8">
-          
-          <PlantDetail plant={this.state.plant} style={{ marginTop: 0, marginBottom: 0 }}/>
-        </Col>
+            <PlantDetail
+              plant={this.state.plant}
+              style={{ marginTop: 0, marginBottom: 0 }}
+            />
+          </Col>
         </Row>
 
-<Row>
-<Col size="sm-4">
-    {this.state.plant ? (
-          <List>
-          {this.state.plants.map(plant => (
-            <ListItem 
-            key={plant._id}>
-            {/* {this.state.plant.Name} */}
-            {plant.Name}
-               
-              <DeleteBtn onClick={() => this.deleteBook(plant._id)} />
-            </ListItem>
-          ))}
-        </List>
+        <Row>
+          <Col size="sm-4">
+            {this.state.plant ? (
+              <List>
+                {this.state.plants.map(plant => (
+                  <ListItem key={plant._id}>
+                    {/* {this.state.plant.Name} */}
+                    {plant.Name}
+
+                    <DeleteBtn onClick={() => this.deleteBook(plant._id)} />
+                  </ListItem>
+                ))}
+              </List>
             ) : (
               <h6>Search your plant to get started</h6>
             )}
-</Col>
-<Col size="sm-8">
-<LocalStorageOriginal />
-</Col>
-
-</Row>
-
+          </Col>
+          <Col size="sm-8">
+            <LocalStorageOriginal />
+          </Col>
+        </Row>
       </Container>
     );
   }

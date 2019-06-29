@@ -4,14 +4,14 @@ import Plants from "./pages/Plants";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import MoreDetail from "./pages/Moredetails"
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav/>
         <Switch>
+          
           <Route exact path="/" component={Plants} />
           <Route exact path="/Plants" component={Plants} />
           <Route exact path="/books/:id" component={Detail} />
