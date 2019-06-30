@@ -1,6 +1,7 @@
 import React from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import _ from "lodash";
+import { FormBtn } from "../Form";
 import "./style.css";
 
 const ReactGridLayout = WidthProvider(RGL);
@@ -241,8 +242,8 @@ class LocalStorageOriginal extends React.PureComponent {
     return (
       <React.Fragment>
         <div id="headerTestForce">
-          <button onClick={this.onAddItem}>Add Item</button>
-          <h1>Title</h1>
+          <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn>
+          {/* <h1>Title</h1> */}
         </div>
         <div id="mainTestForce" onMouseDown={this.handleMouseDown}>
           {/* <button onClick={this.resetLayout}>Reset Layout</button> */}

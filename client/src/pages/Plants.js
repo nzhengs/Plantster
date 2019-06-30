@@ -94,33 +94,27 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
-            <FormBtn onClick={this.handleFormSubmit}>Start your garden</FormBtn>
+            <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
           </Col>
           <Col size="sm-8">
-            <PlantDetail
-              plant={this.state.plant}
-              style={{ marginTop: 0, marginBottom: 0 }}
-            />
-          </Col>
-        </Row>
-
-        <Row>
-          <Col size="sm-4">
-            {this.state.plant ? (
+          {this.state.plant && <PlantDetail plant={this.state.plant} style={{ marginTop: 0, marginBottom: 0 }}/>}
+          {!this.state.plant && (
               <List>
                 {this.state.finalPlants.map(plant => (
                   <ListItem key={plant.id}>
                     {plant.name}
                     <DeleteBtn onClick={() => this.removePlant(plant.id)} />
-
                   </ListItem>
                 ))}
               </List>
-            ) : (
-              <h6>Search your plant to get started</h6>
-            )}
+            ) }
+          
           </Col>
-          <Col size="sm-8">
+        </Row>
+     
+
+        <Row>
+          <Col size="sm-12">
             <LocalStorageOriginal />
           </Col>
         </Row>
