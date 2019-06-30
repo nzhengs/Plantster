@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/Plantster_color/Plantster_green_B.png";
 
-function Nav() {
+function Nav1() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light static-top">
       <a className="navbar-brand">
@@ -20,20 +20,22 @@ function Nav() {
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <a href="/Signup" className="nav-link">
-              Sign up
+        <li className="nav-item">
+            <a href="/Profile" className="nav-link">
+              Profile
             </a>
           </li>
+
           <li className="nav-item">
-            <a href="/Login" className="nav-link">
-              Sign in
+            <a href="/" className="nav-link">
+              Logout
             </a>
           </li>
+          
         </ul>
       </div>
     </nav>
   );
 }
 
-export default Nav;
+export default Nav1;

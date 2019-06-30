@@ -29,29 +29,23 @@ class Detail extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-12">
             <Jumbotron>
-              <h1>
-                {this.state.plant.Name}
-              </h1>
+            <h1>Plan and manage your garden.</h1>
+              <a href="/plants" target="_blank" class="button inset">LET'S GET STARTED</a>
               
             </Jumbotron>
           </Col>
-          <Col size="md-6">
-         
-            <div className="img-container" >
-              <img alt={this.state.plant.Name} src={this.state.plant.Image} style={styles}/>
-              </div>
-             
-          </Col>
+          
+        </Row>  
 
 
-
-        </Row>       
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
+          <Col size="md-6">
+          <article>
+           <h1>Synopsis</h1>
+          
+
             <Row>
             <Col size="md-6">
               <ul>

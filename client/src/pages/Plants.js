@@ -8,6 +8,7 @@ import { asyncContainer, Typeahead } from "react-bootstrap-typeahead";
 import SearchBar from "../components/SearchBar";
 import PlantDetail from "../components/PlantDetail";
 import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
+import Nav2 from "../components/Nav2";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -65,6 +66,7 @@ class Plants extends Component {
   render() {
     return (
       <Container fluid>
+         <Nav2/>
         <Row>
           <Col size="sm-4">
             <SearchBar>
