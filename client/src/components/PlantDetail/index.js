@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../assets/css/style.css";
 import Modal from "react-modal";
 import { Col, Row, Container } from "../Grid";
+import { Button } from "react-bootstrap";
 
 class PlantDetail extends Component {
   state = {
@@ -76,41 +77,39 @@ class PlantDetail extends Component {
         >
           <Container fuild>
             <Row>
-              <Col size="md-6">
+              <Col size="sm-12">
                 <h1>{this.props.plant.Name}</h1>
               </Col>
             </Row>
             <Row>
-              <Col size="md-6">
-                <ul>
-                  <li>
-                    <img src={this.props.plant.Image} />
-                  </li>
-
-                  <li>Type: {this.props.plant.Type}</li>
-                  <li>Name: {this.props.plant.Name}</li>
-                  <li>Botanical Name: {this.props.plant.BotanicalName}</li>
-                  <li>Height: {this.props.plant.Height}</li>
-                  <li>Spacing: {this.props.plant.Spacing}</li>
-                  <li>Plant Spacing: {this.props.plant.PS}</li>
-                  <li>
-                    Row Spacing: <href>{this.props.plant.RS}</href>
-                  </li>
-                  <li>Depth: {this.props.plant.Depth}</li>
-                  <li>Spread: {this.props.plant.Spread}</li>
-                  <li>Sun Light: {this.props.plant.Light}</li>
-                  <li>Yield: {this.props.plant.Yield}</li>
-                </ul>
+              <Col size="sm-6">
+                <img src={this.props.plant.Image} />
               </Col>
-              <Col size="md-6">
+              <Col size="sm-6">
+                <li>Botanical Name: {this.props.plant.BotanicalName}</li>
+                <li>Type: {this.props.plant.Type}</li>
+                <li>Name: {this.props.plant.Name}</li>
+                <li>Height: {this.props.plant.Height}</li>
+                <li>Maturity: {this.props.plant.Maturity}</li>
+                <li>Yield: {this.props.plant.Yield}</li>
+                <li>Plant Spacing: {this.props.plant.PS}</li>
+                <li>
+                  Row Spacing: <href>{this.props.plant.RS}</href>
+                </li>
+                <li>Depth: {this.props.plant.Depth}</li>
+                <li>Spread: {this.props.plant.Spread}</li>
+                <li>Sun Light: {this.props.plant.Light}</li>
+                <li>
+                  Foliage: <href>{this.props.plant.Foliage}</href>
+                </li>
+                <li>Growth: {this.props.plant.Growth}</li>
+                <li>Fruit: {this.props.plant.Fruit}</li>
+              </Col>
+            </Row>
+            <Row>
+              <Col size="sm-12">
                 <ul>
-                  <li>
-                    Foliage: <href>{this.props.plant.Foliage}</href>
-                  </li>
-                  <li>Growth: {this.props.plant.Growth}</li>
-                  <li>Fruit: {this.props.plant.Fruit}</li>
                   <li>Size: {this.props.plant.Size}</li>
-                  <li>Maturity: {this.props.plant.Maturity}</li>
                   <li>Zone: {this.props.plant.Zone}</li>
                   <li>Germination: {this.props.plant.Germination}</li>
                   <li>Form: {this.props.plant.Form}</li>
@@ -118,14 +117,18 @@ class PlantDetail extends Component {
                   <li>Soil: {this.props.plant.Soil}</li>
                   <li>Seeds: {this.props.plant.Seeds}</li>
                   <li>Pruning: {this.props.plant.Pruning}</li>
+                  <li>Comments: {this.props.plant.Comments}</li>
                 </ul>
               </Col>
             </Row>
           </Container>
-
-          <button onClick={this.onClick.bind(this)} isOpen={this.state.isOpen}>
-            close
-          </button>
+          <Button
+            variant="success"
+            onClick={this.onClick.bind(this)}
+            isOpen={this.state.isOpen}
+          >
+            Close
+          </Button>
         </Modal>
       </div>
     );
