@@ -166,8 +166,15 @@
 
   #headerTestForce {
     background-color: red;
+    margin-bottom: 50px;
   }
 
   #mainTestForce {
-      background-color: green;
+      background-color: #A0D413;
+      margin-left: 35px;
+  }
+
+  button{
+    margin-left: 35px;
+    float: left;
   }
