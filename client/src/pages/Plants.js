@@ -42,6 +42,11 @@ class Plants extends Component {
       .catch(err => console.log(err));
   };
 
+  removePlant = id => {
+   const newPlantArray = this.state.finalPlants.filter(plant => id !== plant.id)
+   this.setState({finalPlants: newPlantArray});
+  };
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -51,7 +56,7 @@ class Plants extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    let finalPlants = [];
+    let finalPlants = [...this.state.finalPlants];
     let finalPlant = this.state.plant.Name;
     finalPlants.push({
       name: finalPlant,
@@ -103,12 +108,11 @@ class Plants extends Component {
           <Col size="sm-4">
             {this.state.plant ? (
               <List>
-                {this.state.plants.map(plant => (
-                  <ListItem key={plant._id}>
-                    {/* {this.state.plant.Name} */}
-                    {plant.Name}
+                {this.state.finalPlants.map(plant => (
+                  <ListItem key={plant.id}>
+                    {plant.name}
+                    <DeleteBtn onClick={() => this.removePlant(plant.id)} />
 
-                    <DeleteBtn onClick={() => this.deleteBook(plant._id)} />
                   </ListItem>
                 ))}
               </List>
