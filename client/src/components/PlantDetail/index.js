@@ -11,7 +11,7 @@ class PlantDetail extends Component {
     return this.props.plant ? (
       this.displayPlant(this.props)
     ) : (
-      this.list(this.props)
+      <div>Select a Plant</div>
     );
   }
   onClick() {
@@ -130,18 +130,6 @@ class PlantDetail extends Component {
       </div>
     );
   }
-
-
-  list({ children }) {
-    return (
-      <div className="list-overflow-container col-sm-4 col-md-4 col-lg-8">
-        <ul className="list-group">{children}</ul>
-        <li className="list-group-item">{children}</li>
-      </div>
-    );
-  }
-  
-
 }
 
 export default PlantDetail;
