@@ -43,8 +43,10 @@ class Plants extends Component {
   };
 
   removePlant = id => {
-   const newPlantArray = this.state.finalPlants.filter(plant => id !== plant.id)
-   this.setState({finalPlants: newPlantArray});
+    const newPlantArray = this.state.finalPlants.filter(
+      plant => id !== plant.id
+    );
+    this.setState({ finalPlants: newPlantArray });
   };
 
   handleInputChange = event => {
@@ -65,6 +67,10 @@ class Plants extends Component {
     });
     this.setState({ finalPlants: finalPlants });
     console.log(finalPlants);
+    this.typeahead.getInstance().clear();
+    this.setState({
+      plant: null
+    });
   };
 
   render() {
@@ -74,6 +80,7 @@ class Plants extends Component {
           <Col size="sm-4">
             <SearchBar>
               <AsyncTypeahead
+                ref={typeahead => (this.typeahead = typeahead)}
                 isLoading={this.state.isLoading}
                 labelKey="Name"
                 onChange={([selectedPlant]) => {
@@ -94,11 +101,20 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
+            {/* <button onClick={() => this.typeahead.getInstance().clear()} >
+              Clear Typeahead
+            </button> */}
+
             <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
           </Col>
           <Col size="sm-8">
-          {this.state.plant && <PlantDetail plant={this.state.plant} style={{ marginTop: 0, marginBottom: 0 }}/>}
-          {!this.state.plant && (
+            {this.state.plant && (
+              <PlantDetail
+                plant={this.state.plant}
+                style={{ marginTop: 0, marginBottom: 0 }}
+              />
+            )}
+            {!this.state.plant && (
               <List>
                 {this.state.finalPlants.map(plant => (
                   <ListItem key={plant.id}>
@@ -107,11 +123,9 @@ class Plants extends Component {
                   </ListItem>
                 ))}
               </List>
-            ) }
-          
+            )}
           </Col>
         </Row>
-     
 
         <Row>
           <Col size="sm-12">
