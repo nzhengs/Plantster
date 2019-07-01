@@ -77,7 +77,7 @@ class Plants extends Component {
   render() {
     return (
       <Container fluid>
-         <Nav2/>
+        <Nav2 />
         <Row>
           <Col size="sm-4">
             <SearchBar>
@@ -117,14 +117,18 @@ class Plants extends Component {
               />
             )}
             {!this.state.plant && (
-              <List>
-                {this.state.finalPlants.map(plant => (
-                  <ListItem key={plant.id}>
-                    {plant.name}
-                    <DeleteBtn onClick={() => this.removePlant(plant.id)} />
-                  </ListItem>
-                ))}
-              </List>
+              <div>
+                <ul>
+                  {this.state.finalPlants.map(plant => (
+                    <Col size="sm-8">
+                      <ListItem key={plant.id}>
+                        {plant.name}
+                        <DeleteBtn onClick={() => this.removePlant(plant.id)} />
+                      </ListItem>
+                    </Col>
+                  ))}
+                </ul>
+              </div>
             )}
           </Col>
         </Row>

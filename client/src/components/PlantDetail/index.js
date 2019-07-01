@@ -12,7 +12,7 @@ class PlantDetail extends Component {
     return this.props.plant ? (
       this.displayPlant(this.props)
     ) : (
-      <div>Select a Plant</div>
+      <div></div>
     );
   }
   onClick() {
