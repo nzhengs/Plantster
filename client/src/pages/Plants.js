@@ -103,9 +103,6 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
-            {/* <button onClick={() => this.typeahead.getInstance().clear()} >
-              Clear Typeahead
-            </button> */}
 
             <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
           </Col>
