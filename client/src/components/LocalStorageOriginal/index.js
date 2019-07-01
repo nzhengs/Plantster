@@ -63,7 +63,7 @@ class LocalStorageOriginal extends React.PureComponent {
     className: "layout",
     cols: 50,
     rowHeight: 20,
-
+    verticalCompact: true,
     onLayoutChange: function() {}
   };
 
@@ -73,10 +73,10 @@ class LocalStorageOriginal extends React.PureComponent {
     this.state = {
       layout: JSON.parse(JSON.stringify(originalLayout)),
       //   layout: testDefaultLayout,
-      totalHeight: 12,
+      totalHeight: 22,
       mouse: false,
       rollBackLayout: [],
-      newCounter: 10,
+      newCounter: 15,
       gardenSytle: {
         height: "500px",
         width: "1000px"
@@ -125,6 +125,16 @@ class LocalStorageOriginal extends React.PureComponent {
     });
   }
 
+  // componentDidMount() {
+  //   const { newCounter } = this.state;
+  //   let c = parseInt(newCounter, 10);
+
+  //   c++;
+
+  //   this.setState({ newCounter : c });
+
+  // }
+
   componentDidUpdate(prevProps, prevState) {
     //   console.log("PrevState: ", prevState.layout);
     //   console.log("This State Layout: ", this.state.layout);
@@ -169,7 +179,7 @@ class LocalStorageOriginal extends React.PureComponent {
 
     let clone = {};
 
-    clone.i = this.state.newCounter.toString();
+    clone.i = "n" + this.state.newCounter.toString();
     clone.x = 0;
     clone.y = 0;
     clone.h = this.props.seedSpacing;
