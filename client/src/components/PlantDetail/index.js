@@ -120,11 +120,10 @@ class PlantDetail extends Component {
                   <li>Comments: {this.props.plant.Comments}</li>
                 </ul>
               </Col>
-       
             </Row>
           </Container>
           <Button
-              className="float-right"
+            className="float-right"
             variant="success"
             onClick={this.onClick.bind(this)}
             isOpen={this.state.isOpen}

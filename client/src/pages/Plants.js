@@ -44,8 +44,10 @@ class Plants extends Component {
   };
 
   removePlant = id => {
-   const newPlantArray = this.state.finalPlants.filter(plant => id !== plant.id)
-   this.setState({finalPlants: newPlantArray});
+    const newPlantArray = this.state.finalPlants.filter(
+      plant => id !== plant.id
+    );
+    this.setState({ finalPlants: newPlantArray });
   };
 
   handleInputChange = event => {
@@ -66,16 +68,21 @@ class Plants extends Component {
     });
     this.setState({ finalPlants: finalPlants });
     console.log(finalPlants);
+    this.typeahead.getInstance().clear();
+    this.setState({
+      plant: null
+    });
   };
 
   render() {
     return (
       <Container fluid>
-         <Nav2/>
+        <Nav2 />
         <Row>
           <Col size="sm-4">
             <SearchBar>
               <AsyncTypeahead
+                ref={typeahead => (this.typeahead = typeahead)}
                 isLoading={this.state.isLoading}
                 labelKey="Name"
                 onChange={([selectedPlant]) => {
@@ -96,24 +103,32 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
+
             <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
           </Col>
           <Col size="sm-8">
-          {this.state.plant && <PlantDetail plant={this.state.plant} style={{ marginTop: 0, marginBottom: 0 }}/>}
-          {!this.state.plant && (
-              <List>
-                {this.state.finalPlants.map(plant => (
-                  <ListItem key={plant.id}>
-                    {plant.name}
-                    <DeleteBtn onClick={() => this.removePlant(plant.id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) }
-          
+            {this.state.plant && (
+              <PlantDetail
+                plant={this.state.plant}
+                style={{ marginTop: 0, marginBottom: 0 }}
+              />
+            )}
+            {!this.state.plant && (
+              <div>
+                <ul>
+                  {this.state.finalPlants.map(plant => (
+                    <Col size="sm-8">
+                      <ListItem key={plant.id}>
+                        {plant.name}
+                        <DeleteBtn onClick={() => this.removePlant(plant.id)} />
+                      </ListItem>
+                    </Col>
+                  ))}
+                </ul>
+              </div>
+            )}
           </Col>
         </Row>
-     
 
         <Row>
           <Col size="sm-12">
