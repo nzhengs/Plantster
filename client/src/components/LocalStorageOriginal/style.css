@@ -40,6 +40,7 @@
   .react-grid-layout {
     position: relative;
     transition: height 200ms ease;
+    /* width: 900px; */
   }
   .react-grid-item {
     transition: all 200ms ease;
@@ -104,12 +105,14 @@
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
     background-position: bottom right;
     padding: 0 3px 3px 0;
+    margin:0px;
   }
   .react-resizable-handle-sw {
     bottom: 0;
     left: 0;
     cursor: sw-resize;
     transform: rotate(90deg);
+    margin:0px;
   }
   .react-resizable-handle-se {
     bottom: 0;
@@ -172,9 +175,17 @@
   #mainTestForce {
       background-color: #A0D413;
       margin-left: 35px;
+      /* width: 1020px;
+      height: 750px; */
+      padding: 5px;
   }
 
-  button{
+  button {
     margin-left: 35px;
     float: left;
+  }
+
+  .remove {
+    margin: 0px;
+    margin-top: -10px;
   }

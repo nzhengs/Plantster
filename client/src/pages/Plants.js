@@ -22,7 +22,10 @@ class Plants extends Component {
     isLoading: false,
     options: [],
     finalPlant: {},
-    finalPlants: []
+    finalPlants: [],
+    gardenHeight: 750,
+    gardenWeight: 500,
+    seedSpacing: 5
   };
 
   componentDidMount() {
@@ -104,9 +107,9 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
+            {/* <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn> */}
           </Col>
-          <Col size="sm-8">
+          {/* <Col size="sm-8">
             {this.state.plant && (
               <PlantDetail
                 plant={this.state.plant}
@@ -127,12 +130,16 @@ class Plants extends Component {
                 </ul>
               </div>
             )}
-          </Col>
+          </Col> */}
         </Row>
 
         <Row>
           <Col size="sm-12">
-            <LocalStorageOriginal />
+            <LocalStorageOriginal
+            // cols={10}
+            // rowHeight={30}
+            seedSpacing={this.state.seedSpacing}
+            />
           </Col>
         </Row>
       </Container>

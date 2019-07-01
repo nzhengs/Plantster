@@ -61,8 +61,8 @@ const testDefaultLayout = [
 class LocalStorageOriginal extends React.PureComponent {
   static defaultProps = {
     className: "layout",
-    cols: 12,
-    rowHeight: 30,
+    cols: 50,
+    rowHeight: 20,
 
     onLayoutChange: function() {}
   };
@@ -76,7 +76,11 @@ class LocalStorageOriginal extends React.PureComponent {
       totalHeight: 12,
       mouse: false,
       rollBackLayout: [],
-      newCounter: 9
+      newCounter: 10,
+      gardenSytle: {
+        height: "500px",
+        width: "1000px"
+      }
     };
 
     this.onLayoutChange = this.onLayoutChange.bind(this);
@@ -166,10 +170,10 @@ class LocalStorageOriginal extends React.PureComponent {
     let clone = {};
 
     clone.i = this.state.newCounter.toString();
-    clone.x = 3;
-    clone.y = 3;
-    clone.h = 4;
-    clone.w = 2;
+    clone.x = 0;
+    clone.y = 0;
+    clone.h = this.props.seedSpacing;
+    clone.w = this.props.seedSpacing;
     clone.moved = false;
     clone.static = false;
     clone.add = false;
@@ -245,7 +249,11 @@ class LocalStorageOriginal extends React.PureComponent {
           <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn>
           {/* <h1>Title</h1> */}
         </div>
-        <div id="mainTestForce" onMouseDown={this.handleMouseDown}>
+        <div 
+        style={{width: this.state.gardenSytle.width, height: this.state.gardenSytle.height}}
+        id="mainTestForce" 
+        onMouseDown={this.handleMouseDown}
+        >
           {/* <button onClick={this.resetLayout}>Reset Layout</button> */}
           {/* <button onClick={this.setHeight}>Set Height</button> */}
 
@@ -253,9 +261,10 @@ class LocalStorageOriginal extends React.PureComponent {
             {...this.props}
             layout={this.state.layout}
             onLayoutChange={this.onLayoutChange}
+            margin= {[1,1]}
           >
             {_.map(this.state.layout, el => this.createElement(el))}
-            {/* <div key="1" data-grid={{ w: 2, h: 3, x: 0, y: 0 }}>
+            {/* <div key="1" data-grid={{ w: 1, h: 1, x: 0, y: 0 }}>
               <span className="text">1</span>
             </div>
             <div key="2" data-grid={{ w: 2, h: 3, x: 2, y: 0 }}>
