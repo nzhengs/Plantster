@@ -9,6 +9,7 @@ import SearchBar from "../components/SearchBar";
 import PlantDetail from "../components/PlantDetail";
 import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
 import Nav2 from "../components/Nav2";
+import NumberBadge from "../components/NumberBadge";
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -120,12 +121,20 @@ class Plants extends Component {
               <div>
                 <ul>
                   {this.state.finalPlants.map(plant => (
-                    <Col size="sm-8">
-                      <ListItem key={plant.id}>
-                        {plant.name}
-                        <DeleteBtn onClick={() => this.removePlant(plant.id)} />
-                      </ListItem>
-                    </Col>
+                     <Col size="sm-8">
+                     <div >
+                       <li className="list-group-item" style={{backgroundColor: plant.background}}>{plant.name}
+                       <NumberBadge 
+                        removePlant={this.removePlant}
+                        id={plant.id}
+                        key={plant.key}
+                        name={plant.name}
+                        background={plant.background}
+                        />
+                       <DeleteBtn onClick={() => this.removePlant(plant.id)} />
+                       </li>
+                     </div>
+                   </Col>
                   ))}
                 </ul>
               </div>
