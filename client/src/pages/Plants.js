@@ -22,7 +22,10 @@ class Plants extends Component {
     isLoading: false,
     options: [],
     finalPlant: {},
-    finalPlants: []
+    finalPlants: [],
+    gardenHeight: 750,
+    gardenWeight: 500,
+    seedSpacing: 5
   };
 
   componentDidMount() {
@@ -132,7 +135,11 @@ class Plants extends Component {
 
         <Row>
           <Col size="sm-12">
-            <LocalStorageOriginal />
+            <LocalStorageOriginal
+            // cols={10}
+            // rowHeight={30}
+            seedSpacing={this.state.seedSpacing}
+            />
           </Col>
         </Row>
       </Container>
