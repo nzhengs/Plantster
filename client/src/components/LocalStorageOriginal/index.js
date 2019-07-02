@@ -79,7 +79,7 @@ class LocalStorageOriginal extends React.PureComponent {
       newCounter: 15,
       gardenSytle: {
         height: "500px",
-        width: "1000px"
+        width: "1400px"
       }
     };
 
@@ -125,15 +125,11 @@ class LocalStorageOriginal extends React.PureComponent {
     });
   }
 
-  // componentDidMount() {
-  //   const { newCounter } = this.state;
-  //   let c = parseInt(newCounter, 10);
+  componentDidMount() {
 
-  //   c++;
-
-  //   this.setState({ newCounter : c });
-
-  // }
+    //Set layout to last saved layout
+    this.setState({ layout : this.props.defaultLayout });
+  }
 
   componentDidUpdate(prevProps, prevState) {
     //   console.log("PrevState: ", prevState.layout);
@@ -234,14 +230,15 @@ class LocalStorageOriginal extends React.PureComponent {
             Add +
           </span>
         ) : (
-          <span className="text">{i}</span>
+          // <span className="text">{i}</span>
+          <span className="text"></span>
         )}
         <span
           className="remove"
           style={removeStyle}
           onClick={this.onRemoveItem.bind(this, i)}
         >
-          x
+          {/* x */}
         </span>
       </div>
     );
@@ -256,7 +253,8 @@ class LocalStorageOriginal extends React.PureComponent {
     return (
       <React.Fragment>
         <div id="headerTestForce">
-          <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn>
+          {/* <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn> */}
+          <button onClick={() => {this.props.handleGardenSave(this.state.layout)}} type="button" className="btn btn-success float-right">Save Layout</button>
           {/* <h1>Title</h1> */}
         </div>
         <div 

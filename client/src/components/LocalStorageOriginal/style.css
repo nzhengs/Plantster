@@ -162,9 +162,33 @@
   
   .react-grid-item {
     background-color: #61dafb;
-    background-image: url("../../plant2.png");
-    background-repeat: repeat;
-    color: white;
+    border-radius: 5px;
+    background-image: 
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png"),
+    url("../../Plantster_fav_16.png");
+    background-repeat: no-repeat;
+    background-position: 
+    10px 10px, 
+    10px 30px, 
+    10px 50px,
+    10px 70px, 
+    10px 90px, 
+    10px 110px,
+    10px 200px, 
+    10px 130px, 
+    10px 150px,
+    10px 170px, 
+    10px 230px;
+    /* color: white; */
   }
 
   #headerTestForce {

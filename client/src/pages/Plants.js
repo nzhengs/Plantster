@@ -25,7 +25,54 @@ class Plants extends Component {
     finalPlants: [],
     gardenHeight: 750,
     gardenWeight: 500,
-    seedSpacing: 5
+    seedSpacing: 5,
+    defaultLayout: [
+      {
+        w: 2,
+        h: 3,
+        x: 0,
+        y: 0,
+        i: "1",
+        moved: false,
+        static: false
+      },
+      {
+        w: 2,
+        h: 5,
+        x: 2,
+        y: 0,
+        i: "2",
+        moved: false,
+        static: false
+      },
+      {
+        w: 2,
+        h: 3,
+        x: 4,
+        y: 0,
+        i: "3",
+        moved: false,
+        static: false
+      },
+      {
+        w: 2,
+        h: 3,
+        x: 6,
+        y: 0,
+        i: "4",
+        moved: false,
+        static: false
+      },
+      {
+        w: 2,
+        h: 1,
+        x: 8,
+        y: 0,
+        i: "5",
+        moved: false,
+        static: false
+      }
+    ]
   };
 
   componentDidMount() {
@@ -77,6 +124,14 @@ class Plants extends Component {
     });
   };
 
+  handleGardenSave = (newLayout) => {
+    this.setState({ layout : newLayout });
+  }
+
+  triggerChildAddItem = () => {
+    this.refs.addItem.onAddItem();
+  }
+
   render() {
     return (
       <Container fluid>
@@ -107,7 +162,8 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
+            {/* <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn> */}
+            <FormBtn onClick={this.triggerChildAddItem}>Add plant to list</FormBtn>
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
@@ -138,7 +194,10 @@ class Plants extends Component {
             <LocalStorageOriginal
             // cols={10}
             // rowHeight={30}
+            ref="addItem"
             seedSpacing={this.state.seedSpacing}
+            defaultLayout={this.state.defaultLayout}
+            handleGardenSave={this.handleGardenSave}
             />
           </Col>
         </Row>
