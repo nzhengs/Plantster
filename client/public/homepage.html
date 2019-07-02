@@ -13,7 +13,7 @@
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../src/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     
     <title>Plantster</title>
        
@@ -26,7 +26,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light static-top">
 
                             <a class="navbar-brand" href="#">
-                              <img src="../src/assets/images/Plantster_color/Plantster_green_B.png" height="84" alt="">
+                              <img src="/assets/images/Plantster_color/Plantster_green_B.png" height="84" alt="">
                             </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -34,11 +34,9 @@
                       <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                           <li class="nav-item">
-                            <a href="../../client/src/pages/login.html" class="nav-link">Sign up</a>
+                            <a href="/signup" class="nav-link" id="signIn"> Sign in</a>
                           </li>
-                          <li class="nav-item">
-                            <a href="#connect" class="nav-link">Sign in</a>
-                          </li>
+                          
                         </ul>
                       </div>
                     </nav>
@@ -59,7 +57,7 @@
                 <a name="projects"></a> 
                     <div id="us-design" class="col-lg-6 col-md-6">
                             <div class="card border-0 text-center">
-                                <img class="card-img-top" src="../src/assets/images/design-icon.png" alt="Card image cap">
+                                <img class="card-img-top" src="/assets/images/design-icon.png" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">DESIGN</h5>
                                         <p class="card-text">We made it easy to design your garden with our simple drag, drop & pull tool.</p>
@@ -68,7 +66,7 @@
                         </div>     
                      <div id="us-plant" class="col-lg-6 col-md-6">
                         <div class="card border-0 text-center">
-                            <img class="card-img-top" src="../src/assets/images/Seedling-icon.png" alt="Card image cap">
+                            <img class="card-img-top" src="/assets/images/Seedling-icon.png" alt="Card image cap">
                                 <div class="card-body">
                                   <h5 class="card-title">PLANT</h5>
                                   <p class="card-text">Get the information and tools to arrange and plant your garden for optimal success!</p>
@@ -80,7 +78,7 @@
                 <div class="row" id="projects2">               
                     <div id="us-shop" class="col-lg-6 col-md-6">
                             <div class="card border-0 text-center">
-                                <img class="card-img-top" src="../src/assets/images/shopping-cart-icon.png" alt="Card image cap">
+                                <img class="card-img-top" src="/assets/images/shopping-cart-icon.png" alt="Card image cap">
                                     <div class="card-body">
                                       <h5 class="card-title">SHOP</h5>
                                       <p class="card-text">We help you find the right stuff to buy based on your garden design. You can just check out.</p>
@@ -90,7 +88,7 @@
                         
                       <div id="us-water" class="col-lg-6 col-md-6">
                         <div class="card border-0 text-center">
-                            <img class="card-img-top" src="../src/assets/images/water-icon.png" alt="Card image cap">
+                            <img class="card-img-top" src="/assets/images/water-icon.png" alt="Card image cap">
                                 <div class="card-body">
                                   <h5 class="card-title">WATER</h5>
                                   <p class="card-text">We'll alert you when your plants need to be watered and just how much so you don't have to worry about it.</p>
@@ -110,24 +108,24 @@
         <div class="row">
           
           <div id="team" class="col-md-2 col-md-offset-1">
-              <h6 class="Irina">Irina</h6>
-              <img class="irina-image" src="../src/assets/images/IMG_2842.JPG" alt="Card image cap">
+              <h6 class="Irina">Anjana</h6>
+              <img class="irina-image" src="../assets/images/anjana.jpg" alt="Card image cap">
+          </div>
+          <div class="col-md-2">
+            <h6 class="Irina">Ben</h6>
+            <img class="irina-image" src="../assets/images/ben.JPEG" alt="Card image cap">
+          </div>
+          <div class="col-md-2">
+            <h6 class="Irina">Eva</h6>
+            <img class="irina-image" src="../assets/images/eva.JPEG" alt="Card image cap">
+          </div>
+          <div class="col-md-2">
+            <h6 class="Irina">Nate</h6>
+            <img class="irina-image" src="../assets/images/nate.JPEG" alt="Card image cap">
           </div>
           <div class="col-md-2">
             <h6 class="Irina">Irina</h6>
-            <img class="irina-image" src="../src/assets/images/IMG_2842.JPG" alt="Card image cap">
-          </div>
-          <div class="col-md-2">
-            <h6 class="Irina">Irina</h6>
-            <img class="irina-image" src="../src/assets/images/IMG_2842.JPG" alt="Card image cap">
-          </div>
-          <div class="col-md-2">
-            <h6 class="Irina">Irina</h6>
-            <img class="irina-image" src="../src/assets/images/IMG_2842.JPG" alt="Card image cap">
-          </div>
-          <div class="col-md-2">
-            <h6 class="Irina">Irina</h6>
-            <img class="irina-image" src="../src/assets/images/IMG_2842.JPG" alt="Card image cap">
+            <img class="irina-image" src="../assets/images/irina.JPEG" alt="Card image cap">
           </div>
       </div>
 
@@ -149,8 +147,12 @@
               </div>
           </div>
 </section>
-
-
+<script>
+  $("#signIn").on("click", function() {
+  console.log("sign in clicked")
+    window.location="/signup"
+  })
+</script>
 </body>
 </html>
 

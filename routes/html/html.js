@@ -13,7 +13,8 @@ router.get('/profile', (req, res, next) => {
 
 })
 
-router.get('/homepage', (req, res, next) => {
+
+router.get('/', (req, res, next) => {
     
          res.sendFile(path.join(__dirname, "../../client/public/homepage.html"))
     
