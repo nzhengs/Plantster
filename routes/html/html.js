@@ -13,6 +13,13 @@ router.get('/profile', (req, res, next) => {
 
 })
 
+router.get('/homepage', (req, res, next) => {
+    
+         res.sendFile(path.join(__dirname, "../../client/public/homepage.html"))
+    
+
+})
+
 router.get("/signup", (req, res)  =>
 {
 res.sendFile(path.join(__dirname, "../../client/src/pages/login.html"))
