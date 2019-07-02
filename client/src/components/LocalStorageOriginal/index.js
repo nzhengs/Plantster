@@ -7,6 +7,8 @@ import "./style.css";
 const ReactGridLayout = WidthProvider(RGL);
 const originalLayout = getFromLS("layout") || [];
 
+// const backgroundImages ='url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png")'
+let backgroundString2 = "";
 const testDefaultLayout = [
   {
     w: 2,
@@ -126,9 +128,20 @@ class LocalStorageOriginal extends React.PureComponent {
   }
 
   componentDidMount() {
-
     //Set layout to last saved layout
-    this.setState({ layout : this.props.defaultLayout });
+    // backgroundString2 = 'url("../../Plantster_fav_16.png")';
+
+    for (let index = 0; index < (200); index++) {
+      
+      if(index === (199)){
+        backgroundString2 += 'url("../../Plantster_fav_32.png")';
+      } else {
+        backgroundString2 += 'url("../../Plantster_fav_32.png"),';
+      }
+      
+    }
+
+    this.setState({ layout: this.props.defaultLayout });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -210,17 +223,92 @@ class LocalStorageOriginal extends React.PureComponent {
     // this.rollBackLayout();
   }
 
+  createStyleObject = element => {
+    const { gardenWidth } = this.props;
+    const seedSpacing = element.seedSpacing || 6;
+
+    // console.log("Width: ", gardenWidth);
+    // console.log("Seed Spacing: ", seedSpacing);
+
+    let interval = Math.round((1408 / gardenWidth / 12) * seedSpacing);
+    let count = Math.round(1408 / interval);
+
+    // let backgroundString = ""
+
+
+
+    // console.log("Interval: ", interval);
+    // console.log("Count: ", count);
+
+    var start = Math.round(interval/2)-16;
+    var nextx = start;
+    var nexty = start;
+    // console.log("First Next - ", next);
+    let position = "";
+    let nextPos = "";
+
+
+    for (let index = 0; index < count; index++) {
+
+      for (let j = 0; j < count; j++) {
+        if (!(j === (count - 1))) {
+          nextPos = nextx +"px " + nexty + "px, ";
+          position += nextPos;
+          nextx += interval;
+          // console.log("New Next: ", next);
+        } else if(((index === (count - 1)) && (j === (count - 1)))) {
+          nextPos = nextx + "px " + nexty + "px";
+          position += nextPos;
+          // console.log("Last Statement Statement", index, j);
+        } else {
+          nextPos = nextx + "px " + nexty + "px, ";
+          position += nextPos;
+        }
+      }
+
+      nexty += interval
+      nextx = start;
+
+    }
+
+    position = position;
+    // console.log("Position: ", position.toString());
+
+    let styleObject = {}
+    
+    styleObject = {
+      // backgroundImage: 'url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png")',
+      backgroundImage: backgroundString2,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: position
+    }
+
+    // console.log("Style Object: ", styleObject);
+
+    // Get the width and height variables (determine how many pixels = 1 inch)
+    // Get the seed spacing to determine how many inches aparat the favicon should be
+    // Determine if I should use the large or small favicon
+
+    // try generating the background both dynamically and statically
+
+    console.log("Element from inside create style: ", element);
+    return styleObject;
+  };
+
   createElement(el) {
     console.log("In Create Element &&&&&&&&&&");
+    // console.log("EL: ", el);
     const removeStyle = {
       position: "absolute",
       right: "2px",
       top: 0,
       cursor: "pointer"
     };
+    const gridItemSytle = this.createStyleObject(el);
+    // console.log("Grid Item Style = ", gridItemSytle);
     const i = el.add ? "+" : el.i;
     return (
-      <div key={i} data-grid={el}>
+      <div key={i} data-grid={el} style={gridItemSytle}>
         {el.add ? (
           <span
             className="add text"
@@ -231,7 +319,7 @@ class LocalStorageOriginal extends React.PureComponent {
           </span>
         ) : (
           // <span className="text">{i}</span>
-          <span className="text"></span>
+          <span className="text" />
         )}
         <span
           className="remove"
@@ -254,13 +342,24 @@ class LocalStorageOriginal extends React.PureComponent {
       <React.Fragment>
         <div id="headerTestForce">
           {/* <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn> */}
-          <button onClick={() => {this.props.handleGardenSave(this.state.layout)}} type="button" className="btn btn-success float-right">Save Layout</button>
+          <button
+            onClick={() => {
+              this.props.handleGardenSave(this.state.layout);
+            }}
+            type="button"
+            className="btn btn-success float-right"
+          >
+            Save Layout
+          </button>
           {/* <h1>Title</h1> */}
         </div>
-        <div 
-        style={{width: this.state.gardenSytle.width, height: this.state.gardenSytle.height}}
-        id="mainTestForce" 
-        onMouseDown={this.handleMouseDown}
+        <div
+          style={{
+            width: this.state.gardenSytle.width,
+            height: this.state.gardenSytle.height
+          }}
+          id="mainTestForce"
+          onMouseDown={this.handleMouseDown}
         >
           {/* <button onClick={this.resetLayout}>Reset Layout</button> */}
           {/* <button onClick={this.setHeight}>Set Height</button> */}
@@ -269,7 +368,7 @@ class LocalStorageOriginal extends React.PureComponent {
             {...this.props}
             layout={this.state.layout}
             onLayoutChange={this.onLayoutChange}
-            margin= {[1,1]}
+            margin={[1, 1]}
           >
             {_.map(this.state.layout, el => this.createElement(el))}
             {/* <div key="1" data-grid={{ w: 1, h: 1, x: 0, y: 0 }}>

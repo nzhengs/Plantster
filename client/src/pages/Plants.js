@@ -24,7 +24,7 @@ class Plants extends Component {
     finalPlant: {},
     finalPlants: [],
     gardenHeight: 750,
-    gardenWeight: 500,
+    gardenWeight: 12,
     seedSpacing: 5,
     defaultLayout: [
       {
@@ -34,7 +34,8 @@ class Plants extends Component {
         y: 0,
         i: "1",
         moved: false,
-        static: false
+        static: false,
+        seedSpacing: 3
       },
       {
         w: 2,
@@ -194,6 +195,7 @@ class Plants extends Component {
             <LocalStorageOriginal
             // cols={10}
             // rowHeight={30}
+            gardenWidth={this.state.gardenWeight}
             ref="addItem"
             seedSpacing={this.state.seedSpacing}
             defaultLayout={this.state.defaultLayout}
