@@ -89,7 +89,9 @@ p {
   width: 100px;
 }
 
-
+.li{
+  color: white;
+}
 
 
 /*
@@ -205,7 +207,6 @@ span{
 }
 
 
-
 /*
     DYNAMIC BUTTON ON HOMEPAGE
 */
@@ -241,6 +242,7 @@ span{
 .button.wrap:hover {
   box-shadow: inset 0px 0px 0px 2px #2496B0
 }
+
 
 /*
     SOCIAL ICONS

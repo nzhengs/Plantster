@@ -60,6 +60,8 @@ class Plants extends Component {
       [name]: value
     });
   };
+  
+  
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -68,7 +70,8 @@ class Plants extends Component {
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
-      key: 1
+      key: 1,
+      background: this.getRandomColor()
     });
     this.setState({ finalPlants: finalPlants });
     console.log(finalPlants);
@@ -77,6 +80,8 @@ class Plants extends Component {
       plant: null
     });
   };
+
+
 
   render() {
     return (
@@ -125,7 +130,6 @@ class Plants extends Component {
                      <div >
                        <li className="list-group-item" style={{backgroundColor: plant.background}}>{plant.name}
                        <NumberBadge 
-                        removePlant={this.removePlant}
                         id={plant.id}
                         key={plant.key}
                         name={plant.name}
