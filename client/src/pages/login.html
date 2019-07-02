@@ -45,20 +45,18 @@
                 
                 <nav class="navbar navbar-expand-lg navbar-light static-top">
 
-                            <a class="navbar-brand" href="#">
-                              <img src="../public/assets/images/Plantster/plantster logo-02.png" width="300" alt="">
-                            </a>
+                    <a class="navbar-brand" href="#">
+                        <img src="/assets/images/Plantster_color/Plantster_green_B.png" height="84" alt="">
+                      </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                           <li class="nav-item">
-                            <a href="#projects" class="nav-link">Sign up</a>
+                            <a href="#projects" class="nav-link" id="homepage">Home</a>
                           </li>
-                          <li class="nav-item">
-                            <a href="#connect" class="nav-link">Sign in</a>
-                          </li>
+                          
                         </ul>
                       </div>
                     </nav>
@@ -240,20 +238,7 @@
             </div>
           </div>
         </center>
-  <!-- Footer -->
-</section>
 
-        <section id="lab_social_icon_footer">
-
-          <div class="container">
-                  <div class="text-center center-block">
-                      <p>Connect with us!</p>
-                      <a href="https://www.linkedin.com/in/eva-anderson-56250423/"><i id="social-li" class="fa fa-linkedin-square fa-3x social"></i></a>
-                          <a href="https://github.com/eanderson111"><i id="social-gh" class="fa fa-github-square fa-3x social"></i></a>
-                        <a href="https://twitter.com/EvaKolar"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-              </div>
-          </div>
-</section>
 <script>
 //signup 
 $("#btn-signup ").on("click", function() {
@@ -269,7 +254,7 @@ console.log(user)
 $.post("/api/user/signup", user, function(data) {
 console.log(data)
 if (data.firstName) {
-  window.location = "/html/profile"
+  window.location = "/profile"
 }else {
   alert ("Please enter a new email")
 }
@@ -286,13 +271,16 @@ console.log(user)
 $.post("/api/user/login", user, function(data) {
 console.log(data)
 if (data.firstName) {
-  window.location = "/html/profile"
+  window.location = "/profile"
 }else {
   alert ("Please enter a valid email and password")
 }
 });
 });
-
+$("#homepage").on("click", function() {
+  console.log("Homepage clicked")
+    window.location="/"
+  })
 
 
 </script>
