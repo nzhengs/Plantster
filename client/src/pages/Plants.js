@@ -107,9 +107,9 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            {/* <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn> */}
+            <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn>
           </Col>
-          {/* <Col size="sm-8">
+          <Col size="sm-8">
             {this.state.plant && (
               <PlantDetail
                 plant={this.state.plant}
@@ -130,7 +130,7 @@ class Plants extends Component {
                 </ul>
               </div>
             )}
-          </Col> */}
+          </Col>
         </Row>
 
         <Row>
