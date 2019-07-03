@@ -1,0 +1,9 @@
+.badge {
+  float: center;
+  color: rgb(12, 15, 2);
+  display: inline;
+  background: white;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  bottom: 10%;
+}
