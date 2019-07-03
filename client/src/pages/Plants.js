@@ -178,7 +178,7 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            <FormBtn onClick={this.addPlantToList}>Add plant to list</FormBtn>
+            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant to list</FormBtn>
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
