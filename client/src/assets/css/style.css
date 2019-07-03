@@ -198,14 +198,23 @@ h4{
   font-size: 12px;
 }
 
-span{
-  margin:5px;
-}
-
 .dimension-2 col {
   text-align: center;
 }
 
+.listed-plant {
+  padding-top: 5px;
+}
+
+.form-control:focus{
+  border-color:#A0D413;
+  box-shadow: none;
+}
+
+.button:focus{
+  border-color:#A0D413;
+  box-shadow: none;
+}
 
 /*
     DYNAMIC BUTTON ON HOMEPAGE
@@ -220,6 +229,7 @@ span{
   padding: 0px 10px 0px 10px;
   border: 5px solid rgb(179, 190, 192);
   border: 5px solid #A0D413;
+  /* border-radius: 0.25rem; */
   transition: 0.2s;
 }
 
@@ -237,10 +247,6 @@ span{
 
 .button.inset:hover {
   box-shadow: inset 0px 0px 0px 2px #fff;
-}
-
-.button.wrap:hover {
-  box-shadow: inset 0px 0px 0px 2px #2496B0
 }
 
 

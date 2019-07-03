@@ -1,6 +1,9 @@
 .badge {
-  float: right;
-  color: #A0D413;
+  float: center;
+  color: rgb(12, 15, 2);
   display: inline;
-  background: blue;
+  background: white;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  bottom: 10%;
 }

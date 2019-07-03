@@ -3,11 +3,11 @@ import "./style.css";
 
 function NumberBadge(props) {
   return (
-    <div>
-      <span className="badge badge-success" >
-        #
+
+      <span className="badge" {...props} role="badge">
+        # : 3
       </span>
-  </div>
+
   );
 }
 

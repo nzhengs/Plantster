@@ -6,6 +6,7 @@
   overflow-x: hidden;
   margin-left: 50px;
   width: 50%;
+  margin-top: 35px;
 }
 
 .list-overflow-container ul {
@@ -35,8 +36,9 @@
 }
 
 .list-group-item {
-  padding: 5px;
+  padding: 8px;
   line-height: 1;
-  padding-top: 5px;
   color: white;
+  margin-bottom: 2px;
+  font-size: 14px;
 }

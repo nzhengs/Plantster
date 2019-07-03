@@ -61,7 +61,12 @@ class Plants extends Component {
     });
   };
   
-  
+  getRandomColor(){
+    let colorValues = ["#F2506E", "#07418C", "#03738C", "#91E0F2", "#F2CA52", "#077336", "#145932", "#F27405", "#D9411E", "#A6A486", "#F2D5C4" ];
+    return colorValues[Math.floor(Math.random() * colorValues.length)];
+  }
+
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -80,7 +85,6 @@ class Plants extends Component {
       plant: null
     });
   };
-
 
 
   render() {
@@ -126,14 +130,14 @@ class Plants extends Component {
               <div>
                 <ul>
                   {this.state.finalPlants.map(plant => (
-                     <Col size="sm-8">
-                     <div >
+                     <Col size="sm-8 md-8">
+                     <div className="listed-plant" >
                        <li className="list-group-item" style={{backgroundColor: plant.background}}>{plant.name}
                        <NumberBadge 
                         id={plant.id}
                         key={plant.key}
                         name={plant.name}
-                        background={plant.background}
+                        // style={{backgroundColor: plant.background}}
                         />
                        <DeleteBtn onClick={() => this.removePlant(plant.id)} />
                        </li>
