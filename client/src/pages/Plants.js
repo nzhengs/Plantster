@@ -114,8 +114,7 @@ class Plants extends Component {
     return colorValues[Math.floor(Math.random() * colorValues.length)];
   }
 
-
-
+ 
   handleFormSubmit = event => {
     event.preventDefault();
     let finalPlants = [...this.state.finalPlants];
@@ -141,6 +140,12 @@ class Plants extends Component {
 
   triggerChildAddItem = () => {
     this.refs.addItem.onAddItem();
+
+  }
+
+  addPlantToList = (event) =>{
+    this.handleFormSubmit(event);
+    this.triggerChildAddItem();
   }
 
   render() {
@@ -173,8 +178,7 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            {/* <FormBtn onClick={this.handleFormSubmit}>Add plant to list</FormBtn> */}
-            <FormBtn onClick={this.triggerChildAddItem}>Add plant to list</FormBtn>
+            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant to list</FormBtn>
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
