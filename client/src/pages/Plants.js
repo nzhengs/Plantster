@@ -100,16 +100,7 @@ class Plants extends Component {
     this.setState({ breadth: event.target.value });
   };
 
-  handleSubmit(event) {
-    console.log(event.target);
-    event.preventDefault();
-    const data = new FormData(event.target);
-    console.log(data);
-    // fetch('/api/form-submit-url', {
-    //   method: 'POST',
-    //   body: data,
-    // });
-  }
+ 
 
   handleFormSubmit = event => {
     event.preventDefault();
