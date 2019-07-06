@@ -25,7 +25,8 @@ class LocalStorageOriginal extends React.PureComponent {
     super(props);
 
     this.state = {
-      layout: JSON.parse(JSON.stringify(originalLayout)),
+      layout: [],
+      // layout: JSON.parse(JSON.stringify(originalLayout)),
       //   layout: testDefaultLayout,
       totalHeight: 22,
       mouse: false,
@@ -54,7 +55,7 @@ class LocalStorageOriginal extends React.PureComponent {
 
   rollBackLayout() {
     const { rollBackLayout } = this.state;
-    console.log("Roll Back Layout: ", rollBackLayout);
+    console.log("Roll Back Layout State: ", this.state);
     this.setState({ layout: rollBackLayout });
   }
 
@@ -65,14 +66,35 @@ class LocalStorageOriginal extends React.PureComponent {
   }
 
   onLayoutChange(layout) {
+
+    console.log("On Layout Change");
+    console.log("Pulled in layout", layout);
+    console.log("State",this.state);
     /*eslint no-console: 0*/
+    // console.log("On Layout Change Layout", layout);
+    const layout2 = this.state.layout;
+    console.log("**************************Layout2", layout2);
+    // let stateLayout = [...layout2]
+    let stateLayout =  _.cloneDeep(layout2);
+
+    layout.forEach((element,index) => {
+      stateLayout[index].x = element.x;
+      stateLayout[index].y = element.y;
+      stateLayout[index].h = element.h;
+      stateLayout[index].w = element.w;
+    });
+
+    console.log("pre set state", this.state, layout);
+    console.log("global storage", JSON.parse(JSON.stringify(originalLayout)))
     saveToLS("layout", layout);
-    this.setState({ layout });
-    this.props.onLayoutChange(layout); // updates status display
+    this.setState({ layout: stateLayout });
+    this.props.onLayoutChange(stateLayout); // updates status display
+ 
   }
 
   handleMouseDown() {
     console.log("Mouse Down");
+    console.log(this.state);
     this.setState({
       mouse: true,
       rollBackLayout: this.state.layout
@@ -104,19 +126,19 @@ class LocalStorageOriginal extends React.PureComponent {
     let resetFlag = false;
 
     layout.forEach(e => {
-      // console.log("ID: ",e.i)
-      // console.log("Height: ", e.h);
-      // console.log("Y-Axis", e.y);
-      // console.log("Total Height:", e.y+e.h);
+      console.log("ID: ",e.i)
+      console.log("Height: ", e.h);
+      console.log("Y-Axis", e.y);
+      console.log("Total Height:", e.y+e.h);
       if (e.h + e.y > totalHeight) {
         resetFlag = true;
         console.log("Reset Flag", resetFlag);
       }
     });
 
-    if (arraysEqual(this.state.layout, prevState.layout)) {
-      console.log("Arrays Are Equal, Nothing Happens");
-    } else {
+    // if (arraysEqual(this.state.layout, prevState.layout)) {
+    //   console.log("Arrays Are Equal, Nothing Happens");
+    // } else {
       console.log("----Not Equal");
       if (resetFlag) {
         console.log("Height Exceeded");
@@ -126,7 +148,7 @@ class LocalStorageOriginal extends React.PureComponent {
         console.log("Original Layout: ", originalLayout);
         console.log("Previous State: ", prevState.layout);
       }
-    }
+    // }
   }
 
   onAddItem(bgColor) {
@@ -146,7 +168,7 @@ class LocalStorageOriginal extends React.PureComponent {
 
     clone.i = "n" + this.state.newCounter.toString();
     clone.bg = bgColor;
-    clone.x = 0;
+    clone.x = 2;
     clone.y = 0;
     clone.h = this.props.seedSpacing;
     clone.w = this.props.seedSpacing;
@@ -342,7 +364,8 @@ class LocalStorageOriginal extends React.PureComponent {
           <ReactGridLayout
             {...this.props}
             layout={this.state.layout}
-            onLayoutChange={() => this.onLayoutChange(this.state.layout)}
+            // onLayoutChange={() => this.onLayoutChange(this.state.layout)}
+            onLayoutChange={this.onLayoutChange}
             margin={[1, 1]}
           >
             {_.map(this.state.layout, el => this.createElement(el))}

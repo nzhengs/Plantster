@@ -15,4 +15,5 @@ In Process
 Update Notes
 
 1) Removed Static Grid Items
+3) passed in this.state.layout to 
 
