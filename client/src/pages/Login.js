@@ -6,6 +6,7 @@ import API from "../utils/API";
 import { Form } from "react-bootstrap";
 import { Button } from 'react-bootstrap';
 import Nav1 from "../components/Nav1";
+import { FormBtn } from "../components/Form";
 
 
 
@@ -59,9 +60,9 @@ class Login extends Component {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" />
   </Form.Group>
-  <Button variant="primary" type="submit" href="/Profile">
+  <FormBtn variant="primary" type="submit" href="/Profile">
     Submit
-  </Button>
+  </FormBtn>
 </Form>
             
       </Container>

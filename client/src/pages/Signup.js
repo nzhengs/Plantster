@@ -6,6 +6,7 @@ import API from "../utils/API";
 import { Form, Col } from "react-bootstrap";
 import { Button } from 'react-bootstrap';
 import Nav1 from "../components/Nav1";
+import { FormBtn } from "../components/Form";
 
 
 
@@ -39,7 +40,7 @@ class Signup extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-            <h1>Signup</h1>              
+            <h1>Let's save your info</h1>              
             </Jumbotron>
           </Col> 
         </Row>  
@@ -67,9 +68,9 @@ class Signup extends Component {
     </Form.Group>
   </Form.Row>
   
-  <Button variant="primary" type="submit" href="/Profile">
+  <FormBtn variant="primary" type="submit" href="/Profile">
     Submit
-  </Button>
+  </FormBtn>
 </Form>
 
         
