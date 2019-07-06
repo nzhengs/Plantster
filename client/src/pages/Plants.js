@@ -137,8 +137,20 @@ class Plants extends Component {
     };
     this.setState({ layout: newLayout });
     console.log({ newLayout });
-    console.log({ garden });
+    this.saveGarden(garden);
   };
+
+  saveGarden(garden) {
+    console.log({ garden });
+    fetch("api/gardens", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(garden)
+    });
+  }
 
   triggerChildAddItem = plantVals => {
     this.refs.addItem.onAddItem(plantVals);
