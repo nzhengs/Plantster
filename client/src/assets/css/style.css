@@ -89,11 +89,15 @@ p {
   width: 100px;
 }
 
-.li{
-  color: white;
+/* NEW IF WE KEEP REACT HOMEPAGE */
+
+.test-card{
+  border: none;
 }
 
-
+.jumbotron{
+  background: white;
+}
 /*
     HOMEPAGE & GARDEN PAGE
 */
@@ -101,11 +105,10 @@ p {
 .card {
   text-align: center;
   size: 10%;
+  background: white;
+  border: none;
 }
 
-.card-body{
-
-}
 
 .card .card-img-top {
   display: block;
@@ -188,6 +191,7 @@ button{
 
 h6{
   margin-top: 10px;
+  
 }
 
 h4{
@@ -214,6 +218,25 @@ h4{
 .button:focus{
   border-color:#A0D413;
   box-shadow: none;
+}
+
+ul {
+  display: -ms-flexbox;           /* IE 10 */
+  display: -webkit-flex;          /* Safari 6.1+. iOS 7.1+ */
+  display: flex;
+  -webkit-flex-flow: wrap column; /* Safari 6.1+ */
+  flex-flow: wrap column;
+  max-height: 300px;    /* Limit height to whatever you need */
+  padding-inline-start: 20px;           
+}
+
+
+.list-group-item {
+  padding: 8px;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 2px;
+  font-size: 14px;
 }
 
 /*

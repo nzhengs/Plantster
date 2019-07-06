@@ -328,6 +328,9 @@ class LocalStorageOriginal extends React.PureComponent {
         >
           {/* x */}
         </span>
+        <span className="badge" role="badge">
+        # : 3
+      </span>
       </div>
     );
   }
@@ -342,7 +345,7 @@ class LocalStorageOriginal extends React.PureComponent {
       <React.Fragment>
         <div id="headerTestForce">
           {/* <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn> */}
-          <button
+          <FormBtn
             onClick={() => {
               this.props.handleGardenSave(this.state.layout);
             }}
@@ -350,7 +353,7 @@ class LocalStorageOriginal extends React.PureComponent {
             className="btn btn-success float-right"
           >
             Save Layout
-          </button>
+          </FormBtn>
           {/* <h1>Title</h1> */}
         </div>
         <div
