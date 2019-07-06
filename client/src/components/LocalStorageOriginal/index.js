@@ -151,7 +151,7 @@ class LocalStorageOriginal extends React.PureComponent {
     // }
   }
 
-  onAddItem(bgColor) {
+  onAddItem(plantVals) {
     /*eslint no-console: 0*/
     // console.log("adding", "n" + this.state.newCounter);
     // console.log("State - ", this.state)
@@ -163,11 +163,12 @@ class LocalStorageOriginal extends React.PureComponent {
     console.log("Plant Id - ", plant._id);
     console.log("Plant - ", plant);
     // console.log("Final Plants: ", finalPlants[0]);
-    console.log("BG color:", bgColor);
+    console.log("BG color:", plantVals.bgColor);
     let clone = {};
 
     clone.i = "n" + this.state.newCounter.toString();
-    clone.bg = bgColor;
+    clone.bg = plantVals.bgColor;
+    clone.ss = plantVals.seedSpacing
     clone.x = 2;
     clone.y = 0;
     clone.h = this.props.seedSpacing;

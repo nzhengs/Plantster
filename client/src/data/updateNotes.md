@@ -1,6 +1,8 @@
 Update: demo-ready-garden-ui
+Update: totaHeight-fix
+Update: saveable-layout
 
-Update Goals
+Update Goals (All)
 
 1) Empty Grid
 2) 4 x 6 Grid
@@ -12,8 +14,12 @@ In Process
 
 - Creating 4 x 6 grid.
 
-Update Notes
+Update (saveable-layout)
+1)
+
+
+Update Notes (update 1 and 2)
 
 1) Removed Static Grid Items
-3) passed in this.state.layout to 
+3) deep cloned this.state.layout and merged with layout from React Grid Layout to create a layout object that perserves the background color
 

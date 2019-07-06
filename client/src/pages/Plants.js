@@ -73,6 +73,10 @@ class Plants extends Component {
     event.preventDefault();
     let finalPlants = [...this.state.finalPlants];
     let finalPlant = this.state.plant.Name;
+    let returnObj = {
+      bgColor: "",
+      seedSpacing: this.state.plant.seedSpacing
+    }
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
@@ -86,7 +90,10 @@ class Plants extends Component {
     this.setState({
       plant: null
     });
-    return(finalPlants[finalPlants.length -1].background)
+    returnObj.bgColor = finalPlants[finalPlants.length -1].background;
+    console.log("Return Object ******************************", returnObj);
+    // return(finalPlants[finalPlants.length -1].background)
+    return(returnObj)
   };
 
 
@@ -94,14 +101,16 @@ class Plants extends Component {
     this.setState({ layout : newLayout });
   }
 
-  triggerChildAddItem = (bgColor) => {
-    this.refs.addItem.onAddItem(bgColor);
+  triggerChildAddItem = (plantVals) => {
+    this.refs.addItem.onAddItem(plantVals);
 
   }
 
   addPlantToList = (event) =>{
-   let bgColor =  this.handleFormSubmit(event);
-  this.triggerChildAddItem(bgColor);
+  // let bgColor =  this.handleFormSubmit(event);
+  // this.triggerChildAddItem(bgColor);
+  let plantVals =  this.handleFormSubmit(event);
+  this.triggerChildAddItem(plantVals);
   }
 
   render() {
