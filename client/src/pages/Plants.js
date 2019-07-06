@@ -30,7 +30,8 @@ class Plants extends Component {
     gardenWeight: 12,
     seedSpacing: 5,
     bgColor: "",
-    defaultLayout: []
+    defaultLayout: [],
+    count: 0
   };
 
 
@@ -72,6 +73,10 @@ class Plants extends Component {
     event.preventDefault();
     let finalPlants = [...this.state.finalPlants];
     let finalPlant = this.state.plant.Name;
+    let returnObj = {
+      bgColor: "",
+      seedSpacing: this.state.plant.PS
+    }
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
@@ -85,7 +90,10 @@ class Plants extends Component {
     this.setState({
       plant: null
     });
-    return(finalPlants[finalPlants.length -1].background)
+    returnObj.bgColor = finalPlants[finalPlants.length -1].background;
+    console.log("Return Object ******************************", returnObj);
+    // return(finalPlants[finalPlants.length -1].background)
+    return(returnObj)
   };
 
 
@@ -93,14 +101,18 @@ class Plants extends Component {
     this.setState({ layout : newLayout });
   }
 
-  triggerChildAddItem = (bgColor) => {
-    this.refs.addItem.onAddItem(bgColor);
+  triggerChildAddItem = (plantVals) => {
+    this.refs.addItem.onAddItem(plantVals);
 
   }
 
+  setCount = (newCount) => {
+    this.setState({ count : newCount  });
+  }
+
   addPlantToList = (event) =>{
-   let bgColor =  this.handleFormSubmit(event);
-  this.triggerChildAddItem(bgColor);
+  let plantVals =  this.handleFormSubmit(event);
+  this.triggerChildAddItem(plantVals);
   }
 
   render() {
@@ -181,6 +193,7 @@ class Plants extends Component {
             finalPlants={this.state.finalPlants}
             plant={this.state.plant}
             bgColor={this.state.bgColor}
+            setCount={this.setCount}
             />
           </Col>
         </Row>
