@@ -6,6 +6,7 @@ import API from "../utils/API";
 import { Card, Button } from "react-bootstrap";
 import seedling from "../assets/images/Seedling-icon.png";
 import Nav1 from "../components/Nav1";
+import { FormBtn } from "../components/Form";
 
 
 
@@ -41,61 +42,57 @@ class Profile extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-            <h1>Profile</h1>              
+            <h1>Hi, Your name here</h1>      
+            <a href="/plants" className="button inset">Start a garden</a>        
             </Jumbotron>
           </Col>
-          
         </Row>  
-
-        <Row>
-        <Col size="md-6">
-        </Col>
-        <Col size="md-6">
-        <a href="/plants" class="button inset">Start a New Garden</a>
-        </Col>
-
-        </Row>
-
 
 
         <Row>
           <Col size="md-12">
-            <article>       
-          
-            <Row>
-            <Col size="md-6">
+            
+          <div className="card-body">
+              <table id="product_detail" className="table table-sm">
+                <tbody>
+                  <tr>
+                    <td width="80%" scope="row">
+                      prop
+                    </td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    </td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    </td>
+                  </tr>
 
-          
-            <Card style={{ width: '600px' }}>
-                <Card.Body>
-             <Card.Title>YOUR NAME HERE</Card.Title>
-                <Card.Text>
-                        Email and anyother info??
-                </Card.Text>
-            
-            </Card.Body>
-            </Card>
-                    
-                </Col>
-                <Col size="md-6">
-                <Card style={{ width: '600px' }}>
-                <Card.Img variant="top" src={seedling} alt="Seedling"/>
-                <Card.Body>
-             <Card.Title>GARDEN NAME</Card.Title>
-            <Card.Text>
-            Garden 1
-            <Link to="/Plants">← To Your Garden </Link>
-                </Card.Text>
-            
-            </Card.Body>
-            </Card>
+                  <tr>
+                    <td scope="row">prop</td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    </td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td scope="row">prop</td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    </td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td scope="row">prop</td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    </td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
               
-              </Col>
-              </Row>
-             
-            
+        
 
-            </article>
+         
           </Col>
         </Row>
         <Row>
