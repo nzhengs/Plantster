@@ -28,7 +28,8 @@ class Plants extends Component {
     gardenWeight: 12,
     seedSpacing: 5,
     bgColor: "",
-    defaultLayout: []
+    defaultLayout: [],
+    count: 0
   };
 
   componentDidMount() {
@@ -75,7 +76,7 @@ class Plants extends Component {
     let finalPlant = this.state.plant.Name;
     let returnObj = {
       bgColor: "",
-      seedSpacing: this.state.plant.seedSpacing
+      seedSpacing: this.state.plant.PS
     }
     finalPlants.push({
       name: finalPlant,
@@ -106,9 +107,11 @@ class Plants extends Component {
 
   }
 
+  setCount = (newCount) => {
+    this.setState({ count : newCount  });
+  }
+
   addPlantToList = (event) =>{
-  // let bgColor =  this.handleFormSubmit(event);
-  // this.triggerChildAddItem(bgColor);
   let plantVals =  this.handleFormSubmit(event);
   this.triggerChildAddItem(plantVals);
   }
@@ -191,6 +194,7 @@ class Plants extends Component {
             finalPlants={this.state.finalPlants}
             plant={this.state.plant}
             bgColor={this.state.bgColor}
+            setCount={this.setCount}
             />
           </Col>
         </Row>

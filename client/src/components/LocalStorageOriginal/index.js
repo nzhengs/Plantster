@@ -302,6 +302,9 @@ class LocalStorageOriginal extends React.PureComponent {
       this.state.layout
     );
     const i = el.add ? "+" : el.i;
+    let count = Math.round((el.w*el.h)/el.ss);
+    console.log("COUNT",el.w,el.h,el.ss,count);
+    this.props.setCount(count);
     return (
       <div key={i} data-grid={el} style={gridItemSytle}>
         {el.add ? (
@@ -314,7 +317,7 @@ class LocalStorageOriginal extends React.PureComponent {
           </span>
         ) : (
           // <span className="text">{i}</span>
-          <span className="text" />
+          <span className="text"></span>
         )}
         <span
           className="remove"
@@ -324,7 +327,7 @@ class LocalStorageOriginal extends React.PureComponent {
           {/* x */}
         </span>
         <span className="badge" role="badge">
-          # : 3
+          # : {count}
         </span>
       </div>
     );
