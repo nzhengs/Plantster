@@ -27,6 +27,7 @@ class Plants extends Component {
     gardenHeight: 750,
     gardenWeight: 12,
     seedSpacing: 5,
+    bgColor: "",
     defaultLayout: [
       {
         w: 2,
@@ -128,9 +129,11 @@ class Plants extends Component {
     this.setState({ finalPlants: finalPlants });
     console.log(finalPlants);
     this.typeahead.getInstance().clear();
-    this.setState({
-      plant: null
-    });
+    // Todo: Remove plant clear completely?
+    // this.setState({
+    //   plant: null
+    // });
+    return(finalPlants[finalPlants.length -1].background)
   };
 
 
@@ -138,14 +141,15 @@ class Plants extends Component {
     this.setState({ layout : newLayout });
   }
 
-  triggerChildAddItem = () => {
-    this.refs.addItem.onAddItem();
+  triggerChildAddItem = (bgColor) => {
+    this.refs.addItem.onAddItem(bgColor);
 
   }
 
   addPlantToList = (event) =>{
-    this.handleFormSubmit(event);
-    this.triggerChildAddItem();
+   let bgColor =  this.handleFormSubmit(event);
+   console.log("%%%%%%%%%%%%%%%%%%%%%%%", bgColor);
+    this.triggerChildAddItem(bgColor);
   }
 
   render() {
@@ -178,7 +182,7 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant to list</FormBtn>
+            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant to list</FormBtn> 
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
@@ -221,6 +225,9 @@ class Plants extends Component {
             seedSpacing={this.state.seedSpacing}
             defaultLayout={this.state.defaultLayout}
             handleGardenSave={this.handleGardenSave}
+            finalPlants={this.state.finalPlants}
+            plant={this.state.plant}
+            bgColor={this.state.bgColor}
             />
           </Col>
         </Row>
