@@ -28,54 +28,7 @@ class Plants extends Component {
     gardenWeight: 12,
     seedSpacing: 5,
     bgColor: "",
-    defaultLayout: [
-      {
-        w: 2,
-        h: 3,
-        x: 0,
-        y: 0,
-        i: "1",
-        moved: false,
-        static: false,
-        seedSpacing: 3
-      },
-      {
-        w: 2,
-        h: 5,
-        x: 2,
-        y: 0,
-        i: "2",
-        moved: false,
-        static: false
-      },
-      {
-        w: 2,
-        h: 3,
-        x: 4,
-        y: 0,
-        i: "3",
-        moved: false,
-        static: false
-      },
-      {
-        w: 2,
-        h: 3,
-        x: 6,
-        y: 0,
-        i: "4",
-        moved: false,
-        static: false
-      },
-      {
-        w: 2,
-        h: 1,
-        x: 8,
-        y: 0,
-        i: "5",
-        moved: false,
-        static: false
-      }
-    ]
+    defaultLayout: []
   };
 
   componentDidMount() {
@@ -130,9 +83,9 @@ class Plants extends Component {
     console.log(finalPlants);
     this.typeahead.getInstance().clear();
     // Todo: Remove plant clear completely?
-    // this.setState({
-    //   plant: null
-    // });
+    this.setState({
+      plant: null
+    });
     return(finalPlants[finalPlants.length -1].background)
   };
 
@@ -148,8 +101,7 @@ class Plants extends Component {
 
   addPlantToList = (event) =>{
    let bgColor =  this.handleFormSubmit(event);
-   console.log("%%%%%%%%%%%%%%%%%%%%%%%", bgColor);
-    this.triggerChildAddItem(bgColor);
+  this.triggerChildAddItem(bgColor);
   }
 
   render() {
