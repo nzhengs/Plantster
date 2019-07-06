@@ -74,6 +74,7 @@ class LocalStorageOriginal extends React.PureComponent {
     // console.log("On Layout Change Layout", layout);
     const layout2 = this.state.layout;
     console.log("**************************Layout2", layout2);
+    // let stateLayout = [...layout2]
     let stateLayout =  _.cloneDeep(layout2);
 
     layout.forEach((element,index) => {
