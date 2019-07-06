@@ -111,7 +111,7 @@ class Plants extends Component {
   };
   
   getRandomColor(){
-    let colorValues = ["#F2506E", "#07418C", "#03738C", "#91E0F2", "#F2CA52", "#077336", "#145932", "#F27405", "#D9411E", "#A6A486", "#F2D5C4" ];
+    let colorValues = ["#F2506E", "#07418C", "#03738C", "#91E0F2", "#F2CA52", "#077336", "#145932", "#F27405", "#D9411E", "#A6A486", "#F2D5C4", "#8C2E6B", "#468C8C", "#F2DF80", "#BFB4AA", "#F27777" ];
     return colorValues[Math.floor(Math.random() * colorValues.length)];
   }
 
@@ -182,7 +182,9 @@ class Plants extends Component {
               />
             </SearchBar>
 
-            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant to list</FormBtn> 
+
+            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant</FormBtn>
+
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
@@ -195,7 +197,7 @@ class Plants extends Component {
               <div>
                 <ul>
                   {this.state.finalPlants.map(plant => (
-                     <Col size="sm-8 md-8">
+                     <Col size="sm-6 col-md-6 col-lg-4">
                      <div className="listed-plant" >
                        <li className="list-group-item" style={{backgroundColor: plant.background}}>{plant.name}
                        <NumberBadge 
