@@ -9,7 +9,6 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 
 
-
 function App() {
   return (
     <Router>
@@ -17,6 +16,7 @@ function App() {
         
         <Switch>
           
+
           <Route exact path="/" component={Homepage} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
@@ -29,6 +29,7 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
 
