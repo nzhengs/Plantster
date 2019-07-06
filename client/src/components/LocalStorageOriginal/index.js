@@ -151,7 +151,7 @@ class LocalStorageOriginal extends React.PureComponent {
     // }
   }
 
-  onAddItem(bgColor) {
+  onAddItem(plantVals) {
     /*eslint no-console: 0*/
     // console.log("adding", "n" + this.state.newCounter);
     // console.log("State - ", this.state)
@@ -163,11 +163,12 @@ class LocalStorageOriginal extends React.PureComponent {
     console.log("Plant Id - ", plant._id);
     console.log("Plant - ", plant);
     // console.log("Final Plants: ", finalPlants[0]);
-    console.log("BG color:", bgColor);
+    console.log("BG color:", plantVals.bgColor);
     let clone = {};
 
     clone.i = "n" + this.state.newCounter.toString();
-    clone.bg = bgColor;
+    clone.bg = plantVals.bgColor;
+    clone.ss = plantVals.seedSpacing
     clone.x = 2;
     clone.y = 0;
     clone.h = this.props.seedSpacing;
@@ -301,6 +302,9 @@ class LocalStorageOriginal extends React.PureComponent {
       this.state.layout
     );
     const i = el.add ? "+" : el.i;
+    let count = Math.round((el.w*el.h)/el.ss);
+    console.log("COUNT",el.w,el.h,el.ss,count);
+    this.props.setCount(count);
     return (
       <div key={i} data-grid={el} style={gridItemSytle}>
         {el.add ? (
@@ -313,7 +317,7 @@ class LocalStorageOriginal extends React.PureComponent {
           </span>
         ) : (
           // <span className="text">{i}</span>
-          <span className="text" />
+          <span className="text"></span>
         )}
         <span
           className="remove"
@@ -323,7 +327,7 @@ class LocalStorageOriginal extends React.PureComponent {
           {/* x */}
         </span>
         <span className="badge" role="badge">
-          # : 3
+          # : {count}
         </span>
       </div>
     );
