@@ -131,9 +131,9 @@ class LocalStorageOriginal extends React.PureComponent {
     //Set layout to last saved layout
     // backgroundString2 = 'url("../../Plantster_fav_16.png")';
 
-    for (let index = 0; index < (200); index++) {
+    for (let index = 0; index < (20); index++) {
       
-      if(index === (199)){
+      if(index === (19)){
         backgroundString2 += 'url("../../Plantster_fav_32.png")';
       } else {
         backgroundString2 += 'url("../../Plantster_fav_32.png"),';
@@ -178,17 +178,24 @@ class LocalStorageOriginal extends React.PureComponent {
     }
   }
 
-  onAddItem() {
+  onAddItem(bgColor) {
     /*eslint no-console: 0*/
     // console.log("adding", "n" + this.state.newCounter);
     // console.log("State - ", this.state)
     // console.log(JSON.stringify(this.state))
 
     let newLayout = Array.from(this.state.layout);
+    const { plant, finalPlants } = this.props;
 
+
+    console.log("****** - ", plant._id);
+    console.log("Plant - ", plant);
+    // console.log("Final Plants: ", finalPlants[0]);
+    console.log("BG color:", bgColor);
     let clone = {};
 
     clone.i = "n" + this.state.newCounter.toString();
+    clone.bg = bgColor;
     clone.x = 0;
     clone.y = 0;
     clone.h = this.props.seedSpacing;
@@ -224,66 +231,81 @@ class LocalStorageOriginal extends React.PureComponent {
   }
 
   createStyleObject = element => {
-    const { gardenWidth } = this.props;
+    const { gardenWidth, plant } = this.props;
     const seedSpacing = element.seedSpacing || 6;
 
     // console.log("Width: ", gardenWidth);
     // console.log("Seed Spacing: ", seedSpacing);
 
+console.log("What Got Passed IN &&&&7", element);
+
     let interval = Math.round((1408 / gardenWidth / 12) * seedSpacing);
     let count = Math.round(1408 / interval);
 
+
+    // console.log(finalPlants[0])
+    // let bgColor = finalPlants.find(e => e.id === element.bg).background;
+    // console.log("BACKGROUND COLOR - ", bgColor);
     // let backgroundString = ""
 
-
+    // console.log("Element passed in", element);
+    // console.log("Props: ", this.props);
+    // console.log("State: ", this.state);
+    // console.log("***************", plant._id);
 
     // console.log("Interval: ", interval);
     // console.log("Count: ", count);
 
-    var start = Math.round(interval/2)-16;
-    var nextx = start;
-    var nexty = start;
-    // console.log("First Next - ", next);
-    let position = "";
-    let nextPos = "";
+
+    // Start of Comment
+
+    // var start = Math.round(interval/2)-16;
+    // var nextx = start;
+    // var nexty = start;
+    // // console.log("First Next - ", next);
+    // let position = "";
+    // let nextPos = "";
 
 
-    for (let index = 0; index < count; index++) {
+    // for (let index = 0; index < count; index++) {
 
-      for (let j = 0; j < count; j++) {
-        if (!(j === (count - 1))) {
-          nextPos = nextx +"px " + nexty + "px, ";
-          position += nextPos;
-          nextx += interval;
-          // console.log("New Next: ", next);
-        } else if(((index === (count - 1)) && (j === (count - 1)))) {
-          nextPos = nextx + "px " + nexty + "px";
-          position += nextPos;
-          // console.log("Last Statement Statement", index, j);
-        } else {
-          nextPos = nextx + "px " + nexty + "px, ";
-          position += nextPos;
-        }
-      }
+    //   for (let j = 0; j < count; j++) {
+    //     if (!(j === (count - 1))) {
+    //       nextPos = nextx +"px " + nexty + "px, ";
+    //       position += nextPos;
+    //       nextx += interval;
+    //       // console.log("New Next: ", next);
+    //     } else if(((index === (count - 1)) && (j === (count - 1)))) {
+    //       nextPos = nextx + "px " + nexty + "px";
+    //       position += nextPos;
+    //       // console.log("Last Statement Statement", index, j);
+    //     } else {
+    //       nextPos = nextx + "px " + nexty + "px, ";
+    //       position += nextPos;
+    //     }
+    //   }
 
-      nexty += interval
-      nextx = start;
+    //   nexty += interval
+    //   nextx = start;
 
-    }
+    // }
 
-    position = position;
+    // position = position;
+
+    //End of Comment
     // console.log("Position: ", position.toString());
 
     let styleObject = {}
     
     styleObject = {
-      // backgroundImage: 'url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png")',
-      backgroundImage: backgroundString2,
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: position
+      backgroundImage: 'url("../../Plantster_fav_16.png")',
+      // backgroundImage: backgroundString2,
+      backgroundRepeat: "repeat",
+      // backgroundPosition: position,
+      backgroundColor: element.bg
     }
 
-    // console.log("Style Object: ", styleObject);
+    console.log("Style Object: ", styleObject);
 
     // Get the width and height variables (determine how many pixels = 1 inch)
     // Get the seed spacing to determine how many inches aparat the favicon should be
@@ -291,12 +313,12 @@ class LocalStorageOriginal extends React.PureComponent {
 
     // try generating the background both dynamically and statically
 
-    console.log("Element from inside create style: ", element);
+    // console.log("Element from inside create style: ", element);
     return styleObject;
   };
 
   createElement(el) {
-    console.log("In Create Element &&&&&&&&&&");
+    // console.log("In Create Element &&&&&&&&&&");
     // console.log("EL: ", el);
     const removeStyle = {
       position: "absolute",
