@@ -228,6 +228,7 @@ class Tessel extends Component {
                     <td>{timer.zone}</td>
                     <button
                       type="submit"
+                      deleteKey ={index}
                       onClick={this.handleDelete}
                       value={timer.index}
                       className="btn btn-link m-1"

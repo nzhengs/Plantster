@@ -7,6 +7,7 @@ import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
+import Tessel from "./pages/Tessel"
 
 
 
@@ -22,7 +23,7 @@ function App() {
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Profile" component={Profile} />
           <Route exact path="/Plants" component={Plants} />
-          <Route exact path="/books/:id" component={Detail} />
+          <Route exact path="/Tessel" component={Tessel} />
           <Route component={NoMatch} />
         </Switch>
       </div>
