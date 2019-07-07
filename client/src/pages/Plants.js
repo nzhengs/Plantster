@@ -32,6 +32,7 @@ class Plants extends Component {
     name: "",
     length: "",
     breadth: "",
+    pixelWidth: "",
     count: 0
   };
 
@@ -46,6 +47,20 @@ class Plants extends Component {
       )
       .catch(err => console.log(err));
   };
+
+  pixelDimensions = () => {
+    const {length, breadth } = this.state;
+    console.log("pixel dimensions", length)
+    let pixelWidth = "";
+    switch(length) {
+      case "6":
+        pixelWidth = "1368px";
+      case "8":
+        pixelWidth = "1344px"
+    }
+
+    this.setState({ pixelWidth });
+  }
 
   deleteBook = id => {
     API.deleteBook(id)
@@ -94,7 +109,10 @@ class Plants extends Component {
   };
 
   updateLength = event => {
-    this.setState({ length: event.target.value });
+    this.setState(
+      { length: event.target.value },
+      () => this.pixelDimensions()
+    );
   };
 
   updateBreadth = event => {
@@ -282,6 +300,7 @@ class Plants extends Component {
               // cols={10}
               // rowHeight={30}
               gardenWidth={this.state.gardenWeight}
+              pixelWidth={this.state.pixelWidth}
               ref="addItem"
               seedSpacing={this.state.seedSpacing}
               defaultLayout={this.state.defaultLayout}

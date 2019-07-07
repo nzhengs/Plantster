@@ -356,7 +356,7 @@ class LocalStorageOriginal extends React.PureComponent {
         </div>
         <div
           style={{
-            width: this.state.gardenSytle.width,
+            width: this.props.pixelWidth,
             height: this.state.gardenSytle.height
           }}
           id="mainTestForce"
