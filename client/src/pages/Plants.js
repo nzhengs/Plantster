@@ -31,6 +31,9 @@ class Plants extends Component {
     seedSpacing: 5,
     bgColor: "",
     defaultLayout: [],
+    name: "",
+    length: "",
+    breadth: "",
     count: 0
   };
 
@@ -66,9 +69,21 @@ class Plants extends Component {
       [name]: value
     });
   };
-  
 
- 
+
+
+  updateName = event => {
+    this.setState({ name: event.target.value });
+  };
+
+  updateLength = event => {
+    this.setState({ length: event.target.value });
+  };
+
+  updateBreadth = event => {
+    this.setState({ breadth: event.target.value });
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
     let finalPlants = [...this.state.finalPlants];
@@ -76,7 +91,7 @@ class Plants extends Component {
     let returnObj = {
       bgColor: "",
       seedSpacing: this.state.plant.PS
-    }
+    };
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
@@ -90,30 +105,48 @@ class Plants extends Component {
     this.setState({
       plant: null
     });
-    returnObj.bgColor = finalPlants[finalPlants.length -1].background;
+    returnObj.bgColor = finalPlants[finalPlants.length - 1].background;
     console.log("Return Object ******************************", returnObj);
     // return(finalPlants[finalPlants.length -1].background)
-    return(returnObj)
+    return returnObj;
   };
 
+  handleGardenSave = newLayout => {
+    const garden = {
+      name: this.state.name,
+      length: this.state.length,
+      breadth: this.state.breadth,
+      layout: newLayout
+    };
+    this.setState({ layout: newLayout });
+    console.log({ newLayout });
+    this.saveGarden(garden);
+  };
 
-  handleGardenSave = (newLayout) => {
-    this.setState({ layout : newLayout });
+  saveGarden(garden) {
+    console.log({ garden });
+    fetch("api/gardens", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(garden)
+    });
   }
 
-  triggerChildAddItem = (plantVals) => {
+  triggerChildAddItem = plantVals => {
     this.refs.addItem.onAddItem(plantVals);
+  };
 
-  }
+  setCount = newCount => {
+    this.setState({ count: newCount });
+  };
 
-  setCount = (newCount) => {
-    this.setState({ count : newCount  });
-  }
-
-  addPlantToList = (event) =>{
-  let plantVals =  this.handleFormSubmit(event);
-  this.triggerChildAddItem(plantVals);
-  }
+  addPlantToList = event => {
+    let plantVals = this.handleFormSubmit(event);
+    this.triggerChildAddItem(plantVals);
+  };
 
   render() {
     return (
@@ -121,6 +154,46 @@ class Plants extends Component {
         <Nav2 />
         <Row>
           <Col size="sm-4">
+            <div className="form-group">
+              <label for="garden-name">
+                Name your garden and specify dimensions
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Name"
+                value={this.state.name}
+                onChange={this.updateName}
+              />
+            </div>
+            <div className="row">
+              <div className="dimension-1 col">
+                <input
+                  type="text"
+                  name="length"
+                  className="form-control"
+                  placeholder="feet"
+                  value={this.state.length}
+                  onChange={this.updateLength}
+                />
+              </div>
+
+              <div className="dimension-2 col">
+                <h6> by </h6>
+              </div>
+
+              <div className="dimension-3 col">
+                <input
+                  type="text"
+                  name="breadth"
+                  className="form-control w-200"
+                  placeholder="feet"
+                  value={this.state.breadth}
+                  onChange={this.updateBreadth}
+                />
+              </div>
+            </div>
             <SearchBar>
               <AsyncTypeahead
                 ref={typeahead => (this.typeahead = typeahead)}
@@ -145,9 +218,9 @@ class Plants extends Component {
               />
             </SearchBar>
 
-
-            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant</FormBtn>
-
+            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant}>
+              Add plant
+            </FormBtn>
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
@@ -160,19 +233,25 @@ class Plants extends Component {
               <div>
                 <ul>
                   {this.state.finalPlants.map(plant => (
-                     <Col size="sm-6 col-md-6 col-lg-4">
-                     <div className="listed-plant" >
-                       <li className="list-group-item" style={{backgroundColor: plant.background}}>{plant.name}
-                       <NumberBadge 
-                        id={plant.id}
-                        key={plant.key}
-                        name={plant.name}
-                        // style={{backgroundColor: plant.background}}
-                        />
-                       <DeleteBtn onClick={() => this.removePlant(plant.id)} />
-                       </li>
-                     </div>
-                   </Col>
+                    <Col size="sm-6 col-md-6 col-lg-4">
+                      <div className="listed-plant">
+                        <li
+                          className="list-group-item"
+                          style={{ backgroundColor: plant.background }}
+                        >
+                          {plant.name}
+                          <NumberBadge
+                            id={plant.id}
+                            key={plant.key}
+                            name={plant.name}
+                            // style={{backgroundColor: plant.background}}
+                          />
+                          <DeleteBtn
+                            onClick={() => this.removePlant(plant.id)}
+                          />
+                        </li>
+                      </div>
+                    </Col>
                   ))}
                 </ul>
               </div>
@@ -183,17 +262,17 @@ class Plants extends Component {
         <Row>
           <Col size="sm-12">
             <LocalStorageOriginal
-            // cols={10}
-            // rowHeight={30}
-            gardenWidth={this.state.gardenWeight}
-            ref="addItem"
-            seedSpacing={this.state.seedSpacing}
-            defaultLayout={this.state.defaultLayout}
-            handleGardenSave={this.handleGardenSave}
-            finalPlants={this.state.finalPlants}
-            plant={this.state.plant}
-            bgColor={this.state.bgColor}
-            setCount={this.setCount}
+              // cols={10}
+              // rowHeight={30}
+              gardenWidth={this.state.gardenWeight}
+              ref="addItem"
+              seedSpacing={this.state.seedSpacing}
+              defaultLayout={this.state.defaultLayout}
+              handleGardenSave={this.handleGardenSave}
+              finalPlants={this.state.finalPlants}
+              plant={this.state.plant}
+              bgColor={this.state.bgColor}
+              setCount={this.setCount}
             />
           </Col>
         </Row>
