@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav";
+import Nav1 from "../components/Nav1";
 import { Col, Row, CenterRow, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import TesselComponent from "../components/TesselComponent/index";
 import formData from "../data/formData";
+import Modal from "react-modal";
+import { Button } from "react-bootstrap";
 
 class Tessel extends Component {
   state = {
@@ -23,9 +25,12 @@ class Tessel extends Component {
     duration: "",
     frequency: "",
     time: "6:45",
-    meridiem: "PM"
+    meridiem: "PM",
+    isOpen: false
   };
-
+  onClick() {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
   handleTimeChange = options => {
     const { hour, minute, meridiem } = options;
     const time = hour + ":" + minute;
@@ -36,9 +41,7 @@ class Tessel extends Component {
     console.log("Focus shifted");
   }
 
-  handleDelete = () => {
-
-  };
+  handleDelete = () => {};
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -58,26 +61,25 @@ class Tessel extends Component {
       frequency: this.state.frequency,
       zone: this.state.zone
     };
-    
+
     // Todo: Try catch block that confirms timer was set successfully on the tessel 2
 
     // Post timer data to Tessel 2 and set timer
     fetch("/api/redLight", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json"
-        },
-        body: JSON.stringify({
-          data: timer
-        })
-      });
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        data: timer
+      })
+    });
 
     // add to timers array
     let timers = [...this.state.timers];
     timers.push(timer);
     console.log(timers);
     this.setState({ timers });
-
   };
 
   render() {
@@ -97,11 +99,36 @@ class Tessel extends Component {
 
     return (
       <React.Fragment>
-        <Nav />
+        <Nav1 />
         <Container>
+          <h6 onClick={this.onClick.bind(this)} className="m-4">
+            Learn about installation
+          </h6>
+          <Modal
+            isOpen={this.state.isOpen}
+            aria={{
+              labelledby: "heading",
+              describedby: "full_description"
+            }}
+          >
+            <iframe
+              src="https://learn.sparkfun.com/tutorials/getting-started-with-the-tessel-2/all"
+              height="100%"
+              width="100%"
+            />
+            <Button
+              className="float-right"
+              variant="success"
+              onClick={this.onClick.bind(this)}
+              isOpen={this.state.isOpen}
+            >
+              Close
+            </Button>
+          </Modal>
           <div className="row justify-content-center">
             <h5 className="m-4">Add Timer</h5>
           </div>
+
           <CenterRow>
             <form style={{ width: "100%" }}>
               <div className="form-row align-items-center">
@@ -216,9 +243,7 @@ class Tessel extends Component {
                     <td>{timer.zone}</td>
                     <button
                       type="submit"
-
                       deleteKey={index}
-
                       onClick={this.handleDelete}
                       value={timer.index}
                       className="btn btn-link m-1"
