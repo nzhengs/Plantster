@@ -32,7 +32,10 @@ class Plants extends Component {
     name: "",
     length: "",
     breadth: "",
-    pixelWidth: "",
+    pixelWidth: "1400px",
+    pixelHeight: "500px",
+    cols: 100,
+    rowHeight: 10,
     count: 0
   };
 
@@ -49,18 +52,32 @@ class Plants extends Component {
   };
 
   pixelDimensions = () => {
-    const {length, breadth } = this.state;
-    console.log("pixel dimensions", length)
-    let pixelWidth = "";
-    switch(length) {
+    const { length, breadth } = this.state;
+    console.log("pixel dimensions", length);
+    let pixelWidth = "1300";
+    let pixelHeight = "750";
+    let cols = 10;
+    let ppi = 10;
+    switch (length) {
       case "6":
         pixelWidth = "1368px";
+        cols = 72;
+        ppi = 19;
+        break;
       case "8":
-        pixelWidth = "1344px"
+        pixelWidth = "1344px";
+        cols = 96;
+        ppi = 14;
+        break;
+    }
+    switch(breadth) {
+      case "4":
+        console.log("Variables: ", ppi,breadth)
+        pixelHeight = (ppi*breadth*12).toString() + "px";
     }
 
-    this.setState({ pixelWidth });
-  }
+    this.setState({ pixelWidth, cols, pixelHeight, rowHeight: ppi });
+  };
 
   deleteBook = id => {
     API.deleteBook(id)
@@ -109,15 +126,13 @@ class Plants extends Component {
   };
 
   updateLength = event => {
-    this.setState(
-      { length: event.target.value },
-      () => this.pixelDimensions()
-    );
+    this.setState({ length: event.target.value }, () => this.pixelDimensions());
   };
 
   updateBreadth = event => {
-    this.setState({ breadth: event.target.value });
+    this.setState({ breadth: event.target.value }, () => this.pixelDimensions());
   };
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -299,8 +314,11 @@ class Plants extends Component {
             <LocalStorageOriginal
               // cols={10}
               // rowHeight={30}
+              cols={this.state.cols}
+              rowHeight={this.state.rowHeight}
               gardenWidth={this.state.gardenWeight}
               pixelWidth={this.state.pixelWidth}
+              pixelHeight={this.state.pixelHeight}
               ref="addItem"
               seedSpacing={this.state.seedSpacing}
               defaultLayout={this.state.defaultLayout}

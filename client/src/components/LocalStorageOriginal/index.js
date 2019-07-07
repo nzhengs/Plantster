@@ -15,8 +15,8 @@ let backgroundString2 = "";
 class LocalStorageOriginal extends React.PureComponent {
   static defaultProps = {
     className: "layout",
-    cols: 50,
-    rowHeight: 20,
+    // cols: 50,
+    // rowHeight: 35,
     verticalCompact: true,
     onLayoutChange: function() {}
   };
@@ -35,7 +35,7 @@ class LocalStorageOriginal extends React.PureComponent {
       gardenSytle: {
         height: "500px",
         width: "1400px"
-      }
+      },
     };
 
     this.onLayoutChange = this.onLayoutChange.bind(this);
@@ -357,7 +357,7 @@ class LocalStorageOriginal extends React.PureComponent {
         <div
           style={{
             width: this.props.pixelWidth,
-            height: this.state.gardenSytle.height
+            height: this.props.pixelHeight
           }}
           id="mainTestForce"
           onMouseDown={this.handleMouseDown}
@@ -390,6 +390,7 @@ class LocalStorageOriginal extends React.PureComponent {
             </div> */}
           </ReactGridLayout>
         </div>
+        <p>.</p>
       </React.Fragment>
     );
   }
