@@ -126,26 +126,27 @@ class Homepage extends Component {
               </Col>
               </Row>
             <Row >
-            <Col size="md-2">
-                <h6 class="Irina">Eva</h6>
-                <img class="irina-image" src={Eva} alt="eva"></img>
-            </Col>
-            <Col size="md-2">
-                <h6 class="Irina">Ben</h6>
-                <img class="irina-image" src={Ben} alt="ben"></img>
-            </Col>
-            <Col size="md-2">
-                <h6 class="Irina">Anjana</h6>
-                <img class="irina-image" src={Anjana} alt="anjana"></img>
-            </Col>
-            <Col size="md-2">
-                <h6 class="Irina">Irina</h6>
-                <img class="irina-image" src={Irina} alt="irina"></img>
-            </Col>
-            <Col size="md-2">
-                <h6 class="Irina">Nathan</h6>
-                <img class="irina-image" src={Nathan} alt="nathan"></img>
-            </Col>
+          
+              <div id="team" class="col-md-2 col-md-offset-1">
+                  <h6 class="Irina">Anjana</h6>
+                  <img class="irina-image" src={Anjana} alt="anjana"></img>
+              </div>
+              <div class="col-md-2">
+                  <h6 class="Irina">Ben</h6>
+                  <img class="irina-image" src={Ben} alt="ben"></img>
+              </div>
+              <div class="col-md-2">
+                  <h6 class="Irina">Eva</h6>
+                  <img class="irina-image" src={Eva} alt="eva"></img>
+              </div>
+              <div class="col-md-2">
+                  <h6 class="Irina">Nate</h6>
+                  <img class="irina-image" src={Nathan} alt="nathan"></img>
+              </div>
+              <div class="col-md-2">
+                  <h6 class="Irina">Irina</h6>
+                  <img class="irina-image" src={Irina} alt="irina"></img>
+              </div>
 
             </Row>
 
@@ -153,12 +154,10 @@ class Homepage extends Component {
           </Col>
         </Row>
         <Row>
-        <div class="container">
-                  <div class="text-center center-block">
+        <div className="container">
+                  <div className="text-center center-block">
                       <p>Connect with us!</p>
-                      <a href="https://www.linkedin.com/in/eva-anderson-56250423/"><i id="social-li" class="fa fa-linkedin-square fa-3x social"></i></a>
-                          <a href="https://github.com/eanderson111"><i id="social-gh" class="fa fa-github-square fa-3x social"></i></a>
-                        <a href="https://twitter.com/EvaKolar"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                          <a href="https://github.com/eanderson111"><i id="social-gh" className="fa fa-github-square fa-3x social"></i></a>
               </div>
           </div>
         </Row>

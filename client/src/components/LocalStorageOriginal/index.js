@@ -7,55 +7,13 @@ import "./style.css";
 const ReactGridLayout = WidthProvider(RGL);
 const originalLayout = getFromLS("layout") || [];
 
-// const backgroundImages ='url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png")'
-let backgroundString2 = "";
-const testDefaultLayout = [
-  {
-    w: 2,
-    h: 3,
-    x: 0,
-    y: 0,
-    i: "1",
-    moved: false,
-    static: false
-  },
-  {
-    w: 2,
-    h: 5,
-    x: 2,
-    y: 0,
-    i: "2",
-    moved: false,
-    static: false
-  },
-  {
-    w: 2,
-    h: 3,
-    x: 4,
-    y: 0,
-    i: "3",
-    moved: false,
-    static: false
-  },
-  {
-    w: 2,
-    h: 3,
-    x: 6,
-    y: 0,
-    i: "4",
-    moved: false,
-    static: false
-  },
-  {
-    w: 2,
-    h: 1,
-    x: 8,
-    y: 0,
-    i: "5",
-    moved: false,
-    static: false
-  }
-];
+
+const bgImageString100small = 'url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png")';
+const bgImageString200small = 'url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png")';
+const bgImageString400small = 'url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png"),url("./Plantster_fav_16.png")';
+const bgImageString200large = 'url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png"),url("./Plantster_fav_32.png")';
+
+let backgroundString2 = ""; 
 
 /**
  * This layout demonstrates how to sync to localstorage.
@@ -63,8 +21,8 @@ const testDefaultLayout = [
 class LocalStorageOriginal extends React.PureComponent {
   static defaultProps = {
     className: "layout",
-    cols: 50,
-    rowHeight: 20,
+    // cols: 50,
+    // rowHeight: 35,
     verticalCompact: true,
     onLayoutChange: function() {}
   };
@@ -73,21 +31,21 @@ class LocalStorageOriginal extends React.PureComponent {
     super(props);
 
     this.state = {
-      layout: JSON.parse(JSON.stringify(originalLayout)),
+      layout: [],
+      // layout: JSON.parse(JSON.stringify(originalLayout)),
       //   layout: testDefaultLayout,
-      totalHeight: 22,
       mouse: false,
       rollBackLayout: [],
       newCounter: 15,
       gardenSytle: {
         height: "500px",
         width: "1400px"
-      }
+      },
     };
 
     this.onLayoutChange = this.onLayoutChange.bind(this);
     this.resetLayout = this.resetLayout.bind(this);
-    this.setHeight = this.setHeight.bind(this);
+    // this.setHeight = this.setHeight.bind(this);
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.rollBackLayout = this.rollBackLayout.bind(this);
     this.onAddItem = this.onAddItem.bind(this);
@@ -102,25 +60,46 @@ class LocalStorageOriginal extends React.PureComponent {
 
   rollBackLayout() {
     const { rollBackLayout } = this.state;
-    console.log("Roll Back Layout: ", rollBackLayout);
+    console.log("Roll Back Layout State: ", this.state);
     this.setState({ layout: rollBackLayout });
   }
 
-  setHeight() {
-    console.log("State - ", this.state);
-    console.log(JSON.stringify(this.state.layout));
-    this.setState({ totalHeight: 20 });
-  }
+  // setHeight() {
+  //   console.log("State - ", this.state);
+  //   console.log(JSON.stringify(this.state.layout));
+  //   this.setState({ totalHeight: 20 });
+  // }
 
   onLayoutChange(layout) {
+
+    console.log("On Layout Change");
+    console.log("Pulled in layout", layout);
+    console.log("State",this.state);
     /*eslint no-console: 0*/
+    // console.log("On Layout Change Layout", layout);
+    const layout2 = this.state.layout;
+    console.log("**************************Layout2", layout2);
+    // let stateLayout = [...layout2]
+    let stateLayout =  _.cloneDeep(layout2);
+
+    layout.forEach((element,index) => {
+      stateLayout[index].x = element.x;
+      stateLayout[index].y = element.y;
+      stateLayout[index].h = element.h;
+      stateLayout[index].w = element.w;
+    });
+
+    console.log("pre set state", this.state, layout);
+    console.log("global storage", JSON.parse(JSON.stringify(originalLayout)))
     saveToLS("layout", layout);
-    this.setState({ layout });
-    this.props.onLayoutChange(layout); // updates status display
+    this.setState({ layout: stateLayout });
+    this.props.onLayoutChange(stateLayout); // updates status display
+ 
   }
 
   handleMouseDown() {
     console.log("Mouse Down");
+    console.log(this.state);
     this.setState({
       mouse: true,
       rollBackLayout: this.state.layout
@@ -131,41 +110,41 @@ class LocalStorageOriginal extends React.PureComponent {
     //Set layout to last saved layout
     // backgroundString2 = 'url("../../Plantster_fav_16.png")';
 
-    for (let index = 0; index < (20); index++) {
-      
-      if(index === (19)){
+    for (let index = 0; index < 20; index++) {
+      if (index === 19) {
         backgroundString2 += 'url("../../Plantster_fav_32.png")';
       } else {
         backgroundString2 += 'url("../../Plantster_fav_32.png"),';
       }
-      
     }
 
     this.setState({ layout: this.props.defaultLayout });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    //   console.log("PrevState: ", prevState.layout);
+    console.log("PrevState: ", prevState.layout);
+    console.log("Current State:", this.state.layout);
     //   console.log("This State Layout: ", this.state.layout);
     //   console.log("Total Height", this.state.totalHeight);
 
-    const { layout, totalHeight } = this.state;
+    const { layout } = this.state;
     let resetFlag = false;
 
     layout.forEach(e => {
-      // console.log("ID: ",e.i)
-      // console.log("Height: ", e.h);
-      // console.log("Y-Axis", e.y);
-      // console.log("Total Height:", e.y+e.h);
-      if (e.h + e.y > totalHeight) {
+      console.log("ID: ",e.i)
+      console.log("Height: ", e.h);
+      console.log("Y-Axis", e.y);
+      console.log("Total Height Calculated:", e.y+e.h);
+      console.log("Total Height:", this.props.totalHeight)
+      if (e.h + e.y > this.props.totalHeight) {
         resetFlag = true;
         console.log("Reset Flag", resetFlag);
       }
     });
 
-    if (arraysEqual(this.state.layout, prevState.layout)) {
-      console.log("Arrays Are Equal, Nothing Happens");
-    } else {
+    // if (arraysEqual(this.state.layout, prevState.layout)) {
+    //   console.log("Arrays Are Equal, Nothing Happens");
+    // } else {
       console.log("----Not Equal");
       if (resetFlag) {
         console.log("Height Exceeded");
@@ -175,10 +154,10 @@ class LocalStorageOriginal extends React.PureComponent {
         console.log("Original Layout: ", originalLayout);
         console.log("Previous State: ", prevState.layout);
       }
-    }
+    // }
   }
 
-  onAddItem(bgColor) {
+  onAddItem(plantVals) {
     /*eslint no-console: 0*/
     // console.log("adding", "n" + this.state.newCounter);
     // console.log("State - ", this.state)
@@ -187,19 +166,19 @@ class LocalStorageOriginal extends React.PureComponent {
     let newLayout = Array.from(this.state.layout);
     const { plant, finalPlants } = this.props;
 
-
-    console.log("****** - ", plant._id);
+    console.log("Plant Id - ", plant._id);
     console.log("Plant - ", plant);
     // console.log("Final Plants: ", finalPlants[0]);
-    console.log("BG color:", bgColor);
+    console.log("BG color:", plantVals.bgColor);
     let clone = {};
 
     clone.i = "n" + this.state.newCounter.toString();
-    clone.bg = bgColor;
+    clone.bg = plantVals.bgColor;
+    clone.ss = plantVals.seedSpacing
     clone.x = 0;
     clone.y = 0;
-    clone.h = this.props.seedSpacing;
-    clone.w = this.props.seedSpacing;
+    clone.h = plantVals.seedSpacing
+    clone.w = plantVals.seedSpacing
     clone.moved = false;
     clone.static = false;
     clone.add = false;
@@ -234,76 +213,72 @@ class LocalStorageOriginal extends React.PureComponent {
     const { gardenWidth, plant } = this.props;
     const seedSpacing = element.seedSpacing || 6;
 
+    console.log("********CREATE STYLE OBJECT **********");
+    console.log("Element", element);
+    console.log("Props", this.props);
     // console.log("Width: ", gardenWidth);
     // console.log("Seed Spacing: ", seedSpacing);
 
-console.log("What Got Passed IN &&&&7", element);
+    console.log("element inside create style object", element);
 
-    let interval = Math.round((1408 / gardenWidth / 12) * seedSpacing);
-    let count = Math.round(1408 / interval);
-
-
-    // console.log(finalPlants[0])
-    // let bgColor = finalPlants.find(e => e.id === element.bg).background;
-    // console.log("BACKGROUND COLOR - ", bgColor);
-    // let backgroundString = ""
-
-    // console.log("Element passed in", element);
-    // console.log("Props: ", this.props);
-    // console.log("State: ", this.state);
-    // console.log("***************", plant._id);
-
-    // console.log("Interval: ", interval);
-    // console.log("Count: ", count);
-
+    console.log("Creating interval", this.props.ppi, element.ss)
+    let interval = this.props.ppi*element.ss;
+    // let count = Math.round(1408 / interval);
+    // let count = Math.round((element.w*element.h)/(element.ss*element.ss))
+    // let countx = Math.round(element.w/element.ss)+1;
+    // let county = Math.round(element.h/element.ss)+1;
+    let countx = 25;
+    let county = 16
 
     // Start of Comment
 
-    // var start = Math.round(interval/2)-16;
-    // var nextx = start;
-    // var nexty = start;
-    // // console.log("First Next - ", next);
-    // let position = "";
-    // let nextPos = "";
+    var start = Math.round(interval / 2) - 8;
+    var nextx = start;
+    var nexty = start;
+    // console.log("First Next - ", next);
+    let position = "";
+    let nextPos = "";
 
+    console.log("ALL VARIABLES BEFORE THE FOR LOOP", start, nextx, nexty, position, nextPos, interval, countx, county)
 
-    // for (let index = 0; index < count; index++) {
+    for (let index = 0; index < county; index++) {
+      for (let j = 0; j < countx; j++) {
+        if (!(j === countx - 1)) {
+          nextPos = nextx + "px " + nexty + "px, ";
+          position += nextPos;
+          nextx += interval;
+          // console.log("New Next: ", next);
+        } else if (index === county - 1 && j === countx - 1) {
+          nextPos = nextx + "px " + nexty + "px";
+          position += nextPos;
+          // console.log("Last Statement Statement", index, j);
+        } else {
+          nextPos = nextx + "px " + nexty + "px, ";
+          position += nextPos;
+        }
+      }
 
-    //   for (let j = 0; j < count; j++) {
-    //     if (!(j === (count - 1))) {
-    //       nextPos = nextx +"px " + nexty + "px, ";
-    //       position += nextPos;
-    //       nextx += interval;
-    //       // console.log("New Next: ", next);
-    //     } else if(((index === (count - 1)) && (j === (count - 1)))) {
-    //       nextPos = nextx + "px " + nexty + "px";
-    //       position += nextPos;
-    //       // console.log("Last Statement Statement", index, j);
-    //     } else {
-    //       nextPos = nextx + "px " + nexty + "px, ";
-    //       position += nextPos;
-    //     }
-    //   }
-
-    //   nexty += interval
-    //   nextx = start;
-
-    // }
+      nexty += interval;
+      nextx = start;
+    }
 
     // position = position;
 
     //End of Comment
     // console.log("Position: ", position.toString());
 
-    let styleObject = {}
-    
+    console.log("Background Color Element",element.bg)
+
+    let styleObject = {};
+
     styleObject = {
-      backgroundImage: 'url("../../Plantster_fav_16.png")',
+      backgroundImage: ((element.ss > 5) ? bgImageString200large: bgImageString400small),
+      // backgroundImage: 'url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png"),url("../../Plantster_fav_16.png")',
       // backgroundImage: backgroundString2,
-      backgroundRepeat: "repeat",
-      // backgroundPosition: position,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: position,
       backgroundColor: element.bg
-    }
+    };
 
     console.log("Style Object: ", styleObject);
 
@@ -318,8 +293,7 @@ console.log("What Got Passed IN &&&&7", element);
   };
 
   createElement(el) {
-    // console.log("In Create Element &&&&&&&&&&");
-    // console.log("EL: ", el);
+    console.log("Current State within create element", el, this.state.layout);
     const removeStyle = {
       position: "absolute",
       right: "2px",
@@ -327,8 +301,15 @@ console.log("What Got Passed IN &&&&7", element);
       cursor: "pointer"
     };
     const gridItemSytle = this.createStyleObject(el);
-    // console.log("Grid Item Style = ", gridItemSytle);
+    console.log(
+      "Current State after create style object",
+      el,
+      this.state.layout
+    );
     const i = el.add ? "+" : el.i;
+    let count = Math.round((el.w*el.h)/(el.ss*el.ss));
+    console.log("COUNT",el.w,el.h,el.ss,count);
+    this.props.setCount(count);
     return (
       <div key={i} data-grid={el} style={gridItemSytle}>
         {el.add ? (
@@ -341,7 +322,7 @@ console.log("What Got Passed IN &&&&7", element);
           </span>
         ) : (
           // <span className="text">{i}</span>
-          <span className="text" />
+          <span className="text"></span>
         )}
         <span
           className="remove"
@@ -351,8 +332,8 @@ console.log("What Got Passed IN &&&&7", element);
           {/* x */}
         </span>
         <span className="badge" role="badge">
-        # : 3
-      </span>
+          # : {count}
+        </span>
       </div>
     );
   }
@@ -380,8 +361,8 @@ console.log("What Got Passed IN &&&&7", element);
         </div>
         <div
           style={{
-            width: this.state.gardenSytle.width,
-            height: this.state.gardenSytle.height
+            width: this.props.pixelWidth,
+            height: this.props.pixelHeight
           }}
           id="mainTestForce"
           onMouseDown={this.handleMouseDown}
@@ -392,6 +373,7 @@ console.log("What Got Passed IN &&&&7", element);
           <ReactGridLayout
             {...this.props}
             layout={this.state.layout}
+            // onLayoutChange={() => this.onLayoutChange(this.state.layout)}
             onLayoutChange={this.onLayoutChange}
             margin={[1, 1]}
           >
@@ -413,6 +395,7 @@ console.log("What Got Passed IN &&&&7", element);
             </div> */}
           </ReactGridLayout>
         </div>
+        <p>.</p>
       </React.Fragment>
     );
   }

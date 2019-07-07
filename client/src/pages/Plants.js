@@ -10,6 +10,8 @@ import PlantDetail from "../components/PlantDetail";
 import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
 import Nav2 from "../components/Nav2";
 import NumberBadge from "../components/NumberBadge";
+import { RandomColor } from "../components/RandomColor";
+
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -26,57 +28,21 @@ class Plants extends Component {
     finalPlants: [],
     gardenHeight: 750,
     gardenWeight: 12,
-    seedSpacing: 5,
+    // seedSpacing: 5,
     bgColor: "",
-    defaultLayout: [
-      {
-        w: 2,
-        h: 3,
-        x: 0,
-        y: 0,
-        i: "1",
-        moved: false,
-        static: false,
-        seedSpacing: 3
-      },
-      {
-        w: 2,
-        h: 5,
-        x: 2,
-        y: 0,
-        i: "2",
-        moved: false,
-        static: false
-      },
-      {
-        w: 2,
-        h: 3,
-        x: 4,
-        y: 0,
-        i: "3",
-        moved: false,
-        static: false
-      },
-      {
-        w: 2,
-        h: 3,
-        x: 6,
-        y: 0,
-        i: "4",
-        moved: false,
-        static: false
-      },
-      {
-        w: 2,
-        h: 1,
-        x: 8,
-        y: 0,
-        i: "5",
-        moved: false,
-        static: false
-      }
-    ]
+    defaultLayout: [],
+    name: "",
+    length: "",
+    breadth: "",
+    pixelWidth: "1400px",
+    pixelHeight: "500px",
+    cols: 100,
+    rowHeight: 10,
+    ppi: 10,
+    totalHeight: 10,
+    count: 0
   };
+
 
   componentDidMount() {
     this.loadBooks();
@@ -88,6 +54,95 @@ class Plants extends Component {
         this.setState({ plants: res.data, Type: "", Name: "", Comments: "" })
       )
       .catch(err => console.log(err));
+  };
+
+  pixelDimensions = () => {
+    const { length, breadth } = this.state;
+    console.log("pixel dimensions", length);
+    let pixelWidth = "1300";
+    let pixelHeight = "750";
+    let cols = 10;
+    let ppi = 10;
+    let totalHeight = 20;
+    switch (length) {
+      case "4":
+        pixelWidth = "1248px";
+        cols = 48;
+        ppi = 26;
+        break;
+      case "5":
+        pixelWidth = "1320px";
+        cols = 60;
+        ppi = 22;
+        break;
+      case "6":
+        pixelWidth = "1368px";
+        cols = 72;
+        ppi = 19;
+        break;
+      case "7":
+        pixelWidth = "1344px";
+        cols = 84;
+        ppi = 16;
+        break;
+      case "8":
+        pixelWidth = "1344px";
+        cols = 96;
+        ppi = 14;
+        break;
+      case "9":
+        pixelWidth = "1404px";
+        cols = 108;
+        ppi = 13;
+        break;
+      case "10":
+        pixelWidth = "1320px";
+        cols = 120;
+        ppi = 11;
+        break;
+      case "11":
+        pixelWidth = "1320px";
+        cols = 132;
+        ppi = 10;
+        break;
+      case "12":
+        pixelWidth = "1296px";
+        cols = 144;
+        ppi = 9;
+        break;
+      case "13":
+        pixelWidth = "1404px";
+        cols = 156;
+        ppi = 9;
+        break;
+      case "14":
+        pixelWidth = "1344px";
+        cols = 168;
+        ppi = 8;
+        break;
+      case "15":
+        pixelWidth = "1260px";
+        cols = 180;
+        ppi = 7;
+        break;
+      case "16":
+        pixelWidth = "1344px";
+        cols = 192;
+        ppi = 7;
+        break;
+    }
+
+    pixelHeight = (ppi * parseInt(breadth) * 12 + 50).toString() + "px";
+    totalHeight = parseInt(breadth) * 12;
+
+    this.setState({
+      pixelWidth,
+      cols,
+      pixelHeight,
+      rowHeight: ppi,
+      ppi,
+      totalHeight
+    });
   };
 
   deleteBook = id => {
@@ -109,48 +164,84 @@ class Plants extends Component {
       [name]: value
     });
   };
-  
-  getRandomColor(){
-    let colorValues = ["#F2506E", "#07418C", "#03738C", "#91E0F2", "#F2CA52", "#077336", "#145932", "#F27405", "#D9411E", "#A6A486", "#F2D5C4", "#8C2E6B", "#468C8C", "#F2DF80", "#BFB4AA", "#F27777" ];
-    return colorValues[Math.floor(Math.random() * colorValues.length)];
-  }
 
- 
+  updateName = event => {
+    this.setState({ name: event.target.value });
+  };
+
+  updateLength = event => {
+    this.setState({ length: event.target.value }, () => this.pixelDimensions());
+  };
+
+  updateBreadth = event => {
+    this.setState({ breadth: event.target.value }, () =>
+      this.pixelDimensions()
+    );
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
     let finalPlants = [...this.state.finalPlants];
     let finalPlant = this.state.plant.Name;
+    let returnObj = {
+      bgColor: "",
+      seedSpacing: this.state.plant.PS
+    };
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
       key: 1,
-      background: this.getRandomColor()
+      background: RandomColor()
     });
     this.setState({ finalPlants: finalPlants });
     console.log(finalPlants);
     this.typeahead.getInstance().clear();
     // Todo: Remove plant clear completely?
-    // this.setState({
-    //   plant: null
-    // });
-    return(finalPlants[finalPlants.length -1].background)
+    this.setState({
+      plant: null
+    });
+    returnObj.bgColor = finalPlants[finalPlants.length - 1].background;
+    console.log("Return Object ******************************", returnObj);
+    // return(finalPlants[finalPlants.length -1].background)
+    return returnObj;
   };
 
+  handleGardenSave = newLayout => {
+    const garden = {
+      name: this.state.name,
+      length: this.state.length,
+      breadth: this.state.breadth,
+      layout: newLayout
+    };
+    this.setState({ layout: newLayout });
+    console.log({ newLayout });
+    this.saveGarden(garden);
+  };
 
-  handleGardenSave = (newLayout) => {
-    this.setState({ layout : newLayout });
+  saveGarden(garden) {
+    console.log({ garden });
+    fetch("api/gardens", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(garden)
+    });
   }
 
-  triggerChildAddItem = (bgColor) => {
-    this.refs.addItem.onAddItem(bgColor);
+  triggerChildAddItem = plantVals => {
+    this.refs.addItem.onAddItem(plantVals);
+  };
 
-  }
+  setCount = newCount => {
+    this.setState({ count: newCount });
+  };
 
-  addPlantToList = (event) =>{
-   let bgColor =  this.handleFormSubmit(event);
-   console.log("%%%%%%%%%%%%%%%%%%%%%%%", bgColor);
-    this.triggerChildAddItem(bgColor);
-  }
+  addPlantToList = event => {
+    let plantVals = this.handleFormSubmit(event);
+    this.triggerChildAddItem(plantVals);
+  };
 
   render() {
     return (
@@ -158,6 +249,46 @@ class Plants extends Component {
         <Nav2 />
         <Row>
           <Col size="sm-4">
+            <div className="form-group">
+              <label for="garden-name">
+                Name your garden and specify dimensions
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Name"
+                value={this.state.name}
+                onChange={this.updateName}
+              />
+            </div>
+            <div className="row">
+              <div className="dimension-1 col">
+                <input
+                  type="text"
+                  name="length"
+                  className="form-control"
+                  placeholder="feet"
+                  value={this.state.length}
+                  onChange={this.updateLength}
+                />
+              </div>
+
+              <div className="dimension-2 col">
+                <h6> by </h6>
+              </div>
+
+              <div className="dimension-3 col">
+                <input
+                  type="text"
+                  name="breadth"
+                  className="form-control w-200"
+                  placeholder="feet"
+                  value={this.state.breadth}
+                  onChange={this.updateBreadth}
+                />
+              </div>
+            </div>
             <SearchBar>
               <AsyncTypeahead
                 ref={typeahead => (this.typeahead = typeahead)}
@@ -182,9 +313,9 @@ class Plants extends Component {
               />
             </SearchBar>
 
-
-            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant} >Add plant</FormBtn>
-
+            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant}>
+              Add plant
+            </FormBtn>
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
@@ -197,19 +328,25 @@ class Plants extends Component {
               <div>
                 <ul>
                   {this.state.finalPlants.map(plant => (
-                     <Col size="sm-6 col-md-6 col-lg-4">
-                     <div className="listed-plant" >
-                       <li className="list-group-item" style={{backgroundColor: plant.background}}>{plant.name}
-                       <NumberBadge 
-                        id={plant.id}
-                        key={plant.key}
-                        name={plant.name}
-                        // style={{backgroundColor: plant.background}}
-                        />
-                       <DeleteBtn onClick={() => this.removePlant(plant.id)} />
-                       </li>
-                     </div>
-                   </Col>
+                    <Col size="sm-6 col-md-6 col-lg-4">
+                      <div className="listed-plant">
+                        <li
+                          className="list-group-item"
+                          style={{ backgroundColor: plant.background }}
+                        >
+                          {plant.name}
+                          <NumberBadge
+                            id={plant.id}
+                            key={plant.key}
+                            name={plant.name}
+                            // style={{backgroundColor: plant.background}}
+                          />
+                          <DeleteBtn
+                            onClick={() => this.removePlant(plant.id)}
+                          />
+                        </li>
+                      </div>
+                    </Col>
                   ))}
                 </ul>
               </div>
@@ -220,16 +357,23 @@ class Plants extends Component {
         <Row>
           <Col size="sm-12">
             <LocalStorageOriginal
-            // cols={10}
-            // rowHeight={30}
-            gardenWidth={this.state.gardenWeight}
-            ref="addItem"
-            seedSpacing={this.state.seedSpacing}
-            defaultLayout={this.state.defaultLayout}
-            handleGardenSave={this.handleGardenSave}
-            finalPlants={this.state.finalPlants}
-            plant={this.state.plant}
-            bgColor={this.state.bgColor}
+              // cols={10}
+              // rowHeight={30}
+              cols={this.state.cols}
+              rowHeight={this.state.rowHeight}
+              gardenWidth={this.state.gardenWeight}
+              pixelWidth={this.state.pixelWidth}
+              pixelHeight={this.state.pixelHeight}
+              ppi={this.state.ppi}
+              totalHeight={this.state.totalHeight}
+              ref="addItem"
+              // seedSpacing={this.state.seedSpacing}
+              defaultLayout={this.state.defaultLayout}
+              handleGardenSave={this.handleGardenSave}
+              finalPlants={this.state.finalPlants}
+              plant={this.state.plant}
+              bgColor={this.state.bgColor}
+              setCount={this.setCount}
             />
           </Col>
         </Row>
