@@ -37,6 +37,7 @@ class Plants extends Component {
     cols: 100,
     rowHeight: 10,
     ppi: 10,
+    totalHeight: 10,
     count: 0
   };
 
@@ -59,6 +60,7 @@ class Plants extends Component {
     let pixelHeight = "750";
     let cols = 10;
     let ppi = 10;
+    let totalHeight = 20;
     switch (length) {
       case "6":
         pixelWidth = "1368px";
@@ -73,11 +75,11 @@ class Plants extends Component {
     }
     switch(breadth) {
       case "4":
-        console.log("Variables: ", ppi,breadth)
-        pixelHeight = (ppi*breadth*12).toString() + "px";
+        pixelHeight = ((ppi*parseInt(breadth)*12)+50).toString() + "px";
+        totalHeight = parseInt(breadth)*12;
     }
 
-    this.setState({ pixelWidth, cols, pixelHeight, rowHeight: ppi, ppi });
+    this.setState({ pixelWidth, cols, pixelHeight, rowHeight: ppi, ppi, totalHeight });
   };
 
   deleteBook = id => {
@@ -321,6 +323,7 @@ class Plants extends Component {
               pixelWidth={this.state.pixelWidth}
               pixelHeight={this.state.pixelHeight}
               ppi={this.state.ppi}
+              totalHeight={this.state.totalHeight}
               ref="addItem"
               // seedSpacing={this.state.seedSpacing}
               defaultLayout={this.state.defaultLayout}
