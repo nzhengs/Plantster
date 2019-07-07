@@ -41,7 +41,11 @@ class Tessel extends Component {
     console.log("Focus shifted");
   }
 
-  handleDelete = () => {};
+  handleDelete = index => {
+    console.log(index);
+    const timers = this.state.timers.filter((timer, i) => index !== i);
+    this.setState({ timers });
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -101,9 +105,10 @@ class Tessel extends Component {
       <React.Fragment>
         <Nav1 />
         <Container>
-          <h6 onClick={this.onClick.bind(this)} className="m-4">
+          <Button onClick={this.onClick.bind(this)} style={{ float: "right" }}>
             Learn about installation
-          </h6>
+          </Button>
+
           <Modal
             isOpen={this.state.isOpen}
             aria={{
@@ -128,7 +133,6 @@ class Tessel extends Component {
           <div className="row justify-content-center">
             <h5 className="m-4">Add Timer</h5>
           </div>
-
           <CenterRow>
             <form style={{ width: "100%" }}>
               <div className="form-row align-items-center">
@@ -244,7 +248,7 @@ class Tessel extends Component {
                     <button
                       type="submit"
                       deleteKey={index}
-                      onClick={this.handleDelete}
+                      onClick={() => this.handleDelete(index)}
                       value={timer.index}
                       className="btn btn-link m-1"
                     >
