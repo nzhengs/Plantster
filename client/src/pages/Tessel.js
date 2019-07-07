@@ -104,11 +104,13 @@ class Tessel extends Component {
     return (
       <React.Fragment>
         <Nav1 />
+        <Button
+          onClick={this.onClick.bind(this)}
+          style={{ float: "right", margin: "10px" }}
+        >
+          Learn about installation
+        </Button>
         <Container>
-          <Button onClick={this.onClick.bind(this)} style={{ float: "right" }}>
-            Learn about installation
-          </Button>
-
           <Modal
             isOpen={this.state.isOpen}
             aria={{
