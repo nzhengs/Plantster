@@ -7,6 +7,7 @@ import { Card, Button } from "react-bootstrap";
 import seedling from "../assets/images/Seedling-icon.png";
 import Nav1 from "../components/Nav1";
 import { FormBtn } from "../components/Form";
+import axios from 'axios'
 
 
 
@@ -22,15 +23,46 @@ const styles = {
 
 
 class Profile extends Component {
-  state = {
-    plant: {}
-  };
+  constructor() {
+    super()
+    this.state = {
+      loggedIn: false,
+      username: null
+    }
+
+    this.getUser = this.getUser.bind(this)
+    this.componentDidMount = this.componentDidMount.bind(this)
+    this.updateUser = this.updateUser.bind(this)
+  }
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getUser(this.props.match.params.id)
-      .then(res => this.setState({ plant: res.data }))
-      .catch(err => console.log(err));
+    this.getUser()
+  }
+
+  updateUser (userObject) {
+    this.setState(userObject)
+  }
+
+  getUser() {
+    axios.get('/api/users/').then(response => {
+      console.log('Get user response: ')
+      console.log(response.data)
+      if (response.data.user) {
+        console.log('Get User: There is a user saved in the server session: ')
+
+        this.setState({
+          loggedIn: true,
+          username: response.data.user.username
+        })
+      } else {
+        console.log('Get user: no user');
+        this.setState({
+          loggedIn: false,
+          username: null
+        })
+      }
+    })
   }
 
 /*
@@ -61,7 +93,7 @@ class Profile extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-            <h1>Hi, Your name here</h1>      
+            <h1>Hi, {this.state.username}</h1>      
             <a href="/plants" className="button inset">Start a garden</a>        
             </Jumbotron>
           </Col>

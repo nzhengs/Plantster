@@ -20,7 +20,6 @@ import axios from 'axios'
         username: '',
         password: '',
         confirmPassword: '',
-        redirectTo: null
   
       }
       this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,7 +36,7 @@ import axios from 'axios'
       event.preventDefault()
   
       //request to server to add a new username/password
-      axios.post('/api/users/', {
+      axios.post('/user/', {
         firstName: this.state.firstName,
         lastName: this.state.lastName, 
         username: this.state.username,
@@ -62,9 +61,6 @@ import axios from 'axios'
 
 
   render() {
-    if (this.state.redirectTo) {
-      return <Redirect to={{ pathname: this.state.redirectTo }} />
-  } else {
     return (
       <Container fluid>
          <Nav1/>
@@ -77,25 +73,25 @@ import axios from 'axios'
         </Row>  
         <Form>
         <Form.Row>
-    <Form.Group as={Col} controlId="formGridfirstName">
+    <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>First Name</Form.Label>
       <Form.Control placeholder="John" 
         type="text"
         value={this.state.firstName}
-        onChange={this.handleChange}
+        onChange={this.handleInputChange}
         name="firstName"
-        
+        id="firstName"
       
       
       />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridlastName">
+    <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label>Last Name</Form.Label>
       <Form.Control placeholder="Smith" 
       type="text"
        value={this.state.lastName}
-       onChange={this.handleChange}
+       onChange={this.handleInputChange}
        name="lastName"
       
       
@@ -103,12 +99,12 @@ import axios from 'axios'
     </Form.Group>
   </Form.Row>
   <Form.Row>
-    <Form.Group as={Col} controlId="formGridusername">
+    <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
       <Form.Control placeholder="Enter email"
       type="text"
        value={this.state.username}
-       onChange={this.handleChange}
+       onChange={this.handleInputChange}
        name="username"
       
       
@@ -119,7 +115,7 @@ import axios from 'axios'
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password"
        value={this.state.password}
-       onChange={this.handleChange}
+       onChange={this.handleInputChange}
        name="password"
       
       />
@@ -127,7 +123,7 @@ import axios from 'axios'
   </Form.Row>
   
   <FormBtn variant="primary" 
-   onClick={this.handleSubmit}  
+   onClick={this.handleFormSubmit}  
   >
     Submit
   </FormBtn>
@@ -141,6 +137,5 @@ import axios from 'axios'
     );
   }
 }
-  }
 
 export default Signup;
