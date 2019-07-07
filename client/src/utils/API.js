@@ -29,5 +29,8 @@ export default {
     return axios.get("/api/users/" + id);
   },
 
+  getUser: function(username) {
+    return axios.get("/api/users/" + username);
+  },
 
 };

@@ -1,4 +1,4 @@
 module.exports = {
   Plant: require("./plant"),
-  User: require("./users")
+  User: require("./user")
 };

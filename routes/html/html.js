@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
 
 })
 
-router.get("/signup", (req, res)  =>
+router.get("/signup1", (req, res)  =>
 {
 res.sendFile(path.join(__dirname, "../../client/src/pages/login.html"))
 });
