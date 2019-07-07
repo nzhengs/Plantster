@@ -26,12 +26,18 @@ class Plants extends Component {
     finalPlants: [],
     gardenHeight: 750,
     gardenWeight: 12,
-    seedSpacing: 5,
+    // seedSpacing: 5,
     bgColor: "",
     defaultLayout: [],
     name: "",
     length: "",
     breadth: "",
+    pixelWidth: "1400px",
+    pixelHeight: "500px",
+    cols: 100,
+    rowHeight: 10,
+    ppi: 10,
+    totalHeight: 10,
     count: 0
   };
 
@@ -45,6 +51,95 @@ class Plants extends Component {
         this.setState({ plants: res.data, Type: "", Name: "", Comments: "" })
       )
       .catch(err => console.log(err));
+  };
+
+  pixelDimensions = () => {
+    const { length, breadth } = this.state;
+    console.log("pixel dimensions", length);
+    let pixelWidth = "1300";
+    let pixelHeight = "750";
+    let cols = 10;
+    let ppi = 10;
+    let totalHeight = 20;
+    switch (length) {
+      case "4":
+        pixelWidth = "1248px";
+        cols = 48;
+        ppi = 26;
+        break;
+      case "5":
+        pixelWidth = "1320px";
+        cols = 60;
+        ppi = 22;
+        break;
+      case "6":
+        pixelWidth = "1368px";
+        cols = 72;
+        ppi = 19;
+        break;
+      case "7":
+        pixelWidth = "1344px";
+        cols = 84;
+        ppi = 16;
+        break;
+      case "8":
+        pixelWidth = "1344px";
+        cols = 96;
+        ppi = 14;
+        break;
+      case "9":
+        pixelWidth = "1404px";
+        cols = 108;
+        ppi = 13;
+        break;
+      case "10":
+        pixelWidth = "1320px";
+        cols = 120;
+        ppi = 11;
+        break;
+      case "11":
+        pixelWidth = "1320px";
+        cols = 132;
+        ppi = 10;
+        break;
+      case "12":
+        pixelWidth = "1296px";
+        cols = 144;
+        ppi = 9;
+        break;
+      case "13":
+        pixelWidth = "1404px";
+        cols = 156;
+        ppi = 9;
+        break;
+      case "14":
+        pixelWidth = "1344px";
+        cols = 168;
+        ppi = 8;
+        break;
+      case "15":
+        pixelWidth = "1260px";
+        cols = 180;
+        ppi = 7;
+        break;
+      case "16":
+        pixelWidth = "1344px";
+        cols = 192;
+        ppi = 7;
+        break;
+    }
+
+    pixelHeight = (ppi * parseInt(breadth) * 12 + 50).toString() + "px";
+    totalHeight = parseInt(breadth) * 12;
+
+    this.setState({
+      pixelWidth,
+      cols,
+      pixelHeight,
+      rowHeight: ppi,
+      ppi,
+      totalHeight
+    });
   };
 
   deleteBook = id => {
@@ -94,11 +189,13 @@ class Plants extends Component {
   };
 
   updateLength = event => {
-    this.setState({ length: event.target.value });
+    this.setState({ length: event.target.value }, () => this.pixelDimensions());
   };
 
   updateBreadth = event => {
-    this.setState({ breadth: event.target.value });
+    this.setState({ breadth: event.target.value }, () =>
+      this.pixelDimensions()
+    );
   };
 
   handleFormSubmit = event => {
@@ -281,9 +378,15 @@ class Plants extends Component {
             <LocalStorageOriginal
               // cols={10}
               // rowHeight={30}
+              cols={this.state.cols}
+              rowHeight={this.state.rowHeight}
               gardenWidth={this.state.gardenWeight}
+              pixelWidth={this.state.pixelWidth}
+              pixelHeight={this.state.pixelHeight}
+              ppi={this.state.ppi}
+              totalHeight={this.state.totalHeight}
               ref="addItem"
-              seedSpacing={this.state.seedSpacing}
+              // seedSpacing={this.state.seedSpacing}
               defaultLayout={this.state.defaultLayout}
               handleGardenSave={this.handleGardenSave}
               finalPlants={this.state.finalPlants}

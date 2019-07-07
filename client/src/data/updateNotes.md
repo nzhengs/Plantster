@@ -9,13 +9,15 @@ Update Goals (All)
 3) Background Color on Grid
 4) Count
 5) Save all necessary info to top level
+6) reset the default grid dimensions to current state values, keep defaults in the state definitions
 
 In Process
 
 - Creating 4 x 6 grid.
 
-Update (saveable-layout)
-1)
+Update (dynamic-grid)
+1) Add setState callback to handle functions for length and breadth
+2) created pixelDimensions function that gets called from handle length and breadth
 
 
 Update Notes (update 1 and 2)
