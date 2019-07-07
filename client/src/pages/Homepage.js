@@ -69,7 +69,7 @@ class Homepage extends Component {
                 <Card.Body>
              <Card.Title>DESIGN</Card.Title>
             <Card.Text>
-            We made it easy to design your garden with our simple insert, drag, drop & pull layout tool.
+            <p>We made it easy to design your garden with our simple insert, drag, drop & pull layout tool.</p>
               </Card.Text>
             
             </Card.Body>
@@ -82,7 +82,7 @@ class Homepage extends Component {
                 <Card.Body>
              <Card.Title>PLANT</Card.Title>
             <Card.Text>
-            Get the information and tools to arrange and plant your garden for optimal success!
+            <p>Get the information and tools to arrange and plant your garden for optimal success!</p>
                 </Card.Text>
             
             </Card.Body>
@@ -98,7 +98,7 @@ class Homepage extends Component {
                 <Card.Body>
              <Card.Title>SHOP</Card.Title>
             <Card.Text>
-            We help you find the right stuff to buy based on your garden design. You can just check out.
+            <p>We help you find the right stuff to buy based on your garden design. You can just "check out."</p>
                 </Card.Text>
             
             </Card.Body>
@@ -111,7 +111,7 @@ class Homepage extends Component {
                 <Card.Body>
              <Card.Title>WATER</Card.Title>
             <Card.Text>
-            We'll alert you when your plants need to be watered and just how much so you don't have to worry about it.
+            <p>We'll alert you when your plants need to be watered and just how much so you don't have to worry about it.</p>
                 </Card.Text>
             
             </Card.Body>
@@ -121,7 +121,7 @@ class Homepage extends Component {
             </Row>
             <Row>
               <Col size="md-12" >
-              <h1 className="justify-content-md-center"  style={{ textAlign: "center" }}>MEET THE TEAM</h1>
+              <h1 className="justify-content-md-center"  style={{ textAlign: "center" }}>Meet the team</h1>
                             
               </Col>
               </Row>
@@ -136,16 +136,16 @@ class Homepage extends Component {
                   <img class="irina-image" src={Ben} alt="ben"></img>
               </div>
               <div class="col-md-2">
-                  <h6 class="Irina">Eva</h6>
-                  <img class="irina-image" src={Eva} alt="eva"></img>
-              </div>
-              <div class="col-md-2">
                   <h6 class="Irina">Nate</h6>
                   <img class="irina-image" src={Nathan} alt="nathan"></img>
               </div>
               <div class="col-md-2">
                   <h6 class="Irina">Irina</h6>
                   <img class="irina-image" src={Irina} alt="irina"></img>
+              </div>
+              <div class="col-md-2">
+                  <h6 class="Irina">Eva</h6>
+                  <img class="irina-image" src={Eva} alt="eva"></img>
               </div>
 
             </Row>
@@ -157,7 +157,7 @@ class Homepage extends Component {
         <div className="container">
                   <div className="text-center center-block">
                       <p>Connect with us!</p>
-                          <a href="https://github.com/eanderson111"><i id="social-gh" className="fa fa-github-square fa-3x social"></i></a>
+                          <a href="https://github.com/eanderson111/Plantster"><i id="social-gh" className="fa fa-github-square fa-3x social"></i></a>
               </div>
           </div>
         </Row>

@@ -59,31 +59,31 @@ class Profile extends Component {
                     <td width="80%" scope="row">
                       prop
                     </td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf07a;
                     </td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf043;
                     </td>
                   </tr>
 
                   <tr>
                     <td scope="row">prop</td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf07a;
                     </td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
-                    </td>
-                  </tr>
-                  <tr>
-                    <td scope="row">prop</td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
-                    </td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf043;
                     </td>
                   </tr>
                   <tr>
                     <td scope="row">prop</td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf07a;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf07a;
                     </td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#424242'}}>&#xf043;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf043;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td scope="row">prop</td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#A0D413'}}>&#xf07a;
+                    </td>
+                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#A0D413'}}>&#xf043;
                     </td>
                   </tr>
                 </tbody>

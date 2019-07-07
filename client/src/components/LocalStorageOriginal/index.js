@@ -34,7 +34,7 @@ class LocalStorageOriginal extends React.PureComponent {
       newCounter: 15,
       gardenSytle: {
         height: "500px",
-        width: "1400px"
+        width: "1230px"
       }
     };
 

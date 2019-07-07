@@ -40,8 +40,7 @@ class Login extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-            <h1>Login</h1>
-              
+            <h1>Welcome back</h1>
               
             </Jumbotron>
           </Col>
