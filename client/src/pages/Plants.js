@@ -10,6 +10,8 @@ import PlantDetail from "../components/PlantDetail";
 import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
 import Nav2 from "../components/Nav2";
 import NumberBadge from "../components/NumberBadge";
+import { RandomColor } from "../components/RandomColor";
+
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
@@ -40,6 +42,7 @@ class Plants extends Component {
     totalHeight: 10,
     count: 0
   };
+
 
   componentDidMount() {
     this.loadBooks();
@@ -162,28 +165,6 @@ class Plants extends Component {
     });
   };
 
-  getRandomColor() {
-    let colorValues = [
-      "#F2506E",
-      "#07418C",
-      "#03738C",
-      "#91E0F2",
-      "#F2CA52",
-      "#077336",
-      "#145932",
-      "#F27405",
-      "#D9411E",
-      "#A6A486",
-      "#F2D5C4",
-      "#8C2E6B",
-      "#468C8C",
-      "#F2DF80",
-      "#BFB4AA",
-      "#F27777"
-    ];
-    return colorValues[Math.floor(Math.random() * colorValues.length)];
-  }
-
   updateName = event => {
     this.setState({ name: event.target.value });
   };
@@ -210,7 +191,7 @@ class Plants extends Component {
       name: finalPlant,
       id: this.state.plant._id,
       key: 1,
-      background: this.getRandomColor()
+      background: RandomColor()
     });
     this.setState({ finalPlants: finalPlants });
     console.log(finalPlants);
