@@ -21,17 +21,59 @@ const styles = {
 
 class Login extends Component {
   state = {
-    plant: {}
+    user: {},
+    username: "",
+    password: ""
+    
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ plant: res.data }))
-      .catch(err => console.log(err));
-  }
+  
 
-   
+  /*
+  $("#btn-login ").on("click", function() {
+    var email = $("input[name='username']").val();
+  var password = $("input[name='password']").val();
+  var user = {
+    email,password
+  }
+  console.log(user)
+  $.post("/api/user/login", user, function(data) {
+  console.log(data)
+  if (data.firstName) {
+    window.location = "/profile"
+  }else {
+    alert ("Please enter a valid email and password")
+  }
+  });
+  });
+
+  */
+
+ handleFormSubmit = event => {
+  event.preventDefault();
+  if (this.state.username && this.state.password) {
+    API.getUser({
+      username: this.state.username,
+      password: this.state.password,
+
+      
+    })
+      console.log( this.state.username)
+      console.log( this.state.password)
+     // .catch(err => console.log(err));
+
+  }
+};
+
+handleInputChange = event => {
+  const { name, value } = event.target;
+  this.setState({
+    [name]: value
+  });
+};
+
+
 
   render() {
     return (
@@ -53,14 +95,28 @@ class Login extends Component {
           <Form>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control type="email" placeholder="Enter email" 
+     value={this.state.username}
+     onChange={this.handleInputChange}
+     name="username"
+    
+    />
   </Form.Group>
 
   <Form.Group controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control type="password" placeholder="Password" 
+    value={this.state.password}
+    onChange={this.handleInputChange}
+    name="password"
+    
+    
+    
+    />
   </Form.Group>
-  <FormBtn variant="primary" type="submit" href="/Profile">
+  <FormBtn variant="primary" type="submit" href="/Profile"
+  onClick={this.handleFormSubmit}
+  >
     Submit
   </FormBtn>
 </Form>

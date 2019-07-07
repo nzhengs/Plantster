@@ -28,12 +28,31 @@ class Profile extends Component {
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getBook(this.props.match.params.id)
+    API.getUser(this.props.match.params.id)
       .then(res => this.setState({ plant: res.data }))
       .catch(err => console.log(err));
   }
 
+/*
+  $(document).ready( function () {
+    $.get("/api/user/").then(function(userInfo) {
+  console.log(userInfo)
+  $("#userName").text(`${userInfo.user.firstName} ${userInfo.user.lastName}` )
+  $("#userEmail").text(`${userInfo.user.email}` )
+  })
+  $("#signOut").on("click", function() {
+    console.log("clicked")
+    $.post("/api/user/logout/").then(function() {
+      window.location="/"
+    })
+  })
+  })
    
+  */
+
+
+
+  
 
   render() {
     return (
