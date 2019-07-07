@@ -26,7 +26,7 @@ class Plants extends Component {
     finalPlants: [],
     gardenHeight: 750,
     gardenWeight: 12,
-    seedSpacing: 5,
+    // seedSpacing: 5,
     bgColor: "",
     defaultLayout: [],
     name: "",
@@ -36,6 +36,7 @@ class Plants extends Component {
     pixelHeight: "500px",
     cols: 100,
     rowHeight: 10,
+    ppi: 10,
     count: 0
   };
 
@@ -76,7 +77,7 @@ class Plants extends Component {
         pixelHeight = (ppi*breadth*12).toString() + "px";
     }
 
-    this.setState({ pixelWidth, cols, pixelHeight, rowHeight: ppi });
+    this.setState({ pixelWidth, cols, pixelHeight, rowHeight: ppi, ppi });
   };
 
   deleteBook = id => {
@@ -319,8 +320,9 @@ class Plants extends Component {
               gardenWidth={this.state.gardenWeight}
               pixelWidth={this.state.pixelWidth}
               pixelHeight={this.state.pixelHeight}
+              ppi={this.state.ppi}
               ref="addItem"
-              seedSpacing={this.state.seedSpacing}
+              // seedSpacing={this.state.seedSpacing}
               defaultLayout={this.state.defaultLayout}
               handleGardenSave={this.handleGardenSave}
               finalPlants={this.state.finalPlants}
