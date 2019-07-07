@@ -62,24 +62,84 @@ class Plants extends Component {
     let ppi = 10;
     let totalHeight = 20;
     switch (length) {
+      case "4":
+        pixelWidth = "1248px";
+        cols = 48;
+        ppi = 26;
+        break;
+      case "5":
+        pixelWidth = "1320px";
+        cols = 60;
+        ppi = 22;
+        break;
       case "6":
         pixelWidth = "1368px";
         cols = 72;
         ppi = 19;
+        break;
+      case "7":
+        pixelWidth = "1344px";
+        cols = 84;
+        ppi = 16;
         break;
       case "8":
         pixelWidth = "1344px";
         cols = 96;
         ppi = 14;
         break;
-    }
-    switch(breadth) {
-      case "4":
-        pixelHeight = ((ppi*parseInt(breadth)*12)+50).toString() + "px";
-        totalHeight = parseInt(breadth)*12;
+      case "9":
+        pixelWidth = "1404px";
+        cols = 108;
+        ppi = 13;
+        break;
+      case "10":
+        pixelWidth = "1320px";
+        cols = 120;
+        ppi = 11;
+        break;
+      case "11":
+        pixelWidth = "1320px";
+        cols = 132;
+        ppi = 10;
+        break;
+      case "12":
+        pixelWidth = "1296px";
+        cols = 144;
+        ppi = 9;
+        break;
+      case "13":
+        pixelWidth = "1404px";
+        cols = 156;
+        ppi = 9;
+        break;
+      case "14":
+        pixelWidth = "1344px";
+        cols = 168;
+        ppi = 8;
+        break;
+      case "15":
+        pixelWidth = "1260px";
+        cols = 180;
+        ppi = 7;
+        break;
+      case "16":
+        pixelWidth = "1344px";
+        cols = 192;
+        ppi = 7;
+        break;
     }
 
-    this.setState({ pixelWidth, cols, pixelHeight, rowHeight: ppi, ppi, totalHeight });
+    pixelHeight = (ppi * parseInt(breadth) * 12 + 50).toString() + "px";
+    totalHeight = parseInt(breadth) * 12;
+
+    this.setState({
+      pixelWidth,
+      cols,
+      pixelHeight,
+      rowHeight: ppi,
+      ppi,
+      totalHeight
+    });
   };
 
   deleteBook = id => {
@@ -133,9 +193,10 @@ class Plants extends Component {
   };
 
   updateBreadth = event => {
-    this.setState({ breadth: event.target.value }, () => this.pixelDimensions());
+    this.setState({ breadth: event.target.value }, () =>
+      this.pixelDimensions()
+    );
   };
-
 
   handleFormSubmit = event => {
     event.preventDefault();
