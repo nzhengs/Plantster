@@ -165,6 +165,7 @@ class Plants extends Component {
     });
   };
 
+
   updateName = event => {
     this.setState({ name: event.target.value });
   };

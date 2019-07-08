@@ -5,7 +5,7 @@ function Nav1() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light static-top">
       <a className="navbar-brand">
-        <img src={logo} height="75" alt="" />
+        <img src={logo} height="65" alt="" />
       </a>
       <button
         className="navbar-toggler"
