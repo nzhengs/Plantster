@@ -7,33 +7,68 @@ import { Form } from "react-bootstrap";
 import { Button } from 'react-bootstrap';
 import Nav1 from "../components/Nav1";
 import { FormBtn } from "../components/Form";
-
-
-
-
-const styles = {
-
-  width: '250px',
-  height: '250px',
-  margin: "50px",
-};
+import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 
 class Login extends Component {
-  state = {
-    plant: {}
-  };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ plant: res.data }))
-      .catch(err => console.log(err));
+  constructor() {
+      super()
+      this.state = {
+          username: '',
+          password: '',
+          redirectTo: null
+      }
+      this.handleSubmit = this.handleSubmit.bind(this)
+      this.handleChange = this.handleChange.bind(this)
+
   }
 
-   
+  handleChange(event) {
+      this.setState({
+          [event.target.name]: event.target.value
+      })
+  }
+
+  handleSubmit(event) {
+      event.preventDefault()
+      console.log('handleSubmit')
+
+      axios
+          .post('/api/users/login', {
+              username: this.state.username,
+              password: this.state.password
+          })
+          .then(response => {
+              console.log('login response: ')
+              console.log(response)
+              if (response.status === 200) {
+                  // update App.js state
+                  this.props.updateUser({
+                      loggedIn: true,
+                      username: response.data.username
+                  })
+                  // update the state to redirect to home
+                  this.setState({
+                      redirectTo: '/Profile'
+                  })
+              }
+          }).catch(error => {
+              console.log('login error: ')
+              console.log(error);
+              
+          })
+  }
+
+
+
+
+
 
   render() {
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />
+  } else {
     return (
       <Container fluid>
          <Nav1/>
@@ -52,14 +87,28 @@ class Login extends Component {
           <Form>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control  placeholder="Enter email" 
+     value={this.state.username}
+     onChange={this.handleChange}
+     name="username"
+    
+    />
   </Form.Group>
 
   <Form.Group controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control type="password" placeholder="Password" 
+    value={this.state.password}
+    onChange={this.handleChange}
+    name="password"
+    
+    
+    
+    />
   </Form.Group>
-  <FormBtn variant="primary" type="submit" href="/Profile">
+  <FormBtn variant="primary" type="submit" href="/Profile"
+  onClick={this.handleSubmit}
+  >
     Submit
   </FormBtn>
 </Form>
@@ -67,6 +116,7 @@ class Login extends Component {
       </Container>
     );
   }
+}
 }
 
 export default Login;

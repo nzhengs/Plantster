@@ -10,7 +10,6 @@ import Signup from "./pages/Signup";
 import Tessel from "./pages/Tessel"
 
 
-
 function App() {
   return (
     <Router>
@@ -18,6 +17,7 @@ function App() {
         
         <Switch>
           
+
           <Route exact path="/" component={Homepage} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
@@ -30,6 +30,7 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
 

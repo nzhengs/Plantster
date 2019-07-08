@@ -36,6 +36,7 @@ export function RandomColor(){
       "#f8c076",
       "91E0F2",
       "03738c"]
+
     
         return colorValues[Math.floor(Math.random() * colorValues.length)];
       }

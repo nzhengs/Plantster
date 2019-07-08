@@ -136,6 +136,7 @@ class Homepage extends Component {
                   <img class="irina-image" src={Ben} alt="ben"></img>
               </div>
               <div class="col-md-2">
+
                   <h6 class="Irina">Nate</h6>
                   <img class="irina-image" src={Nathan} alt="nathan"></img>
               </div>
@@ -143,10 +144,12 @@ class Homepage extends Component {
                   <h6 class="Irina">Irina</h6>
                   <img class="irina-image" src={Irina} alt="irina"></img>
               </div>
+
               <div class="col-md-2">
                   <h6 class="Irina">Eva</h6>
                   <img class="irina-image" src={Eva} alt="eva"></img>
               </div>
+
 
             </Row>
 
@@ -158,6 +161,7 @@ class Homepage extends Component {
                   <div className="text-center center-block">
                       <p>Connect with us!</p>
                           <a href="https://github.com/eanderson111/Plantster"><i id="social-gh" className="fa fa-github-square fa-3x social"></i></a>
+
               </div>
           </div>
         </Row>
