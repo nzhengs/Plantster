@@ -2,10 +2,11 @@ import React from "react";
 import "./style.css";
 
 function NumberBadge(props) {
+  console.log("!!!!!!!!!!!!!!!!!!", props)
   return (
 
       <span className="badge" {...props} role="badge">
-        # : 3
+        # : {props.size}
       </span>
 
   );
