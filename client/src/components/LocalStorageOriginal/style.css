@@ -199,6 +199,13 @@
 
   #mainTestForce {
       background-color: #A0D413;
+      /* background-image: url(../../../src/assets/images/5017.png);
+      background-repeat: repeat; */
+        /* background:
+          linear-gradient(63deg, #A0D413 23%, transparent 23%) 7px 0,
+          linear-gradient(63deg, transparent 74%, #A0D413 78%),
+          linear-gradient(63deg, transparent 34%, #A0D413 38%, #A0D413 58%, transparent 62%),
+          #243E36; */
       margin-left: 35px;
       /* width: 1020px;
       height: 750px; */

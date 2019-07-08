@@ -244,6 +244,8 @@ class Plants extends Component {
     this.triggerChildAddItem(plantVals);
   };
 
+
+
   render() {
     return (
       <Container fluid>
@@ -340,8 +342,11 @@ class Plants extends Component {
                             id={plant.id}
                             key={plant.key}
                             name={plant.name}
-                            // style={{backgroundColor: plant.background}}
+                            count={this.count}    
                           />
+                            {/* <span className="badge" role="badge">
+                             {this.setCount}
+                            </span> */}
                           <DeleteBtn
                             onClick={() => this.removePlant(plant.id)}
                           />
