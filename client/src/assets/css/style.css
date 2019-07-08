@@ -3,11 +3,6 @@ body {
   font-size: 16px;
   line-height: 34px;
   color: #777777;
-  /* background: url('../images/chu-tai-121706-unsplash.jpg') no-repeat center center fixed; */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover; 
 }
 
 /*
@@ -224,13 +219,12 @@ ul {
     DYNAMIC BUTTON ON HOMEPAGE
 */
 
-
 .button.inset {
   text-decoration: none;
   color: #fff;
   background-color: #A0D413;
   letter-spacing: 2px;
-  padding: 0px 10px 0px 10px;
+  padding: 5px 10px 5px 10px;
   border: 5px solid rgb(179, 190, 192);
   border: 5px solid #A0D413;
   /* border-radius: 0.25rem; */
@@ -258,49 +252,9 @@ ul {
     SOCIAL ICONS
 */
 .container{
-  margin-top: 50px
+  margin-top: 80px
 }
 
-#lab_social_icon_footer {
-  padding: 40px 0;
-  background-color: white;
-  margin-top: 50px;
+.fa-github-square:before {
+  color: #A0D413
 }
-
-#lab_social_icon_footer a {
-  color: #333;
-}
-
-#lab_social_icon_footer .social:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-}
-
-#lab_social_icon_footer .social {
-  -webkit-transform: scale(0.8);
-  /* Browser Variations: */
-  
-  -moz-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-}
-/*
-    SOCIAL ICONS - Multicolored Button Hover Variations
-*/
-
-#lab_social_icon_footer #social-gh:hover {
-  color:#A0D413;
-}
-
-#lab_social_icon_footer #social-tw:hover {
-  color: #A0D413;
-}
-
-#lab_social_icon_footer #social-li:hover {
-  color: #A0D413;
-}
-
-
