@@ -39,8 +39,7 @@ class Plants extends Component {
     cols: 100,
     rowHeight: 10,
     ppi: 10,
-    totalHeight: 10,
-    count: 0
+    totalHeight: 10
   };
 
 
@@ -193,7 +192,7 @@ class Plants extends Component {
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
-      size: 2,
+      size: 1,
       background: RandomColor()
     });
     this.setState({ finalPlants: finalPlants });
@@ -237,8 +236,10 @@ class Plants extends Component {
     this.refs.addItem.onAddItem(plantVals);
   };
 
-  setCount = newCount => {
-    this.setState({ count: newCount });
+  setCount = (plantId, newCount) => {
+    const plant = this.state.finalPlants.find(plant => plant.id === plantId);
+    plant.size = newCount;
+    this.setState({ finalPlants: this.state.finalPlants });
   };
 
   addPlantToList = event => {

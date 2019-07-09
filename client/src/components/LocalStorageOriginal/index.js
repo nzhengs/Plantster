@@ -310,7 +310,7 @@ class LocalStorageOriginal extends React.PureComponent {
     const i = el.add ? "+" : el.i;
     let count = Math.round((el.w*el.h)/(el.ss*el.ss));
     console.log("COUNT",el.w,el.h,el.ss,count);
-    this.props.setCount(count);
+    this.props.setCount(el.id, count);
     return (
       <div key={i} data-grid={el} style={gridItemSytle}>
         {el.add ? (
