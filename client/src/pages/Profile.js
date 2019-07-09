@@ -45,7 +45,7 @@ class Profile extends Component {
   }
 
   getUser() {
-    axios.get('/api/users/').then(response => {
+    axios.get('/api/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {
