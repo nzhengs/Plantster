@@ -191,7 +191,7 @@ class Plants extends Component {
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
-      key: 1,
+      size: 2,
       background: RandomColor()
     });
     this.setState({ finalPlants: finalPlants });
@@ -243,6 +243,8 @@ class Plants extends Component {
     let plantVals = this.handleFormSubmit(event);
     this.triggerChildAddItem(plantVals);
   };
+
+
 
   render() {
     return (
@@ -328,7 +330,8 @@ class Plants extends Component {
             {!this.state.plant && (
               <div>
                 <ul>
-                  {this.state.finalPlants.map(plant => (
+                  {this.state.finalPlants.map(plant => {
+                    return (
                     <Col size="sm-6 col-md-6 col-lg-4">
                       <div className="listed-plant">
                         <li
@@ -340,15 +343,19 @@ class Plants extends Component {
                             id={plant.id}
                             key={plant.key}
                             name={plant.name}
-                            // style={{backgroundColor: plant.background}}
+                            size={plant.size}    
                           />
+                            {/* <span className="badge" role="badge">
+                             {this.setCount}
+                            </span> */}
                           <DeleteBtn
                             onClick={() => this.removePlant(plant.id)}
                           />
                         </li>
                       </div>
                     </Col>
-                  ))}
+                  )}
+                  )}
                 </ul>
               </div>
             )}
