@@ -24,11 +24,6 @@ app.use(bodyParser.json())
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-// Add routes, both API and view
-app.use(routes);
-
-
 // Connect to the Mongo DB
  mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/plantslist");
 // Sessions
@@ -43,13 +38,13 @@ app.use(
 )
 
 app.use(express.static('client/src'))
-app.use(express.static('client/public'))
+
 
 // Passport
 app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
-
-
+// Add routes, both API and view
+app.use(routes);
 
 
 
