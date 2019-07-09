@@ -175,6 +175,8 @@ class LocalStorageOriginal extends React.PureComponent {
     clone.i = "n" + this.state.newCounter.toString();
     clone.bg = plantVals.bgColor;
     clone.ss = plantVals.seedSpacing
+    clone.id = plantVals.id;
+    clone.index = plantVals.index;
     clone.x = 2;
     clone.y = 0;
     clone.h = plantVals.seedSpacing
@@ -341,6 +343,12 @@ class LocalStorageOriginal extends React.PureComponent {
   onRemoveItem(i) {
     console.log("removing", i);
     this.setState({ layout: _.reject(this.state.layout, { i: i }) });
+  }
+
+  removeAnItem = (itemId, index) => {
+    const layout = this.state.layout;
+    const newLayout =  _.reject(layout, { id: itemId, index });
+    this.setState({ layout: newLayout});
   }
 
   render() {
