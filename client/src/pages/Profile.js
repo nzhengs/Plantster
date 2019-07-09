@@ -104,7 +104,15 @@ class Profile extends Component {
           <Col size="md-12">
             
           <div className="card-body">
+
               <table id="product_detail" className="table table-sm">
+              <thead>
+                <tr>
+                  <th width="80%" scope="col"><h7>Garden</h7></th>
+                  <th width="10%" scope="col"><h7>Shopping</h7></th>
+                  <th width="10%" scope="col"><h7>Water management</h7></th>
+                </tr>
+              </thead>
                 <tbody>
                   <tr>
                     <td width="80%" scope="row">
@@ -132,9 +140,9 @@ class Profile extends Component {
                   </tr>
                   <tr>
                     <td scope="row">prop</td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#A0D413'}}>&#xf07a;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf07a;
                     </td>
-                    <td style={{fontFamily:'fontAwesome',fontSize:40,color:'#A0D413'}}>&#xf043;
+                    <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf043;
                     </td>
                   </tr>
                 </tbody>

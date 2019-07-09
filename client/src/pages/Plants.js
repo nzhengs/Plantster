@@ -318,10 +318,13 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
-
-            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant}>
+            <div className="addButton">
+            <FormBtn className="addPlant" onClick={this.addPlantToList} disabled={!this.state.plant}>
               Add plant
             </FormBtn>
+            </div>
+
+            
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
