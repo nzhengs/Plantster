@@ -354,17 +354,18 @@ class LocalStorageOriginal extends React.PureComponent {
     return (
       <React.Fragment>
         <div id="headerTestForce">
-          {/* <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn> */}
+          <a href="/Profile">
           <FormBtn
             onClick={() => {
               this.props.handleGardenSave(this.state.layout);
             }}
             type="button"
             className="btn btn-success float-right"
+            
           >
             Save Layout
           </FormBtn>
-          {/* <h1>Title</h1> */}
+          </a>
         </div>
         <div
           style={{
