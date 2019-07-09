@@ -11,6 +11,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 
+
 class Login extends Component {
   constructor() {
       super()
@@ -34,8 +35,7 @@ class Login extends Component {
       event.preventDefault()
       console.log('handleSubmit')
 
-      axios
-          .post('/api/users/login', {
+      axios.post('/api/user/login', {
               username: this.state.username,
               password: this.state.password
           })

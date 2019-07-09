@@ -37,18 +37,19 @@ import axios from 'axios'
       event.preventDefault()
   
       //request to server to add a new username/password
-      axios.post('/api/users/', {
+      axios.post('/api/user/signup', {
         firstName: this.state.firstName,
         lastName: this.state.lastName, 
         username: this.state.username,
         password: this.state.password
       })
         .then(response => {
+          console.log("response")
           console.log(response)
           if (!response.data.errmsg) {
             console.log('successful signup')
             this.setState({ //redirect to login page
-              redirectTo: '/Profile'
+              redirectTo: '/Login'
             })
           } else {
             console.log('username already taken')
