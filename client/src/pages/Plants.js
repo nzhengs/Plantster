@@ -39,7 +39,8 @@ class Plants extends Component {
     cols: 100,
     rowHeight: 10,
     ppi: 10,
-    totalHeight: 10
+    totalHeight: 10,
+    garden:""
   };
 
 
@@ -57,7 +58,7 @@ class Plants extends Component {
 
   pixelDimensions = () => {
     const { length, breadth } = this.state;
-    console.log("pixel dimensions", length);
+    console.log("pixel dimensions", length)
     let pixelWidth = "1300";
     let pixelHeight = "750";
     let cols = 10;
@@ -213,7 +214,8 @@ class Plants extends Component {
       name: this.state.name,
       length: this.state.length,
       breadth: this.state.breadth,
-      layout: newLayout
+      layout: newLayout,
+      finalPlants:this.state.finalPlants
     };
     this.setState({ layout: newLayout });
     console.log({ newLayout });
