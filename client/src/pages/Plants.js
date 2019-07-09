@@ -151,12 +151,12 @@ class Plants extends Component {
       .catch(err => console.log(err));
   };
 
-  removePlant = (id, index) => {
+  removePlant = (id) => {
     const newPlantArray = this.state.finalPlants.filter(
-      (plant, i) => id !== plant.id || index !== i
+      (plant, i) => id !== plant.id 
     );
     this.setState({ finalPlants: newPlantArray });
-    this.refs.addItem.removeAnItem(id,index);
+    this.refs.addItem.removeAnItem(id);
   };
 
   handleInputChange = event => {
@@ -188,8 +188,7 @@ class Plants extends Component {
     let returnObj = {
       bgColor: "",
       seedSpacing: this.state.plant.PS,
-      id: this.state.plant._id,
-      index: finalPlants.length
+      id: this.state.plant._id
     };
     finalPlants.push({
       name: finalPlant,
@@ -333,7 +332,7 @@ class Plants extends Component {
             {!this.state.plant && (
               <div>
                 <ul>
-                  {this.state.finalPlants.map((plant, index) => {
+                  {this.state.finalPlants.map((plant) => {
                     return (
                     <Col size="sm-6 col-md-6 col-lg-4">
                       <div className="listed-plant">
@@ -352,7 +351,7 @@ class Plants extends Component {
                              {this.setCount}
                             </span> */}
                           <DeleteBtn
-                            onClick={() => this.removePlant(plant.id, index)}
+                            onClick={() => this.removePlant(plant.id)}
                           />
                         </li>
                       </div>
