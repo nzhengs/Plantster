@@ -153,7 +153,7 @@ class Plants extends Component {
 
   removePlant = (id) => {
     const newPlantArray = this.state.finalPlants.filter(
-      (plant, i) => id !== plant.id 
+      (plant) => id !== plant.id 
     );
     this.setState({ finalPlants: newPlantArray });
     this.refs.addItem.removeAnItem(id);
