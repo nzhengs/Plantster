@@ -29,7 +29,6 @@ class Plants extends Component {
     gardenWeight: 12,
     // seedSpacing: 5,
     bgColor: "",
-    defaultLayout: [],
     name: "",
     length: "",
     breadth: "",
@@ -46,33 +45,36 @@ class Plants extends Component {
 
     const userGarden = this.props.location.state.garden;
 
+
     console.log("layout of garden" + JSON.stringify(userGarden.layout));
     if (userGarden) {
-      this.setState({
-        name: userGarden.name,
-        length: userGarden.length.toString(),
-        breadth: userGarden.breadth.toString(),
-        finalPlants: userGarden.finalPlants,
-        garden: { layout: userGarden.layout }
-      },()=> this.pixelDimensions());
+      this.setState(
+        {
+          name: userGarden.name,
+          length: userGarden.length.toString(),
+          breadth: userGarden.breadth.toString(),
+          finalPlants: userGarden.finalPlants,
+          garden: { layout: userGarden.layout }
+        },
+        () => this.pixelDimensions()
+      );
     }
 
     this.loadBooks();
   }
   componentDidUpdate(prevProps, prevState) {
-
-    console.log("component did mount1");
-    console.log(prevProps);
-    console.log("component did mount2");
-    console.log(this.state);
+    // console.log("component did mount1");
+    // console.log(prevProps);
+    // console.log("component did mount2");
+    // console.log(this.state);
     if (prevProps.garden) {
-      console.log("component did mount if 1");
+      // console.log("component did mount if 1");
 
       if (isEquivalent(prevProps.garden, this.state.garden)) {
-        console.log("component did mount if 2");
+        // console.log("component did mount if 2");
       } else {
         this.pixelDimensions();
-        console.log("component did mount else 1");
+        // console.log("component did mount else 1");
       }
     }
   }

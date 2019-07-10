@@ -118,6 +118,8 @@ class LocalStorageOriginal extends React.PureComponent {
       }
     }
 
+    console.log("In componenet DID MOUNT: ", this.props)
+    console.log("default array: ", this.state.layout);
     this.setState({ layout: this.props.defaultLayout });
   }
 
@@ -155,6 +157,12 @@ class LocalStorageOriginal extends React.PureComponent {
         console.log("Previous State: ", prevState.layout);
       }
     // }
+
+    if(this.state.layout.length === 0) {
+      this.setState({
+        layout: this.props.defaultLayout
+      });
+    }
   }
 
   onAddItem(plantVals) {
