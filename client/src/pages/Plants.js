@@ -43,6 +43,7 @@ class Plants extends Component {
 
   componentDidMount() {
 
+    if(this.props.location.state) {
     const userGarden = this.props.location.state.garden;
 
 
@@ -59,7 +60,7 @@ class Plants extends Component {
         () => this.pixelDimensions()
       );
     }
-
+  }
     this.loadBooks();
   }
   componentDidUpdate(prevProps, prevState) {
