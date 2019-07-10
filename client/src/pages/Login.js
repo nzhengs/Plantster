@@ -56,6 +56,7 @@ class Login extends Component {
           }).catch(error => {
               console.log('login error: ')
               console.log(error);
+              alert("Try again")
               
           })
   }

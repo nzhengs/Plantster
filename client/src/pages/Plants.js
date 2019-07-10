@@ -11,11 +11,15 @@ import LocalStorageOriginal from "../components/LocalStorageOriginal/index";
 import Nav2 from "../components/Nav2";
 import NumberBadge from "../components/NumberBadge";
 import { RandomColor } from "../components/RandomColor";
+import axios from 'axios'
 
 const AsyncTypeahead = asyncContainer(Typeahead);
 
 class Plants extends Component {
-  state = {
+  constructor() {
+    super()
+
+  this.state = {
     plant: null,
     plants: [],
     Type: "",
@@ -38,8 +42,21 @@ class Plants extends Component {
     rowHeight: 10,
     ppi: 10,
     totalHeight: 10,
+    count: 0,
+    loggedIn: false,
+    username: null
+  };
+
+
+  this.getUser = this.getUser.bind(this)
+
+   
+  }
+
+
     garden: { layout: [] }
   };
+
 
   componentDidMount() {
 
@@ -62,6 +79,7 @@ class Plants extends Component {
     }
   }
     this.loadBooks();
+    this.getUser()
   }
   componentDidUpdate(prevProps, prevState) {
     // console.log("component did mount1");
@@ -279,6 +297,30 @@ class Plants extends Component {
     let plantVals = this.handleFormSubmit(event);
     this.triggerChildAddItem(plantVals);
   };
+
+
+  getUser() {
+    axios.get('/api/user/').then(response => {
+      console.log('Get user response: ')
+      console.log(response.data)
+      if (response.data.user) {
+        console.log('Get User: There is a user saved in the server session: ')
+
+        this.setState({
+          loggedIn: true,
+          username: response.data.user.username
+        })
+      } else {
+        console.log('Get user: no user');
+        this.setState({
+          loggedIn: false,
+          username: null
+        })
+      }
+    })
+  }
+
+
 
   render() {
     return (

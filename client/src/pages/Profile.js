@@ -55,8 +55,9 @@ class Profile extends Component {
 
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
-        });
+          username: response.data.user.firstName + " " + response.data.user.lastName
+        })
+
       } else {
         console.log("Get user: no user");
         this.setState({
