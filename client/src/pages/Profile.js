@@ -101,20 +101,33 @@ class Profile extends Component {
 
         <Row>
           <Col size="md-12">
-            
-          <div className="card-body">
-
+            <div className="card-body">
               <table id="product_detail" className="table table-sm">
-              <thead >
-                <tr >
-                  <th style={{verticalAlign:"middle", width: "80%"}}  scope="col"><h7>Garden</h7></th>
-                  <th style={{verticalAlign:"middle", width: "10%"}}  scope="col"><h7>Shopping</h7></th>
-                  <th style={{verticalAlign:"middle", width: "10%"}}  scope="col"><h7>Water management</h7></th>
-                </tr>
-              </thead>
+                <thead>
+                  <tr>
+                    <th
+                      style={{ verticalAlign: "middle", width: "80%" }}
+                      scope="col"
+                    >
+                      <h7>Garden</h7>
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle", width: "10%" }}
+                      scope="col"
+                    >
+                      <h7>Shopping</h7>
+                    </th>
+                    <th
+                      style={{ verticalAlign: "middle", width: "10%" }}
+                      scope="col"
+                    >
+                      <h7>Water management</h7>
+                    </th>
+                  </tr>
+                </thead>
                 <tbody>
                   {this.state.gardens.map(garden => {
-                      console.log(garden)
+                    console.log(garden);
 
                     return (
                       <tr>
@@ -123,7 +136,7 @@ class Profile extends Component {
                             to={{
                               pathname: "/plants",
                               search: `?id=${garden._id}`,
-                              state: { garden}
+                              state: { garden }
                             }}
                           >
                             {garden.name}
@@ -137,7 +150,13 @@ class Profile extends Component {
                             color: "#A0D413"
                           }}
                         >
-                          <a href="https://www.gurneys.com/"> &#xf07a;</a>
+                          <a
+                            style={{ color: "#A0D413"}}
+                            href="https://www.gurneys.com/"
+                          >
+                            {" "}
+                            &#xf07a;
+                          </a>
                         </td>
 
                         <td
@@ -147,12 +166,11 @@ class Profile extends Component {
                             color: "#A0D413"
                           }}
                         >
-                          <a href="/Tessel">&#xf043;</a>
+                          <a style={{ color: "#A0D413"}} href="/Tessel">&#xf043;</a>
                         </td>
                       </tr>
                     );
                   })}
-
                 </tbody>
               </table>
             </div>
