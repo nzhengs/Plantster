@@ -104,12 +104,12 @@ class Tessel extends Component {
     return (
       <React.Fragment>
         <Nav1 />
-        <Button
+        <FormBtn
           onClick={this.onClick.bind(this)}
           style={{ float: "right", margin: "10px" }}
         >
           Learn about installation
-        </Button>
+        </FormBtn>
         <Container>
           <Modal
             isOpen={this.state.isOpen}
@@ -217,6 +217,7 @@ class Tessel extends Component {
                     type="submit"
                     onClick={this.handleFormSubmit}
                     className="btn btn-success mt-1"
+                    style={{ backgroundColor: "#A0D413" }}
                   >
                     Add Timer
                   </button>
