@@ -15,7 +15,7 @@ import Anjana from "../assets/images/anjana.jpg";
 import Irina from "../assets/images/irina.JPEG";
 import Nathan from "../assets/images/nate.JPEG";
 import Nav from "../components/Nav";
-
+import axios from 'axios'
 
 
 const styles = {
@@ -27,17 +27,49 @@ const styles = {
 
 
 class Homepage extends Component {
-  state = {
-    plant: {}
-  };
+  constructor() {
+    super()
+    this.state = {
+      loggedIn: false,
+      username: null
+    }
+
+    this.logoutUser = this.logoutUser.bind(this)
+    this.componentDidMount = this.componentDidMount.bind(this)
+    this.updateUser = this.updateUser.bind(this)
+  }
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ plant: res.data }))
-      .catch(err => console.log(err));
+    this.logoutUser()
   }
 
+  updateUser (userObject) {
+    this.setState(userObject)
+  }
+
+  logoutUser() {
+    axios.post('/api/user/logout').then(response => {
+      console.log('log user response: ')
+      console.log(response.data)
+      if (response.data.user) {
+        console.log('Get User: There is a user saved in the server session: ')
+
+        this.props.updateUser({
+          loggedIn: false,
+          username: null
+      })
+      } else {
+        console.log('Get user: no user');
+        this.setState({
+          loggedIn: false,
+          username: null
+        })
+      }
+    })
+  }
+
+  
    
 
   render() {

@@ -29,7 +29,7 @@ console.log(req.body)
                 username: username,
                 password: password
             });
-            console.log("saving " + )
+            console.log("saving " )
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
                 res.json(savedUser)
@@ -72,7 +72,8 @@ router.get('/', (req, res, next) => {
 router.post('/logout', (req, res) => {
     if (req.user) {
         console.log("logging out")
-        req.logout()
+        req.logOut()
+
         res.send({ msg: 'logging out' })
        
     } else {
