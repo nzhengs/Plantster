@@ -75,7 +75,7 @@ class PlantDetail extends Component {
             describedby: "full_description"
           }}
         >
-          <Container fuild>
+          <Container fluid>
             <Row>
               <Col size="sm-12">
                 <h1>{this.props.plant.Name}</h1>
