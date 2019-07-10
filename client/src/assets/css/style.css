@@ -171,6 +171,13 @@ h4{
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
 }
+
+h7{
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .dropdown-menu{
   font-size: 12px;
 }
@@ -215,6 +222,14 @@ ul {
   font-size: 14px;
 }
 
+thead {
+  vertical-align: middle;
+  padding-bottom: 5px !important;
+}
+
+/* PROFILE PAGE */
+
+
 /*
     DYNAMIC BUTTON ON HOMEPAGE
 */
@@ -246,6 +261,13 @@ ul {
 .button.inset:hover {
   box-shadow: inset 0px 0px 0px 2px #fff;
 }
+
+.addButton{
+  position:relative;
+  z-index: 100;
+  margin-bottom: -15px;
+}
+
 
 
 /*

@@ -101,8 +101,17 @@ class Profile extends Component {
 
         <Row>
           <Col size="md-12">
-            <div className="card-body">
+            
+          <div className="card-body">
+
               <table id="product_detail" className="table table-sm">
+              <thead >
+                <tr >
+                  <th style={{verticalAlign:"middle", width: "80%"}}  scope="col"><h7>Garden</h7></th>
+                  <th style={{verticalAlign:"middle", width: "10%"}}  scope="col"><h7>Shopping</h7></th>
+                  <th style={{verticalAlign:"middle", width: "10%"}}  scope="col"><h7>Water management</h7></th>
+                </tr>
+              </thead>
                 <tbody>
                   {this.state.gardens.map(garden => {
                       console.log(garden)
@@ -143,6 +152,7 @@ class Profile extends Component {
                       </tr>
                     );
                   })}
+
                 </tbody>
               </table>
             </div>
