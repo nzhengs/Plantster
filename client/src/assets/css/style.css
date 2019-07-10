@@ -222,6 +222,10 @@ ul {
   font-size: 14px;
 }
 
+thead {
+  vertical-align: middle;
+  padding-bottom: 5px !important;
+}
 
 /* PROFILE PAGE */
 

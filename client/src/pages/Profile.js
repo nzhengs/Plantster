@@ -106,16 +106,16 @@ class Profile extends Component {
           <div className="card-body">
 
               <table id="product_detail" className="table table-sm">
-              <thead>
-                <tr>
-                  <th width="80%" scope="col"><h7>Garden</h7></th>
-                  <th width="10%" scope="col"><h7>Shopping</h7></th>
-                  <th width="10%" scope="col"><h7>Water management</h7></th>
+              <thead >
+                <tr >
+                  <th style={{verticalAlign:"middle", width: "80%"}}  scope="col"><h7>Garden</h7></th>
+                  <th style={{verticalAlign:"middle", width: "10%"}}  scope="col"><h7>Shopping</h7></th>
+                  <th style={{verticalAlign:"middle", width: "10%"}}  scope="col"><h7>Water management</h7></th>
                 </tr>
               </thead>
                 <tbody>
                   <tr>
-                    <td width="80%" scope="row">
+                    <td style={{width:"80%"}} scope="row">
                       prop
                     </td>
                     <td style={{fontFamily:'fontAwesome',fontSize:30,color:'#A0D413'}}>&#xf07a;
