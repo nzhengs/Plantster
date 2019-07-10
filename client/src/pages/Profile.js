@@ -105,10 +105,20 @@ class Profile extends Component {
               <table id="product_detail" className="table table-sm">
                 <tbody>
                   {this.state.gardens.map(garden => {
+                      console.log(garden)
+
                     return (
                       <tr>
                         <td width="80%" scope="row">
-                         <a href="/plants"> {garden.name}</a>
+                          <Link
+                            to={{
+                              pathname: "/plants",
+                              search: `?id=${garden._id}`,
+                              state: { garden}
+                            }}
+                          >
+                            {garden.name}
+                          </Link>
                         </td>
 
                         <td

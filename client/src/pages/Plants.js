@@ -12,7 +12,6 @@ import Nav2 from "../components/Nav2";
 import NumberBadge from "../components/NumberBadge";
 import { RandomColor } from "../components/RandomColor";
 
-
 const AsyncTypeahead = asyncContainer(Typeahead);
 
 class Plants extends Component {
@@ -40,12 +39,42 @@ class Plants extends Component {
     rowHeight: 10,
     ppi: 10,
     totalHeight: 10,
-    garden:""
+    garden: { layout: [] }
   };
 
-
   componentDidMount() {
+
+    const userGarden = this.props.location.state.garden;
+
+    console.log("layout of garden" + JSON.stringify(userGarden.layout));
+    if (userGarden) {
+      this.setState({
+        name: userGarden.name,
+        length: userGarden.length.toString(),
+        breadth: userGarden.breadth.toString(),
+        finalPlants: userGarden.finalPlants,
+        garden: { layout: userGarden.layout }
+      },()=> this.pixelDimensions());
+    }
+
     this.loadBooks();
+  }
+  componentDidUpdate(prevProps, prevState) {
+
+    console.log("component did mount1");
+    console.log(prevProps);
+    console.log("component did mount2");
+    console.log(this.state);
+    if (prevProps.garden) {
+      console.log("component did mount if 1");
+
+      if (isEquivalent(prevProps.garden, this.state.garden)) {
+        console.log("component did mount if 2");
+      } else {
+        this.pixelDimensions();
+        console.log("component did mount else 1");
+      }
+    }
   }
 
   loadBooks = () => {
@@ -58,7 +87,7 @@ class Plants extends Component {
 
   pixelDimensions = () => {
     const { length, breadth } = this.state;
-    console.log("pixel dimensions", length)
+    console.log("pixel dimensions", length);
     let pixelWidth = "1300";
     let pixelHeight = "750";
     let cols = 10;
@@ -151,9 +180,9 @@ class Plants extends Component {
       .catch(err => console.log(err));
   };
 
-  removePlant = (id) => {
+  removePlant = id => {
     const newPlantArray = this.state.finalPlants.filter(
-      (plant) => id !== plant.id 
+      plant => id !== plant.id
     );
     this.setState({ finalPlants: newPlantArray });
     this.refs.addItem.removeAnItem(id);
@@ -165,7 +194,6 @@ class Plants extends Component {
       [name]: value
     });
   };
-
 
   updateName = event => {
     this.setState({ name: event.target.value });
@@ -215,7 +243,7 @@ class Plants extends Component {
       length: this.state.length,
       breadth: this.state.breadth,
       layout: newLayout,
-      finalPlants:this.state.finalPlants
+      finalPlants: this.state.finalPlants
     };
     this.setState({ layout: newLayout });
     console.log({ newLayout });
@@ -248,8 +276,6 @@ class Plants extends Component {
     let plantVals = this.handleFormSubmit(event);
     this.triggerChildAddItem(plantVals);
   };
-
-
 
   render() {
     return (
@@ -335,32 +361,32 @@ class Plants extends Component {
             {!this.state.plant && (
               <div>
                 <ul>
-                  {this.state.finalPlants.map((plant) => {
+                  {this.state.finalPlants.map(plant => {
                     return (
-                    <Col size="sm-6 col-md-6 col-lg-4">
-                      <div className="listed-plant">
-                        <li
-                          className="list-group-item"
-                          style={{ backgroundColor: plant.background }}
-                        >
-                          {plant.name}
-                          <NumberBadge
-                            id={plant.id}
-                            key={plant.key}
-                            name={plant.name}
-                            size={plant.size}    
-                          />
+                      <Col size="sm-6 col-md-6 col-lg-4">
+                        <div className="listed-plant">
+                          <li
+                            className="list-group-item"
+                            style={{ backgroundColor: plant.background }}
+                          >
+                            {plant.name}
+                            <NumberBadge
+                              id={plant.id}
+                              key={plant.key}
+                              name={plant.name}
+                              size={plant.size}
+                            />
                             {/* <span className="badge" role="badge">
                              {this.setCount}
                             </span> */}
-                          <DeleteBtn
-                            onClick={() => this.removePlant(plant.id)}
-                          />
-                        </li>
-                      </div>
-                    </Col>
-                  )}
-                  )}
+                            <DeleteBtn
+                              onClick={() => this.removePlant(plant.id)}
+                            />
+                          </li>
+                        </div>
+                      </Col>
+                    );
+                  })}
                 </ul>
               </div>
             )}
@@ -381,7 +407,7 @@ class Plants extends Component {
               totalHeight={this.state.totalHeight}
               ref="addItem"
               // seedSpacing={this.state.seedSpacing}
-              defaultLayout={this.state.defaultLayout}
+              defaultLayout={this.state.garden.layout}
               handleGardenSave={this.handleGardenSave}
               finalPlants={this.state.finalPlants}
               plant={this.state.plant}
@@ -395,4 +421,29 @@ class Plants extends Component {
   }
 }
 
+function isEquivalent(a, b) {
+  // Create arrays of property names
+  var aProps = Object.getOwnPropertyNames(a);
+  var bProps = Object.getOwnPropertyNames(b);
+
+  // If number of properties is different,
+  // objects are not equivalent
+  if (aProps.length != bProps.length) {
+    return false;
+  }
+
+  for (var i = 0; i < aProps.length; i++) {
+    var propName = aProps[i];
+
+    // If values of same property are not equal,
+    // objects are not equivalent
+    if (a[propName] !== b[propName]) {
+      return false;
+    }
+  }
+
+  // If we made it this far, objects
+  // are considered equivalent
+  return true;
+}
 export default Plants;

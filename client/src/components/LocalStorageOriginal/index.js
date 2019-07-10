@@ -31,7 +31,7 @@ class LocalStorageOriginal extends React.PureComponent {
     super(props);
 
     this.state = {
-      layout: [],
+      layout: props.defaultLayout,
       // layout: JSON.parse(JSON.stringify(originalLayout)),
       //   layout: testDefaultLayout,
       mouse: false,
