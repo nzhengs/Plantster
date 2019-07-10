@@ -44,18 +44,14 @@ class Plants extends Component {
     totalHeight: 10,
     count: 0,
     loggedIn: false,
-    username: null
+    username: null,
+    garden: { layout: [] }
+
   };
-
-
   this.getUser = this.getUser.bind(this)
 
    
   }
-
-
-    garden: { layout: [] }
-  };
 
 
   componentDidMount() {
