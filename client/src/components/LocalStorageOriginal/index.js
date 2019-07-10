@@ -31,7 +31,7 @@ class LocalStorageOriginal extends React.PureComponent {
     super(props);
 
     this.state = {
-      layout: [],
+      layout: props.defaultLayout,
       // layout: JSON.parse(JSON.stringify(originalLayout)),
       //   layout: testDefaultLayout,
       mouse: false,
@@ -118,6 +118,8 @@ class LocalStorageOriginal extends React.PureComponent {
       }
     }
 
+    console.log("In componenet DID MOUNT: ", this.props)
+    console.log("default array: ", this.state.layout);
     this.setState({ layout: this.props.defaultLayout });
   }
 
@@ -155,6 +157,12 @@ class LocalStorageOriginal extends React.PureComponent {
         console.log("Previous State: ", prevState.layout);
       }
     // }
+
+    if(this.state.layout.length === 0) {
+      this.setState({
+        layout: this.props.defaultLayout
+      });
+    }
   }
 
   onAddItem(plantVals) {
@@ -175,6 +183,7 @@ class LocalStorageOriginal extends React.PureComponent {
     clone.i = "n" + this.state.newCounter.toString();
     clone.bg = plantVals.bgColor;
     clone.ss = plantVals.seedSpacing
+    clone.id = plantVals.id;
     clone.x = 2;
     clone.y = 0;
     clone.h = plantVals.seedSpacing
@@ -309,7 +318,7 @@ class LocalStorageOriginal extends React.PureComponent {
     const i = el.add ? "+" : el.i;
     let count = Math.round((el.w*el.h)/(el.ss*el.ss));
     console.log("COUNT",el.w,el.h,el.ss,count);
-    this.props.setCount(count);
+    this.props.setCount(el.id, count);
     return (
       <div key={i} data-grid={el} style={gridItemSytle}>
         {el.add ? (
@@ -343,21 +352,28 @@ class LocalStorageOriginal extends React.PureComponent {
     this.setState({ layout: _.reject(this.state.layout, { i: i }) });
   }
 
+  removeAnItem = (itemId) => {
+    const layout = this.state.layout;
+    const newLayout =  _.reject(layout, { id: itemId});
+    this.setState({ layout: newLayout});
+  }
+
   render() {
     return (
       <React.Fragment>
         <div id="headerTestForce">
-          {/* <FormBtn onClick={this.onAddItem}>Adds plant to grid</FormBtn> */}
+          <a href="/Profile">
           <FormBtn
             onClick={() => {
               this.props.handleGardenSave(this.state.layout);
             }}
             type="button"
             className="btn btn-success float-right"
+            
           >
             Save Layout
           </FormBtn>
-          {/* <h1>Title</h1> */}
+          </a>
         </div>
         <div
           style={{

@@ -194,7 +194,7 @@
 
   #headerTestForce {
     background-color: red;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 
   #mainTestForce {
@@ -203,6 +203,7 @@
       /* width: 1020px;
       height: 750px; */
       padding: 5px;
+  
   }
 
   button {

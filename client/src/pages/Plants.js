@@ -13,7 +13,6 @@ import NumberBadge from "../components/NumberBadge";
 import { RandomColor } from "../components/RandomColor";
 import axios from 'axios'
 
-
 const AsyncTypeahead = asyncContainer(Typeahead);
 
 class Plants extends Component {
@@ -34,7 +33,6 @@ class Plants extends Component {
     gardenWeight: 12,
     // seedSpacing: 5,
     bgColor: "",
-    defaultLayout: [],
     name: "",
     length: "",
     breadth: "",
@@ -55,9 +53,49 @@ class Plants extends Component {
    
   }
 
+
+    garden: { layout: [] }
+  };
+
+
   componentDidMount() {
+
+    if(this.props.location.state) {
+    const userGarden = this.props.location.state.garden;
+
+
+    console.log("layout of garden" + JSON.stringify(userGarden.layout));
+    if (userGarden) {
+      this.setState(
+        {
+          name: userGarden.name,
+          length: userGarden.length.toString(),
+          breadth: userGarden.breadth.toString(),
+          finalPlants: userGarden.finalPlants,
+          garden: { layout: userGarden.layout }
+        },
+        () => this.pixelDimensions()
+      );
+    }
+  }
     this.loadBooks();
     this.getUser()
+  }
+  componentDidUpdate(prevProps, prevState) {
+    // console.log("component did mount1");
+    // console.log(prevProps);
+    // console.log("component did mount2");
+    // console.log(this.state);
+    if (prevProps.garden) {
+      // console.log("component did mount if 1");
+
+      if (isEquivalent(prevProps.garden, this.state.garden)) {
+        // console.log("component did mount if 2");
+      } else {
+        this.pixelDimensions();
+        // console.log("component did mount else 1");
+      }
+    }
   }
 
   loadBooks = () => {
@@ -168,6 +206,7 @@ class Plants extends Component {
       plant => id !== plant.id
     );
     this.setState({ finalPlants: newPlantArray });
+    this.refs.addItem.removeAnItem(id);
   };
 
   handleInputChange = event => {
@@ -176,7 +215,6 @@ class Plants extends Component {
       [name]: value
     });
   };
-
 
   updateName = event => {
     this.setState({ name: event.target.value });
@@ -198,12 +236,13 @@ class Plants extends Component {
     let finalPlant = this.state.plant.Name;
     let returnObj = {
       bgColor: "",
-      seedSpacing: this.state.plant.PS
+      seedSpacing: this.state.plant.PS,
+      id: this.state.plant._id
     };
     finalPlants.push({
       name: finalPlant,
       id: this.state.plant._id,
-      size: 2,
+      size: 1,
       background: RandomColor()
     });
     this.setState({ finalPlants: finalPlants });
@@ -224,7 +263,8 @@ class Plants extends Component {
       name: this.state.name,
       length: this.state.length,
       breadth: this.state.breadth,
-      layout: newLayout
+      layout: newLayout,
+      finalPlants: this.state.finalPlants
     };
     this.setState({ layout: newLayout });
     console.log({ newLayout });
@@ -247,14 +287,17 @@ class Plants extends Component {
     this.refs.addItem.onAddItem(plantVals);
   };
 
-  setCount = newCount => {
-    this.setState({ count: newCount });
+  setCount = (plantId, newCount) => {
+    const plant = this.state.finalPlants.find(plant => plant.id === plantId);
+    plant.size = newCount;
+    this.setState({ finalPlants: this.state.finalPlants });
   };
 
   addPlantToList = event => {
     let plantVals = this.handleFormSubmit(event);
     this.triggerChildAddItem(plantVals);
   };
+
 
   getUser() {
     axios.get('/api/user/').then(response => {
@@ -276,6 +319,7 @@ class Plants extends Component {
       }
     })
   }
+
 
 
   render() {
@@ -347,10 +391,13 @@ class Plants extends Component {
                 options={this.state.options}
               />
             </SearchBar>
-
-            <FormBtn onClick={this.addPlantToList} disabled={!this.state.plant}>
+            <div className="addButton">
+            <FormBtn className="addPlant" onClick={this.addPlantToList} disabled={!this.state.plant}>
               Add plant
             </FormBtn>
+            </div>
+
+            
           </Col>
           <Col size="sm-8">
             {this.state.plant && (
@@ -364,30 +411,30 @@ class Plants extends Component {
                 <ul>
                   {this.state.finalPlants.map(plant => {
                     return (
-                    <Col size="sm-6 col-md-6 col-lg-4">
-                      <div className="listed-plant">
-                        <li
-                          className="list-group-item"
-                          style={{ backgroundColor: plant.background }}
-                        >
-                          {plant.name}
-                          <NumberBadge
-                            id={plant.id}
-                            key={plant.key}
-                            name={plant.name}
-                            size={plant.size}    
-                          />
+                      <Col size="sm-6 col-md-6 col-lg-4">
+                        <div className="listed-plant">
+                          <li
+                            className="list-group-item"
+                            style={{ backgroundColor: plant.background }}
+                          >
+                            {plant.name}
+                            <NumberBadge
+                              id={plant.id}
+                              key={plant.key}
+                              name={plant.name}
+                              size={plant.size}
+                            />
                             {/* <span className="badge" role="badge">
                              {this.setCount}
                             </span> */}
-                          <DeleteBtn
-                            onClick={() => this.removePlant(plant.id)}
-                          />
-                        </li>
-                      </div>
-                    </Col>
-                  )}
-                  )}
+                            <DeleteBtn
+                              onClick={() => this.removePlant(plant.id)}
+                            />
+                          </li>
+                        </div>
+                      </Col>
+                    );
+                  })}
                 </ul>
               </div>
             )}
@@ -408,7 +455,7 @@ class Plants extends Component {
               totalHeight={this.state.totalHeight}
               ref="addItem"
               // seedSpacing={this.state.seedSpacing}
-              defaultLayout={this.state.defaultLayout}
+              defaultLayout={this.state.garden.layout}
               handleGardenSave={this.handleGardenSave}
               finalPlants={this.state.finalPlants}
               plant={this.state.plant}
@@ -422,4 +469,29 @@ class Plants extends Component {
   }
 }
 
+function isEquivalent(a, b) {
+  // Create arrays of property names
+  var aProps = Object.getOwnPropertyNames(a);
+  var bProps = Object.getOwnPropertyNames(b);
+
+  // If number of properties is different,
+  // objects are not equivalent
+  if (aProps.length != bProps.length) {
+    return false;
+  }
+
+  for (var i = 0; i < aProps.length; i++) {
+    var propName = aProps[i];
+
+    // If values of same property are not equal,
+    // objects are not equivalent
+    if (a[propName] !== b[propName]) {
+      return false;
+    }
+  }
+
+  // If we made it this far, objects
+  // are considered equivalent
+  return true;
+}
 export default Plants;

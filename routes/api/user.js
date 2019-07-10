@@ -29,7 +29,9 @@ console.log(req.body)
                 username: username,
                 password: password
             });
-            console.log("saving " )
+
+            console.log("saving ")
+
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
                 res.json(savedUser)
