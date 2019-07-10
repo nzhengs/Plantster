@@ -5,7 +5,8 @@ const gardenSchema = new Schema({
   name: String,
   length: Number,
   breadth: Number,
-  layout: []
+  layout: [],
+  finalPlants: []
 });
 
 const Garden = mongoose.model("Garden", gardenSchema);
