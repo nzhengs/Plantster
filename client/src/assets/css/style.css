@@ -272,7 +272,9 @@ thead {
   margin-bottom: -15px;
 }
 
-
+.ReactModal__Overlay{
+  z-index: 130;
+ }
 
 /*
     SOCIAL ICONS
