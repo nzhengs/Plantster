@@ -161,25 +161,30 @@ class Homepage extends Component {
           
               <div id="team" class="col-md-2 col-md-offset-1">
                   <h6 class="Irina">Anjana</h6>
-                  <img class="irina-image" src={Anjana} alt="anjana"></img>
+                  <a href="https://www.linkedin.com/in/anjana-hengaju-9181b182/">
+                  <img class="irina-image" src={Anjana} alt="anjana"></img></a>
               </div>
               <div class="col-md-2">
                   <h6 class="Irina">Ben</h6>
-                  <img class="irina-image" src={Ben} alt="ben"></img>
+                  <a href="https://www.linkedin.com/in/benjamin-andersen-b6378a36/">
+                  <img class="irina-image" src={Ben} alt="ben"></img></a>
               </div>
               <div class="col-md-2">
 
                   <h6 class="Irina">Nate</h6>
-                  <img class="irina-image" src={Nathan} alt="nathan"></img>
+                  <a href="https://www.linkedin.com/in/nathan-olson-75716125/">
+                  <img class="irina-image" src={Nathan} alt="nathan"></img></a>
               </div>
               <div class="col-md-2">
                   <h6 class="Irina">Irina</h6>
-                  <img class="irina-image" src={Irina} alt="irina"></img>
+                  <a href="https://www.linkedin.com/in/irina-montgomery-5237778b/">
+                  <img class="irina-image" src={Irina} alt="irina"></img></a>
               </div>
 
               <div class="col-md-2">
                   <h6 class="Irina">Eva</h6>
-                  <img class="irina-image" src={Eva} alt="eva"></img>
+                  <a href="https://www.linkedin.com/in/eva-anderson-56250423/">
+                  <img class="irina-image" src={Eva} alt="eva"></img></a>
               </div>
 
 
